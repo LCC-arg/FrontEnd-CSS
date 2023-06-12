@@ -1,0 +1,13 @@
+/* Este archivo es el que va a contener a todos los demas CSS
+, el link es hacia este archivo*/
+
+@import url("normalize.css");
+@import url("variables.css");
+@import url("globales.css");
+@import url("utilidades.css");
+@import url("layouts/header.css");
+@import url("layouts/indexStyle.css");
+@import url("layouts/footer.css");
+
+
+
