@@ -271,14 +271,14 @@ footer {
     text-align: center;
     border-top: 1px solid black;
     box-shadow: 0px -10px 50px white;
-    height: 500px;
+    height: 450px;
     background-position:100% 30%;
     background-size:cover;
     position: relative;
     box-shadow: 0px 0px 30px black;
     display: flex;
     justify-content: center;
-    align-items: center;
+    
 
 }
 
@@ -295,7 +295,6 @@ footer:before {
 }
 
 .footer-container{
-  margin-top: 20px;
   display: flex;
   position: absolute;
 
@@ -308,7 +307,7 @@ footer:before {
 .facebook, .instagram, .twitter, .whatsapp, .mail, .tel, .oficina-central, .sucursales, .ayuda{
   display: flex;
   align-items: center;
-  height: 130px;
+  height: 100px;
 }
 
 .contacto{
@@ -324,6 +323,12 @@ footer img{
 footer p {
     margin: 0;
     font-size: 14px;
+}
+
+.copyright{
+  bottom: 0;
+  position: absolute;
+  margin-top: 20px;
 }
 
 
