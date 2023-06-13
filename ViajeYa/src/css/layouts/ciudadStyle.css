@@ -76,3 +76,26 @@
     transform: scale(1.1);
 }
 
+
+/* CAMBIOS  */
+.ciudad{
+    margin-top:65px ;
+}
+.boton-ciudad{
+    display: flex;
+    justify-content: center;
+}
+.texto-ciudad{
+    border: 1px solid var(--negro);
+    padding: 10px 20px;
+    text-align: justify;
+}
+.imagen-ciudad{
+    display: flex;
+    justify-content: center;
+}
+.imagen-ciudad img{
+    height: 500px;
+    width: 100%;
+    object-fit: cover;
+}
