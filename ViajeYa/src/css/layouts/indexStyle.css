@@ -188,6 +188,13 @@
     margin: 15px;
   }
 
+  .columna button{
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+  }
+
   .columna img {
     width: 350px;
     height: 230px;
