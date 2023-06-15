@@ -7,3 +7,12 @@
     max-width: 1200px;
     margin: 0 auto;
 }
+.contenedor3 {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+.button-reset {
+    all: initial;
+  }
+.centrar-texto{
+text-align: center;  }

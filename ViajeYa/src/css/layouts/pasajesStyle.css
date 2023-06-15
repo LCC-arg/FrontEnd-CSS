@@ -1,0 +1,121 @@
+.grid-pasajes{
+    display: grid;
+    grid-template-columns: 18% auto;
+    gap: 80px;
+    margin-top: 100px;
+}
+.filtro-empresa,
+.filtro-horario-salida,
+.filtro-horario-llegada,
+.filtro-tipo-transporte,
+.filtro-orden{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items:flex-start;
+    height: 50px;
+    margin-bottom: 30px;
+}
+.grid-pasajes label{
+    color: var(--negro);
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+.grid-pasajes select{
+  border: solid 1px  #00000071;
+  padding: 10px;
+  border-radius: 5px;
+  width: 250px;
+  font-size: 13px;
+}
+
+/* Boleto */
+
+.resultado-pasaje {
+    display: grid;
+    grid-template-columns: 30% 20% 20% 30%;
+    grid-template-rows: 80% auto;
+    height: 200px;
+    width: 100%;
+    border: solid 1px #00000071;
+    border-radius: 10px;
+    align-items: center;
+    justify-items: center;
+    margin: 20px;
+  }
+  
+
+.resultado-pasaje img{
+    max-width: 100%;
+    max-height: 100%;
+}
+.horario{
+    font-size: 24px;
+}
+.precio-negrita{
+    font-weight: bold;
+    font-size: 24px;
+}
+
+
+.precio{
+display: flex;
+align-items: center;
+margin: 0 auto;
+}
+
+
+.dia-salida,.dia-llegada{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.fecha-salida,.fecha-llegada{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+.libre{
+display: flex;
+justify-content: space-between;
+align-items: center;
+height: 100%;
+} 
+.libre .cantidad{
+    background-color: var(--rosaPrimario);
+    padding: 5px;
+    border-radius: 10px;
+    margin-right: 60px;
+}
+
+.boton-comprar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    background-color: var(--rosaPrimario);
+    font-family: var(--fuentePrincipal);
+    font-weight: bold;
+    border-bottom-right-radius: 10px;
+}
+.libre,.boton-comprar,.tipo-vehiculo,.recorrido{
+width: 100%;
+}
+.recorrido{
+height: 100%; 
+display: flex;
+align-items: center; 
+}
+.tipo-vehiculo{
+    height: 100%; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.border-superior{
+    border-top: solid 1px  #00000071;
+}

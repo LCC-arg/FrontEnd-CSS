@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ViajeYa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&family=Open+Sans:ital,wght@1,800&family=Raleway:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="src/css/main.css">
+</head>
+<body>
+    <div class="container">
+      <header class="header">
+        
+    </header>
+
+    <section>
+        <div class="container-reserva">
+            <div class="container-pasajero-form">
+                <div class="pasajero-form">
+                    <div class="pasajero-tittle" onclick="toggleAdditionalContent()">
+                        <img src="src/img/logo-login.png" alt="">
+                        <h3>Pasajero 1</h3>
+                        <img id="arrow" src="src/img/arrow.png" alt="">
+
+                    </div>
+                    <div class="container-data-pasajero-form">
+                        <div class="grid">
+                            <div class="dni">
+                                <div class="dni-tittle">Número de documento</div>
+                                <div class="two">
+                                    <input type="search" placeholder="Ingresa tu Dni"   id="Buscador" />
+                                </div>
+                            </div>
+                            <div class="nacionalidad">
+                                <div class="nacionalidad-tittle">Nacionalidad</div>
+                                <div class="two">
+                                    <input type="search" placeholder="Ingresa tu Nacionalidad"   id="Buscador" />
+                                </div>
+                            </div>
+                            <div class="nombre">
+                                <div class="nombre-tittle">Nombre</div>
+                                <div class="two">
+                                    <input type="search" placeholder="Ingresa tu nombre"   id="Buscador" />
+                                </div>
+                            </div>
+                            <div class="apellido">
+                                <div class="apellido-tittle">Apellido</div>
+                                <div class="two">
+                                    <input type="search" placeholder="Ingresa tu apellido"   id="Buscador" />
+                                </div>
+                            </div>
+                            <div class="contacto">
+                                <div class="contacto-tittle">Contacto</div>
+                                <div class="two">
+                                    <input type="search" placeholder="Ingresa tu contacto"   id="Buscador" />
+                                </div>
+                            </div>
+                            <div class="genero">
+                                <div class="genero-tittle">Género</div>
+                                <div class="two">
+                                    <input type="search" placeholder="Ingresa tu genero"   id="Buscador" />
+                                </div>
+                            </div>
+                          </div>
+                          
+                          <div class="flex">
+                            <div class="grid2">
+                                <div class="four">
+                                    <select name="day" id="daySelect">
+                                        <option value="">Día</option>
+                                      </select>                                      
+                                </div>
+                                <div class="four">
+                                    <select name="month" id="monthSelect">
+                                        <option value="">Mes</option>
+                                      </select>
+                                </div>
+                                <div class="four">
+                                    <select name="year" id="yearSelect">
+                                        <option value="">Año</option>
+                                      </select>
+                                </div>
+                            </div>
+                          </div>
+                    </div>
+
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+
+    </footer>
+
+    </div>
+
+    <script src="dropdown-date.js"></script>
+    <script type="module" src="src/js/Container/reserva.js"></script>
+
+    </body>

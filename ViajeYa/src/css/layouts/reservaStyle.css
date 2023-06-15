@@ -1,0 +1,118 @@
+.container-reserva{
+    width: 100%;
+    height: auto;
+    margin-top: 100px;
+    
+}
+.container-pasajero-form{
+    position: relative;
+    left: 350px;
+    margin-bottom: 100px;
+
+}
+
+.pasajero-form{
+    width: 800px;
+    border: 2px solid black;
+    box-shadow: 10px 10px 10px black;
+}
+
+.pasajero-tittle{
+    border-bottom: 2px solid black;
+    display: flex;
+    align-items: center;
+    height: 75px;
+    background-color: #938282;
+    position: relative;
+}
+
+#arrow{
+    position: absolute;
+    right: 0;
+}
+
+#arrow:hover{
+    transform: ease 9s;
+}
+
+.pasajero-tittle img{
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 50px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    align-items: center;
+    margin:20px;
+  }
+
+  .grid div{
+    margin: 10px;
+  }
+  
+
+
+  .grid2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    justify-items: center;
+    align-items: center;
+    height: 100px;
+  }
+  .flex{
+  display:flex;
+  justify-content: center;
+  }
+
+
+
+  #Buscador {
+    background: url(https://cdn0.iconfinder.com/data/icons/slim-square-icons-basics/100/basics-19-32.png) no-repeat 0px 5px;
+    background-size: 24px;
+    width: 300px;
+    border: transparent;
+    border-bottom: solid 1px sandybrown;
+    padding: 10px 10px 10px 30px;
+    outline: none;
+    background-color: white;
+    color: black;
+    box-shadow: 0px 0px 10px black;
+    height: 30px;
+  }
+  
+  .search-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+    margin-bottom: 20px;
+  }
+
+  /* Dropdown-date */
+  #daySelect{
+    width: 100px;
+  }
+
+  #monthSelect{
+    width: 200px;
+  }
+
+  #yearSelect{
+    width: 100px;
+  }
+
+  /* toggle dropdown */
+
+  .container-data-pasajero-form {
+    display: none;
+  }
+  
+  .container-data-pasajero-form.show-content {
+    display: block;
+  }
+
+
+ 
