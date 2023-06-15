@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ViajeYa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&family=Open+Sans:ital,wght@1,800&family=Raleway:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/css/main.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <div class="logo-left">
+                 <a class="logo-display" href="index.html">
+                     <img src="src/img/logo.png" alt="Logo LCC">
+                    <h2>LCC</h2>
+                </a>
+                </div>
+               
+                <div class="links-center">
+                  <a href="index.html">Home</a>
+                  <a href="#">Mis Viajes</a>
+                  <a href="#">Destinos</a>
+                  <a href="#">Reserva</a>
+                  <a href="#">Mis datos</a>
+                </div>
+                <div class="link-right">
+                    <a href="#">Ingresar</a>
+                  </div>
+                <div class="logo-right">
+                  <img src="src/img/logo-sesion.svg" alt="Logo sesion">
+                </div>
+              </nav>
+        </header>
+    <section class="hero">
+        <div class="slider">
+            <div class="slides">
+            <input type="radio" name="radio-btn" id="radio1">
+            <input type="radio" name="radio-btn" id="radio2">
+            <input type="radio" name="radio-btn" id="radio3">
+            <input type="radio" name="radio-btn" id="radio4">
+
+            <div class="slide first">
+                <img src="https://besthqwallpapers.com/Uploads/22-9-2017/21383/airplane-4k-sky-clouds-art.jpg" alt="Imagen de avion">
+            </div>
+            <div class="slide">
+                <img src="https://a-static.besthdwallpaper.com/travel-lifestyle-wallpaper-3840x2160-78797_54.jpg" alt="Imagen de Viajes">
+            </div>
+            <div class="slide">
+                <img src="https://cdn.wallpapersafari.com/34/57/jBSnNg.jpg" alt="Imagen de lugar en el mundo">
+            </div>
+            <div class="slide">
+                <img src="https://images2.alphacoders.com/869/869252.jpg" alt="Imagen Venecia">
+            </div>
+
+            <div class="navigation-auto">
+                <div class="auto-btn1"></div>
+                <div class="auto-btn2"></div>
+                <div class="auto-btn3"></div>
+                <div class="auto-btn4"></div>
+            </div>
+
+            </div>
+
+           
+
+        </div>
+
+    </section>
+
+    <main class="contenedor3">
+        <div class="grid-pasajes">
+            <div class="filtros-busqueda-pasajes">
+                <div class="filtro-empresa">
+                    <label for="empresas">Empresas</label>
+                    <select id="empresas">
+                        <option value="" disabled selected>Seleccione una empresa...</option>
+                        <option >Plusmar</option>
+                        <option >RutaAtlantica</option>
+                        <option >Aerolineas Argentina</option>
+                        <option >Viaje Ya</option>
+                    </select>
+                </div>
+                <div class="filtro-horario-salida">
+                    <label for="horario-salida">Horario Salida</label>
+                    <select id="horario-salida">
+                        <option value="" disabled selected>Seleccione un horario de salida..</option>
+                        <option >00:00hs - 04:00hs</option>
+                        <option >04:00hs - 08:00hs</option>
+                        <option >08:00hs - 12:00hs</option>
+                        <option >12:00hs - 16:00hs</option>
+                        <option >16:00hs - 20:00hs</option>
+                        <option >20:00hs - 00:00hs</option>
+                    </select>
+                </div>
+                <div class="filtro-horario-llegada">
+                    <label for="horario-salida">Horario Llegada</label>
+                    <select id="horario-salida">
+                        <option value="" disabled selected>Seleccione un horario de llegada..</option>
+                        <option >00:00hs - 04:00hs</option>
+                        <option >04:00hs - 08:00hs</option>
+                        <option >08:00hs - 12:00hs</option>
+                        <option >12:00hs - 16:00hs</option>
+                        <option >16:00hs - 20:00hs</option>
+                        <option >20:00hs - 00:00hs</option>
+                    </select>
+                </div>
+                <div class="filtro-tipo-transporte">
+                    <label for="tipo-transporte">Tipo de Transporte</label>
+                    <select id="tipo-transporte">
+                        <option value="" disabled selected>Seleccione un tipo de transporte...</option>
+                        <option >Avion</option>
+                        <option >Micro</option>
+                        <option >Tren</option>
+                    </select>
+                </div>
+                <div class="filtro-orden">
+                    <label for="orden">Ordenar por:</label>
+                    <select id="orden">
+                        <option value="" disabled selected>Ordenar por...</option>
+                        <option value="DESC">Mayor Precio</option>
+                        <option value="ASC">Menor Precio</option>
+                    </select>
+                </div>
+
+            </div> 
+            <div class="resultados-busqueda-pasajes">
+                <div class="resultado-pasaje">
+                    <img src="src/img/logoaerolineas.png" alt="logo Empres">
+                    <div class="fecha-salida">
+                        <div class="dia-salida">
+                            <h4>Sale:</h4>
+                            <p>sab 20 may.</p>
+                        </div>
+                        <h4 class="horario">23:05hs</h4>
+                        <p>Terminal Dellepiane</p>
+                    </div>
+                    <div class="fecha-llegada">
+                        <div class="dia-llegada">
+                            <h4>Llega:</h4>
+                            <p>dom 21 may.</p>
+                        </div>
+                        <h4 class="horario">05:15hs</h4>
+                        <p>Terminal Pinamar</p>
+                    </div>
+                    <p class="precio">ARS $ <span class="precio-negrita">8600</span></p>
+                   <div class="tipo-vehiculo border-superior">
+                    <h4 class="centrar-texto ">Bus</h4>
+                   </div>
+                    <div class="recorrido border-superior">
+                        <h4>Recorrido</h4>
+                    </div>
+                    <div class="libre border-superior">
+                        <h4>Libres</h4>
+                        <h4 class="cantidad">12</h4>
+                    </div>
+                    <button class="button-reset boton-comprar border-superior">Comprar</button>
+
+                </div>
+                <div class="resultado-pasaje">
+                    <img src="src/img/logoPlusmar.png" alt="logo Empresa">
+                    <div class="fecha-salida">
+                        <div class="dia-salida">
+                            <h4>Sale:</h4>
+                            <p>sab 20 may.</p>
+                        </div>
+                        <h4 class="horario">23:05hs</h4>
+                        <p>Terminal Dellepiane</p>
+                    </div>
+                    <div class="fecha-llegada">
+                        <div class="dia-llegada">
+                            <h4>Llega:</h4>
+                            <p>dom 21 may.</p>
+                        </div>
+                        <h4 class="horario">05:15hs</h4>
+                        <p>Terminal Pinamar</p>
+                    </div>
+                    <p class="precio">ARS $ <span class="precio-negrita">8600</span></p>
+                   <div class="tipo-vehiculo border-superior">
+                    <h4 class="centrar-texto ">Bus</h4>
+                   </div>
+                    <div class="recorrido border-superior">
+                        <h4>Recorrido</h4>
+                    </div>
+                    <div class="libre border-superior">
+                        <h4>Libres</h4>
+                        <h4 class="cantidad">12</h4>
+                    </div>
+                    <button class="button-reset boton-comprar border-superior">Comprar</button>
+
+                </div>
+                <div class="resultado-pasaje">
+                    <img src="src/img/logoaerolineas.png" alt="logo Empres">
+                    <div class="fecha-salida">
+                        <div class="dia-salida">
+                            <h4>Sale:</h4>
+                            <p>sab 20 may.</p>
+                        </div>
+                        <h4 class="horario">23:05hs</h4>
+                        <p>Terminal Dellepiane</p>
+                    </div>
+                    <div class="fecha-llegada">
+                        <div class="dia-llegada">
+                            <h4>Llega:</h4>
+                            <p>dom 21 may.</p>
+                        </div>
+                        <h4 class="horario">05:15hs</h4>
+                        <p>Terminal Pinamar</p>
+                    </div>
+                    <p class="precio">ARS $ <span class="precio-negrita">8600</span></p>
+                   <div class="tipo-vehiculo border-superior">
+                    <h4 class="centrar-texto ">Bus</h4>
+                   </div>
+                    <div class="recorrido border-superior">
+                        <h4>Recorrido</h4>
+                    </div>
+                    <div class="libre border-superior">
+                        <h4>Libres</h4>
+                        <h4 class="cantidad">12</h4>
+                    </div>
+                    <button class="button-reset boton-comprar border-superior">Comprar</button>
+
+                </div>
+                <div class="resultado-pasaje">
+                    <img src="src/img/logoPlusmar.png" alt="logo Empresa">
+                    <div class="fecha-salida">
+                        <div class="dia-salida">
+                            <h4>Sale:</h4>
+                            <p>sab 20 may.</p>
+                        </div>
+                        <h4 class="horario">23:05hs</h4>
+                        <p>Terminal Dellepiane</p>
+                    </div>
+                    <div class="fecha-llegada">
+                        <div class="dia-llegada">
+                            <h4>Llega:</h4>
+                            <p>dom 21 may.</p>
+                        </div>
+                        <h4 class="horario">05:15hs</h4>
+                        <p>Terminal Pinamar</p>
+                    </div>
+                    <p class="precio">ARS $ <span class="precio-negrita">8600</span></p>
+                   <div class="tipo-vehiculo border-superior">
+                    <h4 class="centrar-texto ">Bus</h4>
+                   </div>
+                    <div class="recorrido border-superior">
+                        <h4>Recorrido</h4>
+                    </div>
+                    <div class="libre border-superior">
+                        <h4>Libres</h4>
+                        <h4 class="cantidad">12</h4>
+                    </div>
+                    <button class="button-reset boton-comprar border-superior">Comprar</button>
+
+                </div>
+              
+              
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+
+        <div class="contenedor contenedor-footer ">
+
+                <div class="mi-cuenta-footer">
+                    <h4>Mi cuenta</h4>
+                    <p>Mi perfil</p>
+                    <p>Tus beneficios</p>
+                </div>
+                <div class="ubicacion-footer">
+                    <h4>Ubicación</h4>
+                    <p>Av..Calchaqui 2013 Quilmes, Arg</p>
+                </div>
+                <div class="negocio-footer">
+                    <h4>Potenciá tu negocio</h4>
+                    <p>Suma tu flota</p>
+                </div>
+                <div class="ayuda-footer">
+                    <h4>Ayuda</h4>
+                </div>
+                <div class="redes-footer">
+                    <h4>Nuestras redes</h4>
+                    <div class="logos-redes">
+                       <a href="https://www.facebook.com"> <img class="logo-redes" src="src/img/baseline-facebook.svg" alt="Logo Facebook"></a>
+                       <a href="https://www.instagram.com"> <img  class="logo-redes" src="src/img/instagram.svg" alt="Logo Instagram"></a>
+                       <a href="https://web.whatsapp.com"> <img class="logo-redes" src="src/img/baseline-whatsapp.svg" alt="Logo WhatsApp"></a>
+        
+                    </div>
+                </div>
+            
+          
+
+            <div class="atencion-footer">
+                <h4>Canales de atención  </h4>
+                <p>0800-800-91218(Todos los días, 24 hs)</p>
+                <p>11-3109-1218</p>
+                <a href="mailto:consultaslcc@lcc.com" target="_blank" rel="noopener"> <p>consultaslcc@lcc.com</p> </a>
+            </div>
+            <div class="nosotros-footer">
+                <h4>Nosotros</h4>
+                <p>Sobre LCC</p>
+                <p>Trabajá con LCC</p>
+            </div>
+            <div class="compañias-footer">
+                <h4>Compañias asociadas</h4>
+                <p>Relaciones</p>
+            </div>
+        </div>
+
+        <div class="footer-footer">
+            <img class="imagen-footer" src="src/img/logo.png" alt="footer_logo">
+            <p >Copyright © 2023 LCC . Agencia de Viajes | Todos los derechos reservados</p>			
+        </div>
+    </footer>
+
+    <script src="src/js/views/indexApp.js"></script>
+
+</body>

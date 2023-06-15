@@ -12,20 +12,31 @@ nav {
     top: 0;
     align-items: center;
     font-size: larger;
+    padding: 30px;
   }
 
   nav a:hover{
     cursor: pointer;
     transition: color .15s ease-in-out;
-    text-shadow: 0px 0px 6px sandybrown ;
+    color: var(--rosaPrimario);
 
   }
 
-  .logo-left img,
-  .logo-right img {
+  .logo-left{
+    margin-left: 20px ;
+  }
+  .logo-right{
+    margin-right: 20px ;
+  }
+  .logo-left img {
     height: 50px;
     padding: 6px;
     margin-top: 6px;
+  }
+ .logo-right img{
+  height: 30px;
+  padding: 6px;
+  margin-top: 6px;
   }
 
   .links-center {
@@ -43,4 +54,16 @@ nav {
   .link-right a {
     color: #fff;
     text-decoration: none;
+  }
+  .logo-display{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo-display h2{
+  color: var(--blanco);
+  transition: color .15s ease-in-out;
+  }
+  .logo-display h2:hover{
+    color: var(--rosaPrimario);
   }
