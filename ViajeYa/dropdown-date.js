@@ -30,3 +30,9 @@ var daySelect = document.getElementById('daySelect');
     var containerData = document.querySelector('.container-data-pasajero-form');
     containerData.classList.toggle('show-content');
   }
+
+ 
+  function toggleAdditionalContent2() {
+    var containerData2 = document.querySelector('.container-data-pasajero-form2');
+    containerData2.classList.toggle('show-content');
+  }
