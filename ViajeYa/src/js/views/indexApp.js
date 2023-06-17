@@ -1,4 +1,14 @@
-var counter = 1;
+
+
+document.addEventListener('DOMContentLoaded', ()=> iniciarApp());
+
+function iniciarApp(){
+slider();
+}
+
+
+function slider() {
+  var counter = 1;
 var interval = 5000;
 setInterval(function(){
 
@@ -28,4 +38,7 @@ setInterval(function(){
     counter = 1;
   }
 }, interval);
+
+}
+
 
