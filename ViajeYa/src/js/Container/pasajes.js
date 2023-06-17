@@ -1,25 +1,11 @@
 import { header } from "../Components/header.js";
 import { footer } from "../Components/footer.js";
-import { loginModal } from "../Components/loginModal.js";
 
-document.addEventListener('DOMContentLoaded', ()=> iniciarApp());
-
-function iniciarApp(){
-ingresarByLogin();
-slider();
-}
-
-
-function slider() {
-  var counter = 1;
 var _header = document.getElementsByClassName('header')[0];
 _header.innerHTML=header();
 
-var _footer = document.getElementsByClassName('footer')[0];
-_footer.innerHTML=footer();
-
-var _login = document.getElementsByClassName('login')[0];
-
+var _header = document.getElementsByClassName('footer')[0];
+_header.innerHTML=footer();
 
 var counter = 1;
 var interval = 5000;
@@ -52,21 +38,3 @@ setInterval(function(){
   }
 }, interval);
 
-}
-
-
-export const ingresarByLogin = () => {
-  let _bodyLogin = document.getElementsByClassName("body__login")[0];
-
-  
-  _header.addEventListener("click", e => {
-    e.preventDefault();
-
-        if(e.target.matches(".link-right a") || e.target.matches(".misViajes") || e.target.matches(".misDatos"))
-        { 
-          _login.innerHTML=loginModal(); 
-          _login.classList.toggle('active');
-
-        }
-    })
-}
