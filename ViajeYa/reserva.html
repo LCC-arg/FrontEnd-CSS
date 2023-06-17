@@ -19,87 +19,59 @@
     <section>
         <div class="container-reserva">
             <div class="container-pasajero-form">
-                <div class="pasajero-form">
-                    <div class="pasajero-tittle" onclick="toggleAdditionalContent()">
-                        <img src="src/img/logo-login.png" alt="">
-                        <h3>Pasajero 1</h3>
-                        <img id="arrow" src="src/img/arrow.png" alt="">
-
-                    </div>
-                    <div class="container-data-pasajero-form">
-                        <div class="grid">
-                            <div class="dni">
-                                <div class="dni-tittle">Número de documento</div>
-                                <div class="two">
-                                    <input type="search" placeholder="Ingresa tu Dni"   id="Buscador" />
-                                </div>
-                            </div>
-                            <div class="nacionalidad">
-                                <div class="nacionalidad-tittle">Nacionalidad</div>
-                                <div class="two">
-                                    <input type="search" placeholder="Ingresa tu Nacionalidad"   id="Buscador" />
-                                </div>
-                            </div>
-                            <div class="nombre">
-                                <div class="nombre-tittle">Nombre</div>
-                                <div class="two">
-                                    <input type="search" placeholder="Ingresa tu nombre"   id="Buscador" />
-                                </div>
-                            </div>
-                            <div class="apellido">
-                                <div class="apellido-tittle">Apellido</div>
-                                <div class="two">
-                                    <input type="search" placeholder="Ingresa tu apellido"   id="Buscador" />
-                                </div>
-                            </div>
-                            <div class="contacto">
-                                <div class="contacto-tittle">Contacto</div>
-                                <div class="two">
-                                    <input type="search" placeholder="Ingresa tu contacto"   id="Buscador" />
-                                </div>
-                            </div>
-                            <div class="genero">
-                                <div class="genero-tittle">Género</div>
-                                <div class="two">
-                                    <input type="search" placeholder="Ingresa tu genero"   id="Buscador" />
-                                </div>
-                            </div>
-                          </div>
-                          
-                          <div class="flex">
-                            <div class="grid2">
-                                <div class="four">
-                                    <select name="day" id="daySelect">
-                                        <option value="">Día</option>
-                                      </select>                                      
-                                </div>
-                                <div class="four">
-                                    <select name="month" id="monthSelect">
-                                        <option value="">Mes</option>
-                                      </select>
-                                </div>
-                                <div class="four">
-                                    <select name="year" id="yearSelect">
-                                        <option value="">Año</option>
-                                      </select>
-                                </div>
-                            </div>
-                          </div>
-                    </div>
-
-                </div>
+               
                 
+                  
+            </div>
+
+            <div class="container-reserva-details">
+                <div class="reserva-details">
+                    <div class="viaje">
+                        <p class="viaje-tittle tittle">Viaje de Ida</p>
+                        <p class="origen"> De: Florencio Varela (Cruce)</p>
+                        <p class="destino">A: Pinamar</p>
+                    </div>
+                    <div class="horarios">
+                        <div class="salida">
+                            <p class="tittle">Salida</p>
+                            <p class="dia"> sab. 20 may.</p>
+                            <p class="hora">23:05 hs</p>
+                        </div>
+                        <div class="llegada">
+                            <p class="tittle">Llegada</p>
+                            <p class="dia">dom. 21 may.</p>
+                            <p class="hora">05:15hs</p>
+                        </div>
+                    </div>
+                    <div class="transporte">
+                        <div class="empresa">
+                            <p class="tittle">Empresa</p>
+                            <p class="empresa-name">RapiBus</p>
+                        </div>
+                        <div class="clase">
+                            <p class="tittle">Clase</p>
+                            <p class="classname">Economico</p>
+                        </div>
+                    </div>
+                    <div class="precio">
+                        <div class="pasajeros-price">
+                            <p class="tittle" >Pasajeros</p>
+                            <p class="pasajerosprice"> 2x $8600</p>
+                        </div>
+                        <div class="total">
+                            <p class="tittle">Total</p>
+                            <p class="totalprice">$17200</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
-
-    <footer class="footer">
+        <footer class="footer">
 
     </footer>
-
+    </section>
     </div>
-
-    <script src="dropdown-date.js"></script>
     <script type="module" src="src/js/Container/reserva.js"></script>
+    <script type="module" src="dropdown-date.js"></script>
 
     </body>

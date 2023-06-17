@@ -1,16 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
+export const loginModal = () => `
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="src/css/main.css">
-    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&family=Open+Sans:ital,wght@1,800&family=Raleway:wght@100;300;400;500;700&display=swap" rel="stylesheet">
-    <title>Login</title>
-</head>
-
-<body class="body__login">
-    <main class="main__login">
+<div class="body__login">
+    <div class="main__login">
         <img class="img_logo_atardecer" id="img_logo_atardecer" src="https://images.unsplash.com/photo-1476900543704-4312b78632f8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80" alt="atardecer_login">
         <img class="img_logo" id="img_logo" src="./src/img/logo.png" alt="logo">
         <div class="login_container">
@@ -28,8 +19,8 @@
                 <button class="boton_registrar" id="boton_registrar">REGISTRARSE</button>
             </div>
         </div>
-    </main>
-    <script type="module" src="src/js/Container/login.js"></script>
-</body>
+    </div>
+</div>
 
-</html>
+`
+

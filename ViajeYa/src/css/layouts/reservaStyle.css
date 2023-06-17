@@ -1,20 +1,36 @@
-.container-reserva{
-    width: 100%;
-    height: auto;
-    margin-top: 100px;
-    
+
+.container{
+  display: flex;
+  flex-direction: column;
 }
-.container-pasajero-form{
-    position: relative;
-    left: 350px;
-    margin-bottom: 100px;
+
+.container-reserva {
+  width: 100%;
+  margin: 100px 0px 100px 0px;
+  display: flex;
+  position: relative;
 
 }
+
+.container-pasajero-form {
+  display: flex;
+  width: 68%;
+  box-sizing: border-box; 
+  position: relative;
+  justify-content: center;
+  flex-direction: column;
+  
+}
+
 
 .pasajero-form{
     width: 800px;
     border: 2px solid black;
     box-shadow: 10px 10px 10px black;
+    margin-bottom: 50px;
+    position: relative;
+    left: 420px;
+    
 }
 
 .pasajero-tittle{
@@ -70,7 +86,7 @@
 
 
 
-  #Buscador {
+  .Buscador {
     background: url(https://cdn0.iconfinder.com/data/icons/slim-square-icons-basics/100/basics-19-32.png) no-repeat 0px 5px;
     background-size: 24px;
     width: 300px;
@@ -82,6 +98,7 @@
     color: black;
     box-shadow: 0px 0px 10px black;
     height: 30px;
+    border: 2px solid black;
   }
   
   .search-container{
@@ -89,19 +106,26 @@
     justify-content: center;
     margin-top: 5px;
     margin-bottom: 20px;
+    
   }
 
   /* Dropdown-date */
   #daySelect{
     width: 100px;
+    background-color: white;
+    border: 2px solid black;
   }
 
   #monthSelect{
     width: 200px;
+    background-color: white;
+    border: 2px solid black;
   }
 
   #yearSelect{
     width: 100px;
+    background-color: white;
+    border: 2px solid black;
   }
 
   /* toggle dropdown */
@@ -110,9 +134,86 @@
     display: none;
   }
   
+  .container-data-pasajero-form2 {
+    display: none;
+  }
   .container-data-pasajero-form.show-content {
     display: block;
   }
 
-
+  .container-data-pasajero-form2.show-content {
+    display: block;
+  }
+/* Reserva Details */
  
+.reserva-details {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  
+}
+.container-reserva-details{
+  position: absolute;
+  right: 200px;
+  width: 400px;
+  border: 2px solid gray;
+  height: auto;
+  
+}
+
+.reserva-details p{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.viaje{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 2px solid gray;
+}
+
+.viaje-tittle{
+  text-align: center;
+  font-size: large;
+  margin-bottom: 5px ;
+}
+.origen, .destino{
+  left: 12%;
+  margin-left: 49px;
+}
+
+.horarios, .precio, .transporte{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 10px ;
+  
+}
+
+.horarios, .transporte{
+  border-bottom: 2px solid gray;
+}
+
+
+.precio div{
+  width: 100px;
+}
+
+.salida, .llegada, .empresa, .clase {
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+  margin-bottom: 10px ;
+  
+}
+
+.tittle{
+  border-bottom: 1px solid black;
+  color: var(--rosaPrimario) ;
+}
+
+.totalprice, .hora{
+  font-size: 25px;
+}
+

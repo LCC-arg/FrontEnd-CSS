@@ -8,10 +8,10 @@ export const header = () => `
                     </div>
                     <div class="links-center">
                         <a href="index.html">Home</a>
-                        <a href="#">Mis Viajes</a>
+                        <a class="misViajes" href="#">Mis Viajes</a>
                         <a href="#">Destinos</a>
                         <a href="#">Reserva</a>
-                        <a href="#">Mis datos</a>
+                        <a class="misDatos" href="#">Mis datos</a>
                     </div>
                     <div class="link-right">
                         <a href="#">Ingresar</a>

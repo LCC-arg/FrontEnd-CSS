@@ -1,7 +1,7 @@
 const urlBase = "https://localhost:7192/api/Viaje";
 
 
-export const getMercaderia = async (idViaje) => {
+export const getViajeById = async (idViaje) => {
     var url = `${urlBase}/${idViaje}`;
     let result = []
     let response = await fetch(url);
@@ -11,7 +11,7 @@ export const getMercaderia = async (idViaje) => {
     return result;    
 }
 
-export const getMercaderiaByFilters = async (tipo, fechaSalida, fechaLlegada) => {
+export const getViajeByFilters = async (tipo, fechaSalida, fechaLlegada) => {
     var url = `${urlBase}?`;
     if(tipo)
     {
