@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', ()=> iniciarApp());
 function iniciarApp(){
 ingresarByLogin();
 slider();
+
 }
 
 
@@ -70,3 +71,5 @@ export const ingresarByLogin = () => {
         }
     })
 }
+
+

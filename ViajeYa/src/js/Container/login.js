@@ -8,4 +8,3 @@ export const iniciarSesion = async () => {
     });
   }
 
-  iniciarSesion();
