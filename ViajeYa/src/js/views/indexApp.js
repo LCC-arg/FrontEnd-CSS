@@ -5,8 +5,9 @@ import { loginModal } from "../Components/loginModal.js";
 document.addEventListener('DOMContentLoaded', ()=> iniciarApp());
 
 function iniciarApp(){
-ingresarByLogin();
+
 slider();
+ingresarByLogin();
 
 }
 

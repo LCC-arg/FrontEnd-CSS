@@ -24,9 +24,9 @@ export const footer = () => `
         <div class="redes-footer">
             <h4>Nuestras redes</h4>
             <div class="logos-redes">
-                <a href="https://www.facebook.com"> <img class="logo-redes" src="src/img/baseline-facebook.svg" alt="Logo Facebook"></a>
-                <a href="https://www.instagram.com"> <img  class="logo-redes" src="src/img/instagram.svg" alt="Logo Instagram"></a>
-                <a href="https://web.whatsapp.com"> <img class="logo-redes" src="src/img/baseline-whatsapp.svg" alt="Logo WhatsApp"></a>
+                <a target=blank href="https://www.facebook.com"> <img class="logo-redes" src="src/img/baseline-facebook.svg" alt="Logo Facebook"></a>
+                <a target=blank href="https://www.instagram.com"> <img  class="logo-redes" src="src/img/instagram.svg" alt="Logo Instagram"></a>
+                <a target=blank href="https://web.whatsapp.com"> <img class="logo-redes" src="src/img/baseline-whatsapp.svg" alt="Logo WhatsApp"></a>
             </div>
         </div>
 
