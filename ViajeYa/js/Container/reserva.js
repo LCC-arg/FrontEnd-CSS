@@ -1,15 +1,4 @@
-import { header } from "../Components/header.js";
-import { footer } from "../Components/footer.js";
-import { pasajeroForm } from "../Components/pasajeroForm.js";
-
-let cont = 1;
-
-var _header = document.getElementsByClassName('header')[0];
-_header.innerHTML=header();
-
-var _footer = document.getElementsByClassName('footer')[0];
-_footer.innerHTML=footer();
-
+import { pasajeroForm } from "../../components/pasajero/pasajero.js";
 
 export const addPasajeroForms = async (num) => {
 
@@ -27,11 +16,10 @@ export function toggleAdditionalContent(id) {
 
 
 export const pasajeroFormsExpand = () => {
-document.addEventListener("click", e => {
-    e.preventDefault();
+    document.addEventListener("click", e => {
+        e.preventDefault();
 
-        if(e.target.matches(".pasajero-tittle"))
-        { 
+        if (e.target.matches(".pasajero-tittle")) {
             toggleAdditionalContent(e.target.getAttribute("number"));
         }
     })

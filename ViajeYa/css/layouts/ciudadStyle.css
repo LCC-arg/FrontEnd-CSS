@@ -1,100 +1,33 @@
-
-.container-destino{
+.container-destino {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     margin-top: 100px;
-    
 }
-
-/* .image-destino img{
-    width: 1200px;
-    box-shadow: 0px 0px 50px black;
-    border-radius: 40px;
-
-} */
-
-/* .name-destino h1{
-    font-size: 40px;
-} */
-
-/* .description-destino{
-    width: 1200px;
-    height: auto;
-    border: 3px solid black;
-    margin-bottom: 100px;
-    background-image: linear-gradient(to bottom,gray,white);
-    
-} */
-
-/* .description-destino p{
-    font-size: 20px;
-    margin: 10px;
-} */
-
-/* .description-destino {
-    font-size: 20px;
-    font-weight: bold;
-    color: blakc;
-    text-align: center;
-    margin-bottom: 75px;
-    
-  } */
-  
-  /* .description-destino strong {
-    color: #ff5f00;
-  }
-  
-  .description-destino em {
-    font-style: italic;
-    color: black;  
-}
-  
-  .description-destino p {
-    margin-bottom: 10px;
-  } */
-
-/* boton */
-
-/* .button-pasajes{
-    width: 200px;
-    height: 100px;
-    margin-bottom: 100px;
-}
-
-.btn-destino-pasajes{
-    width: 220px;
-    height: 80px; 
-    background-color: #ff757c;
-    transition: all .9s ease;
-    box-shadow: 5px 5px black;
-}
-
-.btn-destino-pasajes:hover{
-    cursor: pointer;
-    transform: scale(1.1);
-} */
-
 
 /* CAMBIOS  */
-.ciudad{
-    margin-top:65px ;
+.ciudad {
+    margin-top: 65px;
 }
-.boton-ciudad{
+
+.boton-ciudad {
     display: flex;
     justify-content: center;
 }
-.texto-ciudad{
+
+.texto-ciudad {
     border: 1px solid var(--negro);
     padding: 10px 20px;
     text-align: justify;
 }
-.imagen-ciudad{
+
+.imagen-ciudad {
     display: flex;
     justify-content: center;
 }
-.imagen-ciudad img{
+
+.imagen-ciudad img {
     height: 600px;
     width: 100%;
     object-fit: cover;
