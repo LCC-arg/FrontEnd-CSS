@@ -6,8 +6,6 @@
   width: 100%;
   z-index: 1;
   max-width: 100%;
-
-
 }
 
 .slides {
@@ -172,7 +170,7 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  margin: -130px auto 30px;
+  margin: -130px auto 0px;
 }
 
 .fila {
@@ -183,6 +181,7 @@
 .columna {
   padding-right: 5px;
   width: 20%;
+  padding: 2rem;
   box-sizing: border-box;
   margin: 15px;
 }
@@ -230,9 +229,8 @@
   align-items: center;
   justify-content: center;
   height: 700px;
-  margin-top: 50px;
+/*   margin-top: 50px; */
   flex-direction: column;
-
 }
 
 .about-us-container {
