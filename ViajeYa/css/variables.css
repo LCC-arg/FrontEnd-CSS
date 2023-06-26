@@ -1,0 +1,18 @@
+/* Variables del proyecto. Sirve por si queremos cambiar
+por ej el color,cambiemos solo aca y se cambia en todo el proyecto
+usar como ej var(--colorPrincipal)*/
+
+
+
+:root{
+    --fuentePrincipal: 'Raleway', sans-serif;
+
+    --rosaPrimario:#E77F84;
+    --blanco:#ffffff;
+    --negro: #000000;
+    --grisClaro: #D9D9D9;
+    --gris:#CCCCCC;
+    --grisOscuro:#615F5F
+
+
+}
