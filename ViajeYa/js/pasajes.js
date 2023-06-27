@@ -1,7 +1,6 @@
 import footerComponent from "../components/footer/footer.js";
 import headerComponent from "../components/header/header.js";
-import loginComponent from "../components/loginModal/loginModal.js";
-
+import pasajeComponent from "../components/pasaje/pasaje.js";
 
 
 document.addEventListener('DOMContentLoaded', ()=> iniciarApp());
@@ -9,5 +8,9 @@ document.addEventListener('DOMContentLoaded', ()=> iniciarApp());
 function iniciarApp(){
     footerComponent.GetFooter();
     headerComponent.GetHeader();
-    loginComponent.GetLoginModal();
+    pasajeComponent.GetPasaje();
+
 }
+
+
+

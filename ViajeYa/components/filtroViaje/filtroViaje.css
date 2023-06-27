@@ -1,0 +1,120 @@
+.hero-search {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.751);
+    width: max-content;
+    padding: 1rem;
+    text-align: center;
+    z-index: 1;
+    border-radius: 2rem;
+    border: 1px black solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.viaje {
+    margin: 0 1rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.viaje h2 {
+    color: var(--blanco);
+    margin-right: 3rem;
+    font-size: 30px;
+}
+
+.boton_tipo_viaje {
+    margin: 0.5rem 1.5rem 0.5rem 0;
+    padding: 1rem;
+    border: 2px var(--rosaPrimario) solid;
+    color: var(--rosaPrimario);
+    background: none;
+    font-family: var(--fuentePrincipal);
+    font-weight: bold;
+    border-radius: 2rem;
+}
+
+.boton_tipo_viaje:hover {
+    color: var(--blanco);
+    background-color: var(--rosaPrimario);
+    border: #b14449 2px solid;
+}
+
+.form-search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-search input[type="text"],
+.hero-search input[type="date"] {
+    padding: 1rem;
+    margin: 0.5rem 0;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid var(--grisOscuro);
+    border-radius: 0.5rem;
+    color: var(--negro);
+}
+
+.hero-search input[type="text"]::placeholder {
+    color: var(--negro);
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: start;
+    margin: 0 1rem;
+    color: var(--blanco);
+    font-family: var(--fuentePrincipal);
+    font-weight: bold;
+}
+
+.pasajeros-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.pasajeros-input input[type="text"] {
+    width: 3rem;
+    text-align: center;
+}
+
+.num-pasajeros {
+    padding: 0.5rem;
+    background: none;
+    border: none;
+    font-size: 2.5rem;
+    color: var(--blanco);
+}
+
+label[for="search_cantidad_pasajeros"] {
+    position: relative;
+    left: 1.1rem;
+}
+
+.boton_search {
+    position: relative;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    top: 0.5rem;
+    background-color: var(--rosaPrimario);
+    color: var(--blanco);
+    font-weight: bold;
+    font-family: var(--fuentePrincipal);
+    border: 2px solid #b14449;
+    border-radius: 0.5rem;
+}
+
+.boton_search:hover {
+    background-color: #b14449;
+}
