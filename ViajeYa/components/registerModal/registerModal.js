@@ -1,0 +1,1 @@
+import { agregarEstilo } from "../../utils/agregarEstilos.js";

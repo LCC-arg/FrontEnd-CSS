@@ -2,6 +2,7 @@ import { agregarEstilo } from "../../utils/agregarEstilos.js";
 
 const body = document.getElementsByTagName("body")[0];
 let loginModal = null;
+let btnRegistrarse = null;
 
 async function getLoginModal() {
 
@@ -22,6 +23,14 @@ async function getLoginModal() {
     e.preventDefault();
 
     loginModal.style.display = "flex";
+    btnRegistrarse = document.getElementById("boton_registrar")
+
+    btnRegistrarse.addEventListener("click", (e) =>{
+
+      e.preventDefault();
+      alert("registrarse");
+    })
+
 
   });
 
@@ -33,7 +42,6 @@ async function getLoginModal() {
   })
 
 };
-
 
 
 
