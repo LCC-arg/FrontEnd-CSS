@@ -15,15 +15,14 @@ export function toggleAdditionalContent(id) {
 }
 
 
-export const pasajeroFormsExpand = () => {
+export const pasajeroFormsExpand = () => {    //Linea que arregla lo de reserva
     document.addEventListener("click", e => {
-        e.preventDefault();
-
         if (e.target.matches(".pasajero-tittle")) {
             toggleAdditionalContent(e.target.getAttribute("number"));
         }
-    })
-}
+    });
+};
+
 
 addPasajeroForms(3);
 
