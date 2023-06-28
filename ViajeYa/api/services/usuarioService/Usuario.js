@@ -31,7 +31,7 @@ const logearUsuario = async (UsuarioLoginRequest) => {
 
 const conseguirDatosUsuario = async (idUsuario) => {
 
-  let token = JSON.parse(sessionStorage.getItem("user")).token;
+  let token = config.token;
   let endpoint = apiUrl+"/"+idUsuario;
 
   const response = await fetch(endpoint, {

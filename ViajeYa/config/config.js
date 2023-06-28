@@ -5,7 +5,10 @@ const config = {
     microservicioReserva : "https://localhost:0000",
     microservicioTransporte : "https://localhost:0000",
     microservicioDestino: "https://localhost:0000",
-    microservicioViaje : "https://localhost:7192"
+    microservicioViaje : "https://localhost:7192",
+
+    token : null ,
+    idUsuario : null
 
 }
 

@@ -1,6 +1,7 @@
 import { agregarEstilo } from "../../utils/agregarEstilos.js";
 import registerComponent from "../registerModal/registerModal.js";
 import Usuario from "../../api/services/usuarioService/Usuario.js";
+import config from "../../config/config.js";
 
 const body = document.getElementsByTagName("body")[0];
 let loginModal = null;
@@ -72,10 +73,13 @@ async function loguearUsuario() {
 
       const userString = sessionStorage.getItem("user");
       const userObject = JSON.parse(userString);
-      console.log(userObject);
 
-
-      window.location.href = "/index.html"
+      //el token y el id del usuario se guardan en config
+      config.token = userObject.token;
+      config.idUsuario = userObject.usuarioId;
+      console.log(userObject.usuarioId);
+      console.log(config.token);
+      //window.location.href = "/index.html"
     }
 
 
