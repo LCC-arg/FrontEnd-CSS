@@ -1,3 +1,4 @@
+import cambiarButton from "../ingresarButton/ingresarButton.js";
 import loginComponent from "../loginModal/loginModal.js";
 
 
@@ -8,7 +9,10 @@ const header = document.getElementById("header");
     const html = await response.text();
     header.innerHTML = html;
 
-    loginComponent.GetLoginModal();
+    await loginComponent.GetLoginModal();
+
+    let btnIngresar = document.getElementById("perfil-usuario");
+    cambiarButton(btnIngresar);
   }
 
   const headerComponent = {

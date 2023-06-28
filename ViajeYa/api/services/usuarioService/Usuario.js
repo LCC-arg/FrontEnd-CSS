@@ -44,9 +44,7 @@ const conseguirDatosUsuario = async (idUsuario) => {
 
   const responseData = await response.json();
   // Procesar la respuesta aquí
-  console.log(responseData);
-
-
+  return responseData;
 };
 
 const Usuario = {

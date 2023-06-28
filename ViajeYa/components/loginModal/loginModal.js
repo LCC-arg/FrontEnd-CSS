@@ -69,9 +69,9 @@ async function loguearUsuario() {
 
     if (resultado.token != null) {
 
-      sessionStorage.setItem("user", JSON.stringify(resultado));
-
-      const userString = sessionStorage.getItem("user");
+      sessionStorage.setItem("sesion", JSON.stringify(resultado));
+   
+      const userString = sessionStorage.getItem("sesion");
       const userObject = JSON.parse(userString);
 
       //el token y el id del usuario se guardan en config
@@ -79,7 +79,12 @@ async function loguearUsuario() {
       config.idUsuario = userObject.usuarioId;
       console.log(userObject.usuarioId);
       console.log(config.token);
-      //window.location.href = "/index.html"
+
+      //los datos enteros del usuario se guardan en el sessionStorage y en perfilUsuario de config
+      let perfil = await Usuario.GetById(config.idUsuario);
+      sessionStorage.setItem("userProfile", JSON.stringify(perfil));
+
+      window.location.href = "/index.html"
     }
 
 

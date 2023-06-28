@@ -8,7 +8,8 @@ const config = {
     microservicioViaje : "https://localhost:7192",
 
     token : null ,
-    idUsuario : null
+    idUsuario : null,
+    perfilUsuario : null
 
 }
 
