@@ -1,4 +1,6 @@
 import { agregarEstilo } from "../../utils/agregarEstilos.js";
+import registerComponent from "../registerModal/registerModal.js";
+import Usuario from "../../api/services/usuarioService/Usuario.js";
 
 const body = document.getElementsByTagName("body")[0];
 let loginModal = null;
@@ -15,6 +17,8 @@ async function getLoginModal() {
 
   agregarEstilo("/components/header/header.css");
 
+  //logica de logueo
+  loguearUsuario();
 
   //logica para hacerlo aparecer
   let btnIngresar = document.getElementsByClassName("link-right")[0];
@@ -28,7 +32,7 @@ async function getLoginModal() {
     btnRegistrarse.addEventListener("click", (e) =>{
 
       e.preventDefault();
-      alert("registrarse");
+      registerComponent.getComponet();
     })
 
 
@@ -44,6 +48,42 @@ async function getLoginModal() {
 };
 
 
+async function loguearUsuario() {
+
+  let btnIniciarSesion = document.getElementById("boton_iniciar_sesion");
+
+  btnIniciarSesion.addEventListener("click", async (e) => {
+
+    e.preventDefault();
+    let mail = document.getElementById("search_email").value;
+    let password = document.getElementById("search_password").value;
+
+    const UsuarioLogin = {
+      email: mail,
+      password: password
+    };
+
+
+    const resultado = await Usuario.loginUser(UsuarioLogin)
+
+    if (resultado.token != null) {
+
+      sessionStorage.setItem("user", JSON.stringify(resultado));
+
+      const userString = sessionStorage.getItem("user");
+      const userObject = JSON.parse(userString);
+      console.log(userObject);
+
+
+      window.location.href = "/index.html"
+    }
+
+
+  });
+
+
+
+};
 
   
   const loginComponent = {

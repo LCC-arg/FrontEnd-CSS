@@ -29,3 +29,30 @@ const logearUsuario = async (UsuarioLoginRequest) => {
 };
 
 
+const conseguirDatosUsuario = async (idUsuario) => {
+
+  let token = JSON.parse(sessionStorage.getItem("user")).token;
+  let endpoint = apiUrl+"/"+idUsuario;
+
+  const response = await fetch(endpoint, {
+    method: 'GET',
+    headers: {
+      'Authorization': `Bearer ${token}`
+    }
+  });
+
+
+  const responseData = await response.json();
+  // Procesar la respuesta aquí
+  console.log(responseData);
+
+
+};
+
+const Usuario = {
+  loginUser : logearUsuario ,
+  GetById : conseguirDatosUsuario
+}
+
+
+export default Usuario;
