@@ -1,3 +1,24 @@
+.search-input-box.active .container-suggestions li {
+	display: block;
+}
+
+.container-suggestions li {
+	list-style: none;
+	width: 100%;
+	padding: 8px 12px;
+	border-radius: 5px;
+	display: none;
+    background-color: white;
+    color: #000000;
+    font-size: 13px;
+    text-align: left;
+}
+
+.container-suggestions li:hover{
+    cursor: pointer;
+    background-color: #414b57;
+}
+
 .hero-search {
     position: absolute;
     top: 50%;
@@ -14,9 +35,11 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+    height: 14rem;
 }
 
 .viaje {
+    padding-bottom: 2rem;
     margin: 0 1rem;
     display: flex;
     justify-content: flex-start;
@@ -27,9 +50,11 @@
     color: var(--blanco);
     margin-right: 3rem;
     font-size: 30px;
+    font-family: var(--fuentePrincipal);
 }
 
 .boton_tipo_viaje {
+    cursor: pointer;
     margin: 0.5rem 1.5rem 0.5rem 0;
     padding: 1rem;
     border: 2px var(--rosaPrimario) solid;
@@ -56,10 +81,8 @@
 .hero-search input[type="date"] {
     padding: 1rem;
     margin: 0.5rem 0;
-    background-color: rgb(255, 255, 255);
     border: 1px solid var(--grisOscuro);
     border-radius: 0.5rem;
-    color: var(--negro);
 }
 
 .hero-search input[type="text"]::placeholder {
@@ -75,6 +98,7 @@
     color: var(--blanco);
     font-family: var(--fuentePrincipal);
     font-weight: bold;
+    height: 40rem;
 }
 
 .pasajeros-input {
@@ -90,6 +114,7 @@
 }
 
 .num-pasajeros {
+    cursor: pointer;
     padding: 0.5rem;
     background: none;
     border: none;
@@ -103,10 +128,9 @@ label[for="search_cantidad_pasajeros"] {
 }
 
 .boton_search {
-    position: relative;
+    cursor: pointer;
     padding: 1rem;
-    margin: 0.5rem 0;
-    top: 0.5rem;
+    margin: 1.5rem 0;
     background-color: var(--rosaPrimario);
     color: var(--blanco);
     font-weight: bold;
