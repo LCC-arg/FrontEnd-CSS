@@ -42,7 +42,8 @@ async function getLoginModal() {
 
   document.addEventListener("click", (e)=>{
     
-    if(e.target == loginModal){
+    let login = document.getElementById("login-modal");
+    if(e.target == login){
       loginModal.style.display = "none";
       location.reload();
     }

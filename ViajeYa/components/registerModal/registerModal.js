@@ -58,6 +58,10 @@ async function getRegisterModal() {
             successComponent.getComponet();
         }
 
+        if(respuesta.metadata.status == 409){
+            failureModal.getComponet();
+        }
+
         if(respuesta.metadata.status != 200){
             failureModal.getComponet();
         }

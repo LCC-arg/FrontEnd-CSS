@@ -1,4 +1,5 @@
 import config from "../../config/config.js"
+import cerrarSesion from "../../utils/cerrarSesion.js";
 
 let usuario = sessionStorage.getItem("userProfile");
 function cambiarButton(elemento) {
@@ -8,14 +9,11 @@ function cambiarButton(elemento) {
      if(usuario != null){
           agregarNombre(elemento,datosUsuario.nombre);
 
-          let btnCerraSesion = document.getElementsByClassName("link-right")[0];
+          let btnCerraSesion = document.getElementById("perfil-usuario");
 
-          btnCerraSesion.addEventListener("click",()=>{
-                    sessionStorage.removeItem("userProfile");
-                    sessionStorage.removeItem("sesion");
-                    config.token = null;
-                    config.idUsuario = null;
-                    alert("cerrando sesion imbecil")
+          btnCerraSesion.addEventListener("click",(e)=>{
+            e.preventDefault();
+                    cerrarSesion();
           });
      }
    }
