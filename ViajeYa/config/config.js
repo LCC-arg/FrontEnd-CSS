@@ -2,16 +2,11 @@ const config = {
     
     microservicioServicio : "https://localhost:0000",
     microservicioUsuario :  "https://localhost:7196",
-    microservicioReserva : "https://localhost:0000",
-    microservicioTransporte : "https://localhost:0000",
+    microservicioTransporte : "https://localhost:7155",
+    microservicioReserva : "https://localhost:7061",
     microservicioDestino: "https://localhost:0000",
-    microservicioViaje : "https://localhost:7192",
-
-    token : null ,
-    idUsuario : null,
-    perfilUsuario : null
+    microservicioViaje : "https://localhost:7192"
 
 }
-
 
 export default config;
