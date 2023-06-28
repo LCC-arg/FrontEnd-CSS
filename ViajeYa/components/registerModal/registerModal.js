@@ -1,5 +1,7 @@
 import Usuario from "../../api/services/usuarioService/Usuario.js";
 import { agregarEstilo } from "../../utils/agregarEstilos.js";
+import failureModal from "../failure/failure.js";
+import successComponent from "../success/success.js";
 
 
 async function getRegisterModal() {
@@ -12,16 +14,19 @@ async function getRegisterModal() {
     bodyLogin.innerHTML = html;
     agregarEstilo("/components/registerModal/registerModal.css");
 
+
+    const btnIniciarSesion = document.getElementById("boton_registrar");
+
     enviarRegistro();
 
 };
 
 
-function enviarRegistro() {
+ function enviarRegistro() {
 
     const btnRegistrarCuenta = document.getElementById("botones__register");
 
-    btnRegistrarCuenta.addEventListener("click", (e) => {
+    btnRegistrarCuenta.addEventListener("click", async (e) => {
 
         e.preventDefault();
 
@@ -47,8 +52,16 @@ function enviarRegistro() {
             password : password
         };
 
-        console.log(UsuarioRequest);
-        Usuario.Registrar(UsuarioRequest);
+        const respuesta =  await Usuario.Registrar(UsuarioRequest);
+        
+        if(respuesta.metadata.status == 200){
+            successComponent.getComponet();
+        }
+
+        if(respuesta.metadata.status != 200){
+            failureModal.getComponet();
+        }
+ 
     })
 }
 

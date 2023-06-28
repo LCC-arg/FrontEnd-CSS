@@ -4,28 +4,27 @@ const apiUrl =  `${config.microservicioUsuario}/api/Usuario`;
 
 const logearUsuario = async (UsuarioLoginRequest) => {
 
-    let enpointLogin = apiUrl+"/login"
-    try {
-        const response = await fetch(enpointLogin, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(UsuarioLoginRequest)
-        });
-    
-        if (!response.ok) {
-          throw new Error('Error en la solicitud POST');
-        }
-    
-        const responseData = await response.json();
-        return responseData;
-        // Procesar la respuesta aquí
-    
-      } catch (error) {
-        console.error('Error:', error);
-      }
+  let enpointLogin = apiUrl + "/login"
 
+  const response = await fetch(enpointLogin, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(UsuarioLoginRequest)
+  });
+
+  const responseData = await response.json();
+
+  const metadata = {
+    status: response.status,
+    headers: response.headers
+  };
+
+  return {
+    data: responseData,
+    metadata: metadata
+  };
 };
 
 
@@ -59,7 +58,17 @@ const registrarUsuario = async (UsuarioRequest) => {
   });
 
   const responseData = await response.json();
-  return responseData;
+
+  const metadata = {
+    status: response.status,
+    headers: response.headers
+  };
+
+  return {
+    data: responseData,
+    metadata: metadata
+  };
+
 };
 
 

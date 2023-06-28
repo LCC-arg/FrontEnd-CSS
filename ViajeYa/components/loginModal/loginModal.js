@@ -2,6 +2,7 @@ import { agregarEstilo } from "../../utils/agregarEstilos.js";
 import registerComponent from "../registerModal/registerModal.js";
 import Usuario from "../../api/services/usuarioService/Usuario.js";
 import config from "../../config/config.js";
+import notificationComponent from "../notification/notification.js";
 
 const body = document.getElementsByTagName("body")[0];
 let loginModal = null;
@@ -26,7 +27,7 @@ async function getLoginModal() {
 
   btnIngresar.addEventListener("click", function (e) {
     e.preventDefault();
-
+    
     loginModal.style.display = "flex";
     btnRegistrarse = document.getElementById("boton_registrar")
 
@@ -43,6 +44,7 @@ async function getLoginModal() {
     
     if(e.target == loginModal){
       loginModal.style.display = "none";
+      location.reload();
     }
   })
 
@@ -66,10 +68,10 @@ async function loguearUsuario() {
 
 
     const resultado = await Usuario.loginUser(UsuarioLogin)
+    
+    if (resultado.metadata.status == 200) {
 
-    if (resultado.token != null) {
-
-      sessionStorage.setItem("sesion", JSON.stringify(resultado));
+      sessionStorage.setItem("sesion", JSON.stringify(resultado.data));
    
       const userString = sessionStorage.getItem("sesion");
       const userObject = JSON.parse(userString);
@@ -84,8 +86,15 @@ async function loguearUsuario() {
       let perfil = await Usuario.GetById(config.idUsuario);
       sessionStorage.setItem("userProfile", JSON.stringify(perfil));
 
-      window.location.href = "/index.html"
+      let mensaje = `SESION INICIADA EXITOSAMENTE ,\n nos alegra verte ${perfil.nombre}`;
+      notificationComponent.getNotification("/assets/img/check.png",mensaje);
     }
+
+    if (resultado.metadata.status != 200) {
+        let mensaje = "Ups! usuario y/o contraseña incorrecta";
+        notificationComponent.getNotification("/assets/img/lock.png",mensaje);
+    }
+
 
 
   });
