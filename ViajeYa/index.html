@@ -61,6 +61,59 @@
             </div>
 
             <div class="hero-text" id="hero-text">
+                <div class="hero-search">
+                    <div class="viaje" id="viaje">
+                        <h2>Viajes</h2>
+                        <button class="boton_tipo_viaje" id="boton_ida_vuelta">Ida y vuelta</button>
+                        <button class="boton_tipo_viaje" id="boton_ida">Solo ida</button>
+                    </div>
+                    <form class="form-search">
+                        <div class="input-container">
+                            <label for="search_ciudad_origen">Ciudad de origen:</label>
+                            <div class="search-input-box" id="search-input-box-1">
+                                <input type="text" id="search_ciudad_origen" placeholder="Ingrese una ciudad..." />
+                                <ul class="container-suggestions" id="container-suggestions-1">
+                                    <li>sugerencia 1</li>
+                                    <li>sugerencia 2</li>
+                                    <li>sugerencia 3</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="input-container">
+                            <label for="search_ciudad_destino">Ciudad de destino:</label>
+                            <div class="search-input-box" id="search-input-box-2">
+                                <input type="text" id="search_ciudad_destino" placeholder="Ingrese una ciudad..." />
+                                <ul class="container-suggestions" id="container-suggestions-2">
+                                    <li>sugerencia 1</li>
+                                    <li>sugerencia 2</li>
+                                    <li>sugerencia 3</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="input-container">
+                            <label for="search_fecha_salida">Fecha de salida:</label>
+                            <input type="date" class="fecha_search" id="search_fecha_salida">
+                        </div>
+                        <div class="input-container">
+                            <label for="search_fecha_regreso">Fecha de regreso:</label>
+                            <input type="date" class="fecha_search" id="search_fecha_regreso">
+                        </div>
+                        <div class="input-container">
+                            <label for="search_cantidad_pasajeros">Pasajeros:</label>
+                            <div class="pasajeros-input">
+                                <button type="button" class="num-pasajeros">-</button>
+                                <input type="text" class="cantidad_pasajeros" id="search_cantidad_pasajeros" value="1"
+                                    readonly>
+                                <button type="button" class="num-pasajeros">+</button>
+                            </div>
+                        </div>
+                        <div class="input-container">
+                            <button class="boton_search" id="boton_search">BUSCAR</button>
+                        </div>
+
+                    </form>
+                </div>
+
             </div>
         </section>
         <section class="gallery">
@@ -253,7 +306,6 @@
         <footer class="footer" id="footer">
 
         </footer>
-
 
         <script type="module" src="/js/main.js"></script>
         <script type="module" src="/js/Container/slider.js"></script>
