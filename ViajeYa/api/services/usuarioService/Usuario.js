@@ -47,9 +47,26 @@ const conseguirDatosUsuario = async (idUsuario) => {
   return responseData;
 };
 
+
+const registrarUsuario = async (UsuarioRequest) => {
+
+  const response = await fetch(apiUrl, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(UsuarioRequest)
+  });
+
+  const responseData = await response.json();
+  return responseData;
+};
+
+
 const Usuario = {
   loginUser : logearUsuario ,
-  GetById : conseguirDatosUsuario
+  GetById : conseguirDatosUsuario,
+  Registrar : registrarUsuario
 }
 
 
