@@ -1,7 +1,7 @@
 /* import viaje from "../../api/services/viajeService/Viaje"; */
 
 const viajeFiltro = document.getElementById("hero-text");
-const response = await fetch('/components/filtroViaje/filtroViaje.html');
+const response = await fetch('../components/filtroViaje/filtroViaje.html');
 const html = await response.text();
 viajeFiltro.innerHTML = html;
 
