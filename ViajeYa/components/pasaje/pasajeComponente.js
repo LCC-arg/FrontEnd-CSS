@@ -3,13 +3,6 @@ export default function creacionPasaje(viaje){
   
     /*   
 Tiene que recibir
-Logo de la empresa
-fechaLlegada
-Fecha Salida
-Hora de llegada y de salida
-Cantidad de bolestos disponibles
-tipo de vehiculo
-terminales
 precio
 
     

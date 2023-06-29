@@ -1,9 +1,9 @@
 import config from "../../../config/config.js";
 
-const apiUrl =  `${config.microservicioTransporte}/api/Transporte`;
+const apiUrl =  `${config.microservicioTransporte}/api/CompaniaTransporte`;
 
 
-const crearTransporte = async (transporteRequest) =>{
+const crearCompaniaTransporte = async (CompaniaTransporteRequest) =>{
 
     try {
         const response = await fetch(apiUrl, {
@@ -11,7 +11,7 @@ const crearTransporte = async (transporteRequest) =>{
           headers: {
             'Content-Type': 'application/json'
           },
-          body: JSON.stringify(transporteRequest)
+          body: JSON.stringify(CompaniaTransporteRequest)
         });
     
         if (!response.ok) {
@@ -29,20 +29,21 @@ const crearTransporte = async (transporteRequest) =>{
 };
 
 
-const conseguirTransporte = async (idTransporte) => {
+const conseguirCompaniaTransporte = async (idCompaniaTransporte) => {
 
     let result = [];
-    let response = await fetch(apiUrl + `/` + idTransporte);
+    let response = await fetch(apiUrl + `/` + idCompaniaTransporte);
     if (response.ok) {
         result = await response.json();
     }
     return result;
 };
 
-const conseguirTransportes = async  () => {
+const conseguirCompaniaTransportes = async  () => {
 
 
     //los filtros deben ser opcionales SIEMPRE
+    console.log(apiUrl);
     let result = [];
     let response = await fetch(apiUrl);
     if (response.ok) {
@@ -52,12 +53,12 @@ const conseguirTransportes = async  () => {
 };
 
 
-const transporte = {
+const companiaTransporte = {
 
-    Post : crearTransporte,
-    Get : conseguirTransportes,
-    GetById : conseguirTransporte ,
+    Post : crearCompaniaTransporte,
+    Get : conseguirCompaniaTransportes,
+    GetById : conseguirCompaniaTransporte ,
 
 }
 
-export default transporte;
+export default companiaTransporte;
