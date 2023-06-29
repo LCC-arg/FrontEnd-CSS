@@ -45,7 +45,7 @@ function agregarPasajero(){
 	let botones = document.querySelectorAll(".num-pasajeros");
 	let input = document.getElementById("search_cantidad_pasajeros");
 	numero = parseInt(input.value);
-
+	
 	botones.forEach((boton, index) => {
 		boton.addEventListener("click", async function () {
 			if (index === 0 && numero > 1) {
