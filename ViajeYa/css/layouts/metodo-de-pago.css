@@ -1,0 +1,97 @@
+.container-reserva-details{
+    position: relative;
+    right: 0;
+    margin-bottom: 150px ;
+}
+
+.container-reserva-pay{
+    display: flex;
+    flex-direction: column;
+}
+
+.container-check-pay-method {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 1300px;
+    display: inline-block;
+    padding-right: 200px;
+  }
+  
+  .payment-method {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    justify-content: end;
+  }
+  
+  .payment-method input[type="radio"] {
+    display: none;
+  }
+  
+  .payment-method label {
+    margin-left: 10px;
+    cursor: pointer;
+    width: 450px;
+    border-bottom: 2px solid black;
+  }
+  
+  .payment-method label:before {
+    content: "";
+    position: relative;
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border: 1px solid black;
+    border-radius: 50%;
+    border-color: black;
+    background-color: white;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+  
+  .payment-method input[type="radio"]:checked + label:before {
+    background-color: #3366ff;
+  }
+
+  .footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+
+  .card-data-form-container{
+    justify-content: end;
+    position: relative;
+    left: 350px;
+    width: 900px;
+    border: 2px solid black;
+  }
+
+
+  .pay-method-tittle{
+    background-color: salmon;
+    display: flex;
+
+  }
+
+  #pay-method-tittle {
+    margin: 10px;
+  }
+
+  .grid-card-form{ 
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px;
+    align-items: center;
+    margin:20px;
+  }
+
+
+  .vencimiento{
+    display: flex;
+  }
+  
+  #monthSelect{
+    margin-right: 10px;
+  }
