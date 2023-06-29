@@ -71,6 +71,12 @@
     border: #b14449 2px solid;
 }
 
+.selected{
+    color: var(--blanco);
+    background-color: var(--rosaPrimario);
+    border: #b14449 2px solid;
+}
+
 .form-search {
     display: flex;
     justify-content: center;
@@ -109,7 +115,7 @@
 }
 
 .pasajeros-input input[type="text"] {
-    width: 3rem;
+    width: 3.5rem;
     text-align: center;
 }
 

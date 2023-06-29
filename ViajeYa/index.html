@@ -63,10 +63,11 @@
                 <div class="hero-search">
                     <div class="viaje" id="viaje">
                         <h2>Viajes</h2>
-                        <button class="boton_tipo_viaje" id="boton_ida_vuelta">Ida y vuelta</button>
-                        <button class="boton_tipo_viaje" id="boton_ida">Solo ida</button>
+                        <button class="boton_tipo_viaje" id="boton_ida_vuelta" data-tipo="Ida y vuelta">Ida y
+                            vuelta</button>
+                        <button class="boton_tipo_viaje" id="boton_ida" data-tipo="Ida">Solo ida</button>
                     </div>
-                    <form class="form-search">
+                    <div class="form-search">
                         <div class="input-container">
                             <label for="search_ciudad_origen">Ciudad de origen:</label>
                             <div class="search-input-box" id="search-input-box-1">
@@ -107,10 +108,10 @@
                             </div>
                         </div>
                         <div class="input-container">
-                            <button class="boton_search" id="boton_search">BUSCAR</button>
+                            <a href="./pages/pasajes.html"><button class="boton_search"
+                                    id="boton_search">BUSCAR</button></a>
                         </div>
-
-                    </form>
+                    </div>
                 </div>
 
             </div>
@@ -307,7 +308,4 @@
         </footer>
 
         <script type="module" src="./js/main.js"></script>
-        <script type="module" src="./js/Container/slider.js"></script>
-        <script src="./components/filtroViaje/filtroViaje.js" defer></script>
-        <script src="./components/filtroViaje/suggestions.js" defer></script>
 </body>
