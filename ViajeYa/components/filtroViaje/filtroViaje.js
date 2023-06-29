@@ -1,6 +1,29 @@
-initializeSearch('#search-input-box-1', 'input', '#container-suggestions-1');
-initializeSearch('#search-input-box-2', 'input', '#container-suggestions-2');
-agregarPasajero();
+let suggestions = [];
+
+const getCiudadByNombre = async () => {
+  let result = [];
+  let response = await fetch(`https://localhost:7018/api/Ciudad`);
+  if (response.ok) {
+	result = await response.json();
+  }
+  return result;
+};
+
+getCiudadByNombre()
+  .then((result) => {
+	suggestions = result.map((ciudad) => ciudad.nombre);
+  })
+  .catch((error) => {
+	console.error(error);
+  });
+
+
+async function getFiltroViaje(){
+	initializeSearch('#search-input-box-1', 'input', '#container-suggestions-1');
+	initializeSearch('#search-input-box-2', 'input', '#container-suggestions-2');
+	agregarPasajero();
+	buscar();
+}
 
 function initializeSearch(searchContainerSelector, inputSearchSelector, boxSuggestionsSelector) {
 	const searchContainer = document.querySelector(searchContainerSelector);
@@ -41,11 +64,11 @@ function initializeSearch(searchContainerSelector, inputSearchSelector, boxSugge
 	}
 }
 
-function agregarPasajero(){
+function agregarPasajero() {
 	let botones = document.querySelectorAll(".num-pasajeros");
 	let input = document.getElementById("search_cantidad_pasajeros");
-	numero = parseInt(input.value);
-	
+	let numero = parseInt(input.value);
+
 	botones.forEach((boton, index) => {
 		boton.addEventListener("click", async function () {
 			if (index === 0 && numero > 1) {
@@ -59,3 +82,40 @@ function agregarPasajero(){
 		});
 	});
 }
+
+function buscar() {
+	let botonBuscar = document.getElementById("boton_search");
+
+	let ciudadOrigen = document.getElementById("search_ciudad_origen");
+	let ciudadDestino = document.getElementById("search_ciudad_destino");
+	let fechaSalida = document.getElementById("search_fecha_salida");
+	let fechaLlegada = document.getElementById("search_fecha_regreso");
+	let pasajeros = document.getElementById("search_cantidad_pasajeros");
+
+	const botonTipo = document.querySelectorAll(".boton_tipo_viaje");
+	let forma = "";
+
+	botonTipo.forEach(boton => {
+		boton.addEventListener("click", () => {
+			botonTipo.forEach(btn => btn.classList.remove("selected"));
+			boton.classList.add("selected");
+			forma = boton.dataset.tipo;
+		});
+	});
+
+	botonBuscar.addEventListener("click", async function () {
+		console.log(ciudadOrigen.value);
+		console.log(ciudadDestino.value);
+		console.log(fechaSalida.value);
+		console.log(fechaLlegada.value);
+		console.log(pasajeros.value);
+		console.log(forma);
+	});
+}
+
+const filtroViajeComponent = {
+    GetFiltroViaje: getFiltroViaje,
+};
+
+export default filtroViajeComponent;
+
