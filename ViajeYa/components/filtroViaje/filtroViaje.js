@@ -1,34 +1,9 @@
 import viaje from "../../api/services/viajeService/Viaje.js";
+import Ciudad from "../../api/services/destinosService/Ciudad.js";
+import {setViajes,saveRequestComandaToLocalStorage,loadResultadoViajesFromLocalStorage, resetResultadoViajes} from "../filtroViaje/filtroViajeStorage.js"
 
 let suggestions = [];
-
-const getCiudad = async () => {
-	let result = [];
-	let response = await fetch(`https://localhost:7018/api/Ciudad`);
-	if (response.ok) {
-		result = await response.json();
-	}
-	return result;
-};
-
-const getCiudadByNombre = async (nombre) => {
-	nombre = nombre.toString();
-	let result = [];
-	let response = await fetch(`https://localhost:7018/api/Ciudad?nombre=${nombre}`);
-	if (response.ok) {
-		result = await response.json();
-	}
-	return result;
-};
-
-getCiudad()
-	.then((result) => {
-		suggestions = result.map((ciudad) => ciudad.nombre);
-	})
-	.catch((error) => {
-		console.error(error);
-	});
-
+Ciudad.Get().then((result) => {suggestions = result.map((ciudad) => ciudad.nombre);})
 
 async function getFiltroViaje() {
 	initializeSearch('#search-input-box-1', 'input', '#container-suggestions-1');
@@ -118,8 +93,8 @@ function buscar() {
 
 	botonBuscar.addEventListener("click", async function () {
 
-		let ciudadOrigenId = await getCiudadByNombre(ciudadOrigen.value);
-		let ciudadDestinoId = await getCiudadByNombre(ciudadDestino.value);
+		let ciudadOrigenId = await Ciudad.GetByNombre(ciudadOrigen.value);
+		let ciudadDestinoId = await Ciudad.GetByNombre(ciudadDestino.value);
 	
 		let ciudadOrigenSeleccionadaId;
 		let ciudadDestinoSeleccionadaId;
@@ -138,16 +113,15 @@ function buscar() {
 			}
 		}
 	
-		viaje.Get(
-			forma,
-			ciudadOrigenSeleccionadaId,
-			ciudadDestinoSeleccionadaId,
-			fechaSalida.value,
-			fechaLlegada.value,
-			pasajeros.value
+		viaje.Get(forma, ciudadOrigenSeleccionadaId, ciudadDestinoSeleccionadaId, fechaSalida.value, fechaLlegada.value, pasajeros.value
 		).then(viajes => {
 			console.log(viajes);
+			loadResultadoViajesFromLocalStorage();
+			setViajes(viajes);
+			saveRequestComandaToLocalStorage();
 		});
+
+		window.location.href = "../../pages/pasajes.html";
 	});
 }
 
@@ -156,4 +130,3 @@ const filtroViajeComponent = {
 };
 
 export default filtroViajeComponent;
-

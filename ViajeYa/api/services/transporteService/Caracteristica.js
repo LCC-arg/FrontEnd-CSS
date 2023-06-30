@@ -1,9 +1,9 @@
 import config from "../../../config/config.js";
 
-const apiUrl =  `${config.microservicioTransporte}/api/Transporte`;
+const apiUrl =  `${config.microservicioTransporte}/api/Caracteristica`;
 
 
-const crearTransporte = async (transporteRequest) =>{
+const crearCaracteristica = async (CaracteristicaRequest) =>{
 
     try {
         const response = await fetch(apiUrl, {
@@ -11,7 +11,7 @@ const crearTransporte = async (transporteRequest) =>{
           headers: {
             'Content-Type': 'application/json'
           },
-          body: JSON.stringify(transporteRequest)
+          body: JSON.stringify(CaracteristicaRequest)
         });
     
         if (!response.ok) {
@@ -29,17 +29,17 @@ const crearTransporte = async (transporteRequest) =>{
 };
 
 
-const conseguirTransporte = async (idTransporte) => {
+const conseguirCaracteristica = async (idCaracteristica) => {
 
     let result = [];
-    let response = await fetch(apiUrl + `/` + idTransporte);
+    let response = await fetch(apiUrl + `/` + idCaracteristica);
     if (response.ok) {
         result = await response.json();
     }
     return result;
 };
 
-const conseguirTransportes = async  () => {
+const conseguirCaracteristicas = async  () => {
 
 
     //los filtros deben ser opcionales SIEMPRE
@@ -52,12 +52,12 @@ const conseguirTransportes = async  () => {
 };
 
 
-const transporte = {
+const caracteristica = {
 
-    Post : crearTransporte,
-    Get : conseguirTransportes,
-    GetById : conseguirTransporte ,
+    Post : crearCaracteristica,
+    Get : conseguirCaracteristicas,
+    GetById : conseguirCaracteristica ,
 
 }
 
-export default transporte;
+export default caracteristica;
