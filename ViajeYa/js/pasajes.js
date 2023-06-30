@@ -5,10 +5,10 @@ import pasajeComponent from "../components/pasaje/pasaje.js";
 
 document.addEventListener('DOMContentLoaded', ()=> iniciarApp());
 
-function iniciarApp(){
-    footerComponent.GetFooter();
-    headerComponent.GetHeader();
-    pasajeComponent.GetPasaje();
+async function iniciarApp(){
+    await footerComponent.GetFooter();
+    await headerComponent.GetHeader();
+   await pasajeComponent.GetPasaje();
 
 }
 
