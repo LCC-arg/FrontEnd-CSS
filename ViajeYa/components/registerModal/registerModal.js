@@ -2,18 +2,33 @@ import Usuario from "../../api/services/usuarioService/Usuario.js";
 import { agregarEstilo } from "../../utils/agregarEstilos.js";
 import failureModal from "../failure/failure.js";
 import successComponent from "../success/success.js";
+import Destino from "../../api/services/destinosService/Pais.js";
 
 
 async function getRegisterModal() {
 
     const bodyLogin = document.getElementsByClassName("body__login")[0];
-
+ 
+    let paises = await Destino.Get(); //trae los paises
+    let paisesLista = Array.from(paises);
     const response = await fetch('/components/registerModal/registerModal.html');
     const html = await response.text();
 
     bodyLogin.innerHTML = html;
     agregarEstilo("/components/registerModal/registerModal.css");
 
+    let select = document.getElementById("register_nacionalidad");
+    
+    console.log(paisesLista)
+
+    paisesLista.forEach(pais => {
+        
+        let opcion = document.createElement("option");
+        opcion.value = pais.codigo;
+        opcion.text = pais.nombre;
+        select.appendChild(opcion);
+        
+    })
 
     const btnIniciarSesion = document.getElementById("boton_registrar");
 
