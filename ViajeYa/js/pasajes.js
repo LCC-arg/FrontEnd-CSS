@@ -9,7 +9,6 @@ function iniciarApp(){
     footerComponent.GetFooter();
     headerComponent.GetHeader();
     pasajeComponent.GetPasaje();
-
 }
 
 

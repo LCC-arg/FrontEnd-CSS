@@ -1,24 +1,36 @@
+import viaje from "../../api/services/viajeService/Viaje.js";
+
 let suggestions = [];
 
-const getCiudadByNombre = async () => {
-  let result = [];
-  let response = await fetch(`https://localhost:7018/api/Ciudad`);
-  if (response.ok) {
-	result = await response.json();
-  }
-  return result;
+const getCiudad = async () => {
+	let result = [];
+	let response = await fetch(`https://localhost:7018/api/Ciudad`);
+	if (response.ok) {
+		result = await response.json();
+	}
+	return result;
 };
 
-getCiudadByNombre()
-  .then((result) => {
-	suggestions = result.map((ciudad) => ciudad.nombre);
-  })
-  .catch((error) => {
-	console.error(error);
-  });
+const getCiudadByNombre = async (nombre) => {
+	nombre = nombre.toString();
+	let result = [];
+	let response = await fetch(`https://localhost:7018/api/Ciudad?nombre=${nombre}`);
+	if (response.ok) {
+		result = await response.json();
+	}
+	return result;
+};
+
+getCiudad()
+	.then((result) => {
+		suggestions = result.map((ciudad) => ciudad.nombre);
+	})
+	.catch((error) => {
+		console.error(error);
+	});
 
 
-async function getFiltroViaje(){
+async function getFiltroViaje() {
 	initializeSearch('#search-input-box-1', 'input', '#container-suggestions-1');
 	initializeSearch('#search-input-box-2', 'input', '#container-suggestions-2');
 	agregarPasajero();
@@ -103,18 +115,44 @@ function buscar() {
 		});
 	});
 
+
 	botonBuscar.addEventListener("click", async function () {
-		console.log(ciudadOrigen.value);
-		console.log(ciudadDestino.value);
-		console.log(fechaSalida.value);
-		console.log(fechaLlegada.value);
-		console.log(pasajeros.value);
-		console.log(forma);
+
+		let ciudadOrigenId = await getCiudadByNombre(ciudadOrigen.value);
+		let ciudadDestinoId = await getCiudadByNombre(ciudadDestino.value);
+	
+		let ciudadOrigenSeleccionadaId;
+		let ciudadDestinoSeleccionadaId;
+	
+		for (let i = 0; i < ciudadOrigenId.length; i++) {
+			if (ciudadOrigenId[i].nombre === ciudadOrigen.value) {
+				ciudadOrigenSeleccionadaId = ciudadOrigenId[i].id;
+				break;
+			}
+		}
+	
+		for (let i = 0; i < ciudadDestinoId.length; i++) {
+			if (ciudadDestinoId[i].nombre === ciudadDestino.value) {
+				ciudadDestinoSeleccionadaId = ciudadDestinoId[i].id;
+				break;
+			}
+		}
+	
+		viaje.Get(
+			forma,
+			ciudadOrigenSeleccionadaId,
+			ciudadDestinoSeleccionadaId,
+			fechaSalida.value,
+			fechaLlegada.value,
+			pasajeros.value
+		).then(viajes => {
+			console.log(viajes);
+		});
 	});
 }
 
 const filtroViajeComponent = {
-    GetFiltroViaje: getFiltroViaje,
+	GetFiltroViaje: getFiltroViaje,
 };
 
 export default filtroViajeComponent;
