@@ -1,14 +1,9 @@
 import config from "../../../config/config.js";
 
-const apiUrl =  `${config.microservicioDestino}/api/Pais`;
+const apiUrl =  `${config.microservicioDestino}/api/Provincia`;
 
-<<<<<<< HEAD
-const conseguirPaises = async  () => {
 
-    //devuelve paises
-=======
-
-const crearPais = async (paisRequest) =>{
+const crearProvincia = async (provinciaRequest) =>{
 
     try {
         const response = await fetch(apiUrl, {
@@ -16,7 +11,7 @@ const crearPais = async (paisRequest) =>{
           headers: {
             'Content-Type': 'application/json'
           },
-          body: JSON.stringify(paisRequest)
+          body: JSON.stringify(provinciaRequest)
         });
     
         if (!response.ok) {
@@ -34,21 +29,20 @@ const crearPais = async (paisRequest) =>{
 };
 
 
-const conseguirPais = async (idPais) => {
+const conseguirProvincia = async (idProvincia) => {
 
     let result = [];
-    let response = await fetch(apiUrl + `/` + idPais);
+    let response = await fetch(apiUrl + `/` + idProvincia);
     if (response.ok) {
         result = await response.json();
     }
     return result;
 };
 
-const conseguirPaises = async  () => {
+const conseguirProvincias = async  () => {
 
 
     //los filtros deben ser opcionales SIEMPRE
->>>>>>> componenteFiltro
     let result = [];
     let response = await fetch(apiUrl);
     if (response.ok) {
@@ -58,20 +52,12 @@ const conseguirPaises = async  () => {
 };
 
 
-<<<<<<< HEAD
-const Destino = {
-    Get : conseguirPaises
-};
+const provincia = {
 
-export default Destino;
-=======
-const pais = {
-
-    Post : crearPais,
-    Get : conseguirPaises,
-    GetById : conseguirPais ,
+    Post : crearProvincia,
+    Get : conseguirProvincias,
+    GetById : conseguirProvincia ,
 
 }
 
-export default pais;
->>>>>>> componenteFiltro
+export default provincia;

@@ -1,14 +1,9 @@
 import config from "../../../config/config.js";
 
-const apiUrl =  `${config.microservicioDestino}/api/Pais`;
+const apiUrl =  `${config.microservicioTransporte}/api/CompaniaTransporte`;
 
-<<<<<<< HEAD
-const conseguirPaises = async  () => {
 
-    //devuelve paises
-=======
-
-const crearPais = async (paisRequest) =>{
+const crearCompaniaTransporte = async (CompaniaTransporteRequest) =>{
 
     try {
         const response = await fetch(apiUrl, {
@@ -16,7 +11,7 @@ const crearPais = async (paisRequest) =>{
           headers: {
             'Content-Type': 'application/json'
           },
-          body: JSON.stringify(paisRequest)
+          body: JSON.stringify(CompaniaTransporteRequest)
         });
     
         if (!response.ok) {
@@ -34,21 +29,21 @@ const crearPais = async (paisRequest) =>{
 };
 
 
-const conseguirPais = async (idPais) => {
+const conseguirCompaniaTransporte = async (idCompaniaTransporte) => {
 
     let result = [];
-    let response = await fetch(apiUrl + `/` + idPais);
+    let response = await fetch(apiUrl + `/` + idCompaniaTransporte);
     if (response.ok) {
         result = await response.json();
     }
     return result;
 };
 
-const conseguirPaises = async  () => {
+const conseguirCompaniaTransportes = async  () => {
 
 
     //los filtros deben ser opcionales SIEMPRE
->>>>>>> componenteFiltro
+    console.log(apiUrl);
     let result = [];
     let response = await fetch(apiUrl);
     if (response.ok) {
@@ -58,20 +53,12 @@ const conseguirPaises = async  () => {
 };
 
 
-<<<<<<< HEAD
-const Destino = {
-    Get : conseguirPaises
-};
+const companiaTransporte = {
 
-export default Destino;
-=======
-const pais = {
-
-    Post : crearPais,
-    Get : conseguirPaises,
-    GetById : conseguirPais ,
+    Post : crearCompaniaTransporte,
+    Get : conseguirCompaniaTransportes,
+    GetById : conseguirCompaniaTransporte ,
 
 }
 
-export default pais;
->>>>>>> componenteFiltro
+export default companiaTransporte;

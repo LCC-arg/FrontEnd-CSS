@@ -1,14 +1,9 @@
 import config from "../../../config/config.js";
 
-const apiUrl =  `${config.microservicioDestino}/api/Pais`;
+const apiUrl =  `${config.microservicioTransporte}/api/CaracteristicaTransporte`;
 
-<<<<<<< HEAD
-const conseguirPaises = async  () => {
 
-    //devuelve paises
-=======
-
-const crearPais = async (paisRequest) =>{
+const crearCaracteristicaTransporte = async (CaracteristicaTransporteRequest) =>{
 
     try {
         const response = await fetch(apiUrl, {
@@ -16,7 +11,7 @@ const crearPais = async (paisRequest) =>{
           headers: {
             'Content-Type': 'application/json'
           },
-          body: JSON.stringify(paisRequest)
+          body: JSON.stringify(CaracteristicaTransporteRequest)
         });
     
         if (!response.ok) {
@@ -34,23 +29,24 @@ const crearPais = async (paisRequest) =>{
 };
 
 
-const conseguirPais = async (idPais) => {
+const conseguirCaracteristicaTransporte = async (idCaracteristicaTransporte) => {
 
     let result = [];
-    let response = await fetch(apiUrl + `/` + idPais);
+    let response = await fetch(apiUrl + `/` + idCaracteristicaTransporte);
     if (response.ok) {
         result = await response.json();
     }
     return result;
 };
 
-const conseguirPaises = async  () => {
+const conseguirCaracteristicaTransportes = async  (idTransporte,idCaracteristica) => {
 
 
     //los filtros deben ser opcionales SIEMPRE
->>>>>>> componenteFiltro
+
     let result = [];
-    let response = await fetch(apiUrl);
+    
+    let response = await fetch(`${apiUrl}?idTransporte=${idTransporte}&idCaracteristica=${idCaracteristica}`);
     if (response.ok) {
       result = await response.json();
     }
@@ -58,20 +54,12 @@ const conseguirPaises = async  () => {
 };
 
 
-<<<<<<< HEAD
-const Destino = {
-    Get : conseguirPaises
-};
+const caracteristicaTransporte = {
 
-export default Destino;
-=======
-const pais = {
-
-    Post : crearPais,
-    Get : conseguirPaises,
-    GetById : conseguirPais ,
+    Post : crearCaracteristicaTransporte,
+    Get : conseguirCaracteristicaTransportes,
+    GetById : conseguirCaracteristicaTransporte ,
 
 }
 
-export default pais;
->>>>>>> componenteFiltro
+export default caracteristicaTransporte;

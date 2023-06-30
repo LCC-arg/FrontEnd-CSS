@@ -40,15 +40,44 @@ const conseguirViaje = async (idViaje) => {
 };
 
 
-const conseguirViajeFiltrado = async  (tipo , fechaSalida , fechaLlegada) => {
+const conseguirViajeFiltrado = async  (tipo ,ciudadOrigen, ciudadDestino, fechaSalida , fechaLlegada, pasajeros) => {
 
-    //los filtros deben ser opcionales SIEMPRE
-    let result = [];
-    let response = await fetch(apiUrl + `?tipo=`+tipo+`?fechaSalida=`+fechaSalida+`?fechaLlegada=`+fechaLlegada);
-    if (response.ok) {
-      result = await response.json();
-    }
-    return result;
+  var url = `${apiUrl}?`;
+  if(tipo)
+  {
+      url += `tipo=${tipo}`;
+  }
+  if(ciudadOrigen)
+  {
+      if(tipo){url += `&`;}
+      url += `ciudadOrigen=${ciudadOrigen}`;
+  }
+  if(ciudadDestino)
+  {
+      if(tipo || ciudadOrigen){url += `&`;}
+      url += `ciudadDestino=${ciudadDestino}`;
+  }
+  if(fechaSalida)
+  {
+      if (tipo || ciudadOrigen || ciudadDestino) {url += `&`;}
+      url += `fechaSalida=${fechaSalida}`;
+  }
+  if(fechaLlegada)
+  {
+      if (tipo || ciudadOrigen || ciudadDestino || fechaSalida) {url += `&`;}
+      url += `fechaLlegada=${fechaLlegada}`;
+  }
+  if(pasajeros)
+  {
+      if (tipo || ciudadOrigen || ciudadDestino || fechaSalida || fechaLlegada) {url += `&`;}
+      url += `pasajeros=${pasajeros}`;
+  }
+  let result = []
+  let response = await fetch(url);
+      if(response.ok){
+          result = await response.json();
+      }
+  return result; 
 };
 
 
@@ -71,7 +100,6 @@ const viaje = {
     Get : conseguirViajeFiltrado,
     GetById : conseguirViaje ,
     GetPasajeros : conseguirPasajerosDeViaje
-
 }
 
 export default viaje;
