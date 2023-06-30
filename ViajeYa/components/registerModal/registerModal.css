@@ -16,15 +16,16 @@
 .main__register{
     display: flex;
     box-sizing: border-box;
-    max-width: 50rem;
-    height: 37.5rem;
+    max-width: 60rem;
+    height: 38.5rem;
     background-color: white;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .register_container{
     display: flex;
-    width: 60%;
+    width: 70%;
+    font-size: 20px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -66,6 +67,9 @@
     box-sizing: border-box;
   }
 
+  .container-pais-fecha{
+    padding: 1%;
+  }
 .main_register_img{
     display: flex;
     position: relative;
@@ -124,7 +128,6 @@
 .boton_start{
     display: flex;
     font-family: 'Raleway', sans-serif;
-    font-size: small;
     color: #302f2f;
     padding: 5px;
     margin-top: 5px;
