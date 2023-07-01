@@ -16,7 +16,8 @@
 
 .container-suggestions li:hover{
     cursor: pointer;
-    background-color: #414b57;
+    background-color: var(--rosaPrimario);
+    color: white;
 }
 
 .hero-search {

@@ -3,8 +3,6 @@ import headerComponent from "../components/header/header.js";
 import filtroViajeComponent from "../components/filtroViaje/filtroViaje.js";
 import slider from "./Container/slider.js";
 
-
-
 document.addEventListener('DOMContentLoaded', ()=> iniciarApp());
 
 async function iniciarApp(){
