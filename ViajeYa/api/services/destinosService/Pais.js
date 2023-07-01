@@ -2,11 +2,6 @@ import config from "../../../config/config.js";
 
 const apiUrl =  `${config.microservicioDestino}/api/Pais`;
 
-<<<<<<< HEAD
-const conseguirPaises = async  () => {
-
-    //devuelve paises
-=======
 
 const crearPais = async (paisRequest) =>{
 
@@ -48,7 +43,6 @@ const conseguirPaises = async  () => {
 
 
     //los filtros deben ser opcionales SIEMPRE
->>>>>>> componenteFiltro
     let result = [];
     let response = await fetch(apiUrl);
     if (response.ok) {
@@ -58,13 +52,6 @@ const conseguirPaises = async  () => {
 };
 
 
-<<<<<<< HEAD
-const Destino = {
-    Get : conseguirPaises
-};
-
-export default Destino;
-=======
 const pais = {
 
     Post : crearPais,
@@ -74,4 +61,3 @@ const pais = {
 }
 
 export default pais;
->>>>>>> componenteFiltro

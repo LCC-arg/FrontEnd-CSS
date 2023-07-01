@@ -21,9 +21,20 @@ const getCiudadByNombre = async (nombre) => {
 	return result;
 };
 
+const conseguirCiudad = async (idCiudad) => {
+
+    let result = [];
+    let response = await fetch(apiUrl + "/" + idCiudad);
+    if (response.ok) {
+        result = await response.json();
+    }
+    return result;
+}
+
 const Ciudad = {
   Get : getCiudad,
-  GetByNombre : getCiudadByNombre
+  GetByNombre : getCiudadByNombre,
+  GetById :conseguirCiudad
 }
 
 export default Ciudad;
