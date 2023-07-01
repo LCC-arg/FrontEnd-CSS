@@ -1,4 +1,4 @@
-import { setViaje,getViaje, saveViajeSeleccionadoToLocalStorage, loadViajeSeleccionadoFromLocalStorage, resetViajeSeleccionado } from "../pasaje/viajeSeleccionadoStorage.js"
+import { setViaje,getCantidadPasajeros, saveViajeSeleccionadoToLocalStorage, loadViajeSeleccionadoFromLocalStorage, resetViajeSeleccionado } from "../pasaje/viajeSeleccionadoStorage.js"
 
 export default  function creacionPasaje(datos){
     const pasajeComponente = document.createElement("div");
@@ -45,8 +45,13 @@ export default  function creacionPasaje(datos){
      loadViajeSeleccionadoFromLocalStorage();
      resetViajeSeleccionado();
      setViaje(viaje);
+     console.log("Cantidad pasajeros " + getCantidadPasajeros());
+
      saveViajeSeleccionadoToLocalStorage();
-     console.log(getViaje());
+     const ruta = "/ViajeYa/pages/reserva.html";
+     window.location.href =window.location.origin+ ruta;
+
+
     }
     
     return pasajeComponente;

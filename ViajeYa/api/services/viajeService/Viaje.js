@@ -70,7 +70,7 @@ const conseguirViajeFiltrado = async  (tipo ,ciudadOrigen, ciudadDestino, fechaS
   if(pasajeros)
   {
       if (tipo || ciudadOrigen || ciudadDestino || fechaSalida || fechaLlegada) {url += `&`;}
-      url += `pasajeros=${pasajeros}`;
+      url += `pasajesDisponibles=${pasajeros}`;
   }
   let result = []
   let response = await fetch(url);

@@ -1,11 +1,11 @@
 export const pasajeroForm = (id) => `
 
-<link rel="stylesheet" href="/components/pasajero/reservaStyle.css">
+<link rel="stylesheet" href="/ViajeYa/components/pasajero/reservaStyle.css">
 <div class="pasajero-form">
     <div class="pasajero-tittle" number="${id}" id="pasajero-title">
-        <img src="/assets/img/logo-login.png" alt="">
+        <img src="/ViajeYa/assets/img/logo-login.png" alt="">
         <h3>Pasajero ${id}</h3>
-        <img id="arrow" src="/assets/img/arrow.png" alt="">
+        <img id="arrow" src="/ViajeYa/assets/img/arrow.png" alt="">
     </div>
 
     <div class="container-data-pasajero-form" id="container-data-pasajero-form${id}">

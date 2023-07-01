@@ -7,13 +7,16 @@
     <title>ViajeYa</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link
         href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&family=Open+Sans:ital,wght@1,800&family=Raleway:wght@100;300;400;500;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/preloader.css">
 </head>
 
 <body>
+    <div class="lds-spinner loader" id="loader"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
     <div class="container">
         <header class="header" id="header">
 
@@ -102,8 +105,7 @@
                             <label for="search_cantidad_pasajeros">Pasajeros:</label>
                             <div class="pasajeros-input">
                                 <button type="button" class="num-pasajeros">-</button>
-                                <input type="text" class="cantidad_pasajeros" id="search_cantidad_pasajeros" value="1"
-                                    readonly>
+                                <input type="text" class="cantidad_pasajeros" id="search_cantidad_pasajeros" value="1" readonly>
                                 <button type="button" class="num-pasajeros">+</button>
                             </div>
                         </div>
@@ -307,4 +309,5 @@
         </footer>
 
         <script type="module" src="./js/main.js"></script>
+        <script type="module" src="./js/preloader.js"></script>
 </body>

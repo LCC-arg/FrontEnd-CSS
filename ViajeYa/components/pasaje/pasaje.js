@@ -2,7 +2,6 @@ import transporte from "../../api/services/transporteService/Transporte.js";
 import caracteristicaTransporte from "../../api/services/transporteService/CaracteristicaTransporte.js";
 import ciudad from "../../api/services/destinosService/Ciudad.js";
 import creacionPasaje from "./pasajeComponente.js";
-import { setViaje,getViaje, saveViajeSeleccionadoToLocalStorage, loadViajeSeleccionadoFromLocalStorage, resetViajeSeleccionado } from "../pasaje/viajeSeleccionadoStorage.js"
 
 
 

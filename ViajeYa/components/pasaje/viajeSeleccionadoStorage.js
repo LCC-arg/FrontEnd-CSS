@@ -1,5 +1,6 @@
 let viajeSeleccionado = {
-    viaje: ""
+    viaje: "",
+    cantidadPasajeros : 1
 };
 
 export const setViajeSeleccionado = (viajeSeleccionadoInput) => {
@@ -17,6 +18,16 @@ export const setViaje = (viajeInput) => {
 
   export const getViaje = () => {
     return viajeSeleccionado.viaje;
+  };
+
+
+  export const setCantidadPasajeros = (cantidad) => {
+    viajeSeleccionado.cantidadPasajeros = cantidad;
+  };
+  
+
+  export const getCantidadPasajeros = () => {
+    return viajeSeleccionado.cantidadPasajeros;
   };
 
 export const saveViajeSeleccionadoToLocalStorage = () => {

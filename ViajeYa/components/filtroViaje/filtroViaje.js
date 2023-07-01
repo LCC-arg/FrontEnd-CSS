@@ -1,6 +1,8 @@
 import viaje from "../../api/services/viajeService/Viaje.js";
 import Ciudad from "../../api/services/destinosService/Ciudad.js";
 import { setViajes, saveRequestComandaToLocalStorage, loadResultadoViajesFromLocalStorage, resetResultadoViajes } from "../filtroViaje/filtroViajeStorage.js"
+import { setCantidadPasajeros, getCantidadPasajeros, saveViajeSeleccionadoToLocalStorage, loadViajeSeleccionadoFromLocalStorage, resetViajeSeleccionado } from "../pasaje/viajeSeleccionadoStorage.js"
+
 
 let suggestions = [];
 Ciudad.Get().then((result) => { suggestions = result.map((ciudad) => ciudad.nombre); })
@@ -68,6 +70,8 @@ function agregarPasajero() {
 			}
 		});
 	});
+
+
 }
 
 function buscar() {
@@ -78,6 +82,10 @@ function buscar() {
 	let fechaSalida = document.getElementById("search_fecha_salida");
 	let fechaLlegada = document.getElementById("search_fecha_regreso");
 	let pasajeros = document.getElementById("search_cantidad_pasajeros");
+	console.log(pasajeros.value);
+
+
+
 
 	const botonTipo = document.querySelectorAll(".boton_tipo_viaje");
 	let forma = "";
@@ -92,6 +100,9 @@ function buscar() {
 
 
 	botonBuscar.addEventListener("click", async function () {
+
+		document.getElementById("loader").classList.remove("loader2");
+		document.getElementById("loader").classList.add("loader")
 
 		let ciudadOrigenId = await Ciudad.GetByNombre(ciudadOrigen.value);
 		let ciudadDestinoId = await Ciudad.GetByNombre(ciudadDestino.value);
@@ -119,7 +130,10 @@ function buscar() {
 				loadResultadoViajesFromLocalStorage();
 				setViajes(viajes);
 				saveRequestComandaToLocalStorage();
-				const ruta ="/ViajeYa/pages/pasajes.html";
+				const ruta = "/ViajeYa/pages/pasajes.html";
+				loadResultadoViajesFromLocalStorage();
+				setCantidadPasajeros(pasajeros.value);
+				saveViajeSeleccionadoToLocalStorage();
 				window.location.href =window.location.origin+ ruta;
 			});
 	});
