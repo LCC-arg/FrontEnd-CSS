@@ -2,6 +2,8 @@ import transporte from "../../api/services/transporteService/Transporte.js";
 import caracteristicaTransporte from "../../api/services/transporteService/CaracteristicaTransporte.js";
 import ciudad from "../../api/services/destinosService/Ciudad.js";
 import creacionPasaje from "./pasajeComponente.js";
+import { setViaje,getViaje, saveViajeSeleccionadoToLocalStorage, loadViajeSeleccionadoFromLocalStorage, resetViajeSeleccionado } from "../pasaje/viajeSeleccionadoStorage.js"
+
 
 
 async function getPasaje(viajeId) {
@@ -9,21 +11,18 @@ async function getPasaje(viajeId) {
 
   let data = await obtenerDatos(viajeId);
   let response = creacionPasaje(data);
-  agregarPasaje.innerHTML += response;
-  botonComprar();
+  console.log(response);
+
+  agregarPasaje.appendChild(response);
+
 }
 
-async function botonComprar() {
-  const botonComprar = document.querySelector(".boton-comprar");
-  botonComprar.addEventListener('click', () => botonComprarAction());
-}
 
-const botonComprarAction = () => {
-}
 
 async function obtenerDatos(pasaje) {
 
   let precioReserva = pasaje.precio //PRECIO
+  let idViaje = pasaje.id;
   let idCiudadOrigen = parseInt(pasaje.ciudadOrigen);
   let idCiudadDestino = pasaje.ciudadDestino;
   let idTransporte = pasaje.transporteId;
@@ -63,7 +62,8 @@ async function obtenerDatos(pasaje) {
     ciudadOrigen: nombreCiudadOrigen,
     ciudadDestino: nombreCiudadDestino,
     imagen: "",
-    descripcion: descripcionTransporte
+    descripcion: descripcionTransporte,
+    idViaje : idViaje
   };
   return datos;
 }
