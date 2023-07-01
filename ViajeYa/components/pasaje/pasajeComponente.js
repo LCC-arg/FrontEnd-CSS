@@ -1,3 +1,4 @@
+import { setViaje,getViaje, saveViajeSeleccionadoToLocalStorage, loadViajeSeleccionadoFromLocalStorage, resetViajeSeleccionado } from "../pasaje/viajeSeleccionadoStorage.js"
 
 export default  function creacionPasaje(datos){
     const pasajeComponente = document.createElement("div");
@@ -37,10 +38,15 @@ export default  function creacionPasaje(datos){
     `;
     
     const botonComprar = pasajeComponente.querySelector(".boton-comprar");
-    botonComprar.addEventListener('click', () => botonComprarAction(datos.idViaje));
+    botonComprar.addEventListener('click', () => botonComprarAction(datos.viaje));
     
-    function botonComprarAction(idViaje) {
-     console.log(1);
+    function botonComprarAction(viaje) {
+     console.log("Compraste el viaje " + datos.viaje.id);
+     loadViajeSeleccionadoFromLocalStorage();
+     resetViajeSeleccionado();
+     setViaje(viaje);
+     saveViajeSeleccionadoToLocalStorage();
+     console.log(getViaje());
     }
     
     return pasajeComponente;

@@ -63,7 +63,8 @@ async function obtenerDatos(pasaje) {
     ciudadDestino: nombreCiudadDestino,
     imagen: "",
     descripcion: descripcionTransporte,
-    idViaje : idViaje
+    idViaje : idViaje,
+    viaje : pasaje
   };
   return datos;
 }
