@@ -1,9 +1,9 @@
 import config from "../../../config/config.js";
 
-const apiUrl =  `${config.microservicioTransporte}/api/Transporte`;
+const apiUrl =  `${config.microservicioTransporte}/api/CaracteristicaTransporte`;
 
 
-const crearTransporte = async (transporteRequest) =>{
+const crearCaracteristicaTransporte = async (CaracteristicaTransporteRequest) =>{
 
     try {
         const response = await fetch(apiUrl, {
@@ -11,7 +11,7 @@ const crearTransporte = async (transporteRequest) =>{
           headers: {
             'Content-Type': 'application/json'
           },
-          body: JSON.stringify(transporteRequest)
+          body: JSON.stringify(CaracteristicaTransporteRequest)
         });
     
         if (!response.ok) {
@@ -29,22 +29,24 @@ const crearTransporte = async (transporteRequest) =>{
 };
 
 
-const conseguirTransporte = async (idTransporte) => {
+const conseguirCaracteristicaTransporte = async (idCaracteristicaTransporte) => {
 
     let result = [];
-    let response = await fetch(apiUrl + `/` + idTransporte);
+    let response = await fetch(apiUrl + `/` + idCaracteristicaTransporte);
     if (response.ok) {
         result = await response.json();
     }
     return result;
 };
 
-const conseguirTransportes = async  () => {
+const conseguirCaracteristicaTransportes = async  (idTransporte,idCaracteristica) => {
 
 
     //los filtros deben ser opcionales SIEMPRE
+
     let result = [];
-    let response = await fetch(apiUrl);
+    
+    let response = await fetch(`${apiUrl}?idTransporte=${idTransporte}&idCaracteristica=${idCaracteristica}`);
     if (response.ok) {
       result = await response.json();
     }
@@ -52,12 +54,12 @@ const conseguirTransportes = async  () => {
 };
 
 
-const transporte = {
+const caracteristicaTransporte = {
 
-    Post : crearTransporte,
-    Get : conseguirTransportes,
-    GetById : conseguirTransporte ,
+    Post : crearCaracteristicaTransporte,
+    Get : conseguirCaracteristicaTransportes,
+    GetById : conseguirCaracteristicaTransporte ,
 
 }
 
-export default transporte;
+export default caracteristicaTransporte;
