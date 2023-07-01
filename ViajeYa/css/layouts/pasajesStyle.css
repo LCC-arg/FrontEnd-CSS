@@ -1,44 +1,140 @@
-.grid-pasajes{
+.grid-pasajes {
     display: grid;
-    grid-template-columns: 18% auto;
+    grid-template-columns: 20% auto;
     gap: 80px;
     margin-top: 100px;
     min-height: 73vh;
 }
-.filtros-busqueda-pasajes{
+
+
+.filtros-busqueda-pasajes {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
 
 /* FILTRO BUSQUEDA*/
 
 
-.filtros-busqueda-viajes{
-    border: 1px solid black;
-    min-height: 500px;
+.filtros-busqueda-viajes {
+    border: #b14449 2px solid;
+    border-radius: 20px;
+    height: fit-content;
+    width: fit-content;
     padding: 20px;
+    background-color: var(--negro);
+    color: var(--blanco);
+}
+.filtros-busqueda-viajes h2{
+    font-size: 35px;
+    margin: 30px 0;
+}
+
+.viaje_filtro{
+    display: flex;
+    margin-bottom: 30px;
+}
+.boton_tipo_viaje {
+    cursor: pointer;
+    margin: 0.5rem 1.5rem 0.5rem 0;
+    padding: 1rem;
+    min-width: fit-content;
+    border: 2px #b14449 solid;
+    color: var(--negro);
     background-color: var(--rosaPrimario);
+    font-family: var(--fuentePrincipal);
+    font-weight: bold;
+    border-radius: 2rem;
 }
-.filtros-busqueda-viajes input{
-    background-color: var(--grisClaro);
-    height: 40px;
-    min-width: 100%;
+
+.boton_tipo_viaje:hover {
+    color: var(--blanco);
+    background-color: #b14449;
+    border: var(--rosaPrimario) 2px solid;
+}
+
+.filtros-busqueda-viajes input {
+    height: 50px;
+    width: 100%;
     border-radius: 10px;
+    padding: 8px;
+    margin-bottom: 20px;
 }
-.seleccionar-tipo-viaje{
+
+.seleccionar-tipo-viaje {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
 }
 
-.filtro-busqueda-viajes-viaje{
-margin-bottom: 20px;
+.filtro-busqueda-viajes-viaje {
+    margin-bottom: 20px;
+}
+
+.fechas-container{
+    display: flex;
+}
+.fechas-container input{
+    border-radius: 0;
+}
+
+.fecha-salida-div,
+.fecha-regreso-div{
+    width: 120px;
+}
+
+.pasajeros-container label{
+    margin-top: 500px;
+}
+.pasajeros-input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pasajeros-input input {
+    width: 3rem;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.cant-pasajeros {
+    cursor: pointer;
+    padding: 0.5rem;
+    background: none;
+    border: none;
+    font-size: 2.5rem;
+    color: var(--rosaPrimario);
+}
+
+.boton-buscar{
+    display: flex;
+    justify-content: center;
+    min-width: 100%;
+}
+.boton-search {
+    cursor: pointer;
+    padding: 1rem;
+    margin: 1.5rem 0;
+    width: 100%;
+    background-color: var(--rosaPrimario);
+    color: var(--negro);
+    font-weight: bold;
+    font-family: var(--fuentePrincipal);
+    border: 2px solid #b14449;
+    border-radius: 0.5rem;
+}
+
+.boton-search:hover {
+    background-color: #b14449;
+    color: var(--blanco);
 }
 
 
-/* FILTRO DE CHECKBOX*/ 
+
+/* FILTRO DE CHECKBOX*/
 
 
 /* FILTROS DE BUSQUEDA*/
@@ -47,25 +143,29 @@ margin-bottom: 20px;
 .filtro-horario-salida,
 .filtro-horario-llegada,
 .filtro-tipo-transporte,
-.filtro-orden{
+.filtro-orden {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items:flex-start;
     height: 50px;
     margin-bottom: 30px;
     padding: 20px;
 }
 
-.grid-pasajes label{
-    color: var(--negro);
+.filtro-empresa input{
+    color: #b14449;
+}
+
+.grid-pasajes label {
     font-weight: bold;
     margin-bottom: 3px;
 }
-.grid-pasajes select{
-  border: solid 1px  #00000071;
-  padding: 10px;
-  border-radius: 5px;
-  width: 250px;
-  font-size: 13px;
+
+.grid-pasajes select {
+    border: solid 1px #00000071;
+    padding: 10px;
+    border-radius: 5px;
+    width: 275px;
+    font-size: 13px;
+    color: #b14449;
 }

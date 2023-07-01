@@ -24,36 +24,45 @@
         <div class="grid-pasajes">
             <div class="filtros-busqueda-pasajes">
                 <div class="filtros-busqueda-viajes">
-                    <h3 class="filtro-busqueda-viajes-viaje">Viaje</h3>
-                    <div class="seleccionar-tipo-viaje">
-                        <label>
-                            <input type="checkbox" name="tipo-viaje" value="ida"> Ida
-                        </label>
-
-                        <label>
-                            <input type="checkbox" name="tipo-viaje" value="ida-vuelta"> Ida y Vuelta
-                        </label>
+                    <h2>Viajes</h2>
+                    <div class="viaje_filtro" id="viaje_filtro">
+                        <button class="boton_tipo_viaje" id="boton_ida_vuelta" data-tipo="Ida y vuelta">Ida y
+                            vuelta</button>
+                        <button class="boton_tipo_viaje" id="boton_ida" data-tipo="Ida">Solo ida</button>
                     </div>
                     <div class="seleccionar-ciudad-origen">
-                        <label for="">Origen </label>
-                        <input type="text" id="filtro-origen" placeholder="" />
+                        <label for="">Ciudad de origen: </label>
+                        <input type="text" id="filtro-origen" placeholder="Ingrese una ciudad..." />
                     </div>
                     <div class="seleccionar-ciudad-destino">
-                        <label for="">Destino </label>
-                        <input type="text" id="filtro-destino" placeholder="" />
+                        <label for="">Ciudad de destino: </label>
+                        <input type="text" id="filtro-destino" placeholder="Ingrese una ciudad..." />
                     </div>
 
 
+                    <div class="fechas-container">
+                        <div class="fecha-salida-div">
+                            <label for="fecha-salida">Salida:</label>
+                            <input type="date" id="fecha-salida" />
+                        </div>
+                        <div class="fecha-regreso-div">
+                            <label for="fecha-regreso">Regreso:</label>
+                            <input type="date" id="fecha-regreso" />
+                        </div>
+                    </div>
+                    
 
-                    <label for="fecha-salida">Fecha de salida:</label>
-                    <input type="date" id="fecha-salida" />
-
-                    <label for="fecha-vuelta">Fecha de vuelta:</label>
-                    <input type="date" id="fecha-vuelta" />
-                    <label for="cantidad-pasajeros">Cantidad de pasajeros:</label>
-                    <input type="number" id="cantidad-pasajeros" min="1" />
-
-
+                    <div class="pasajeros-container">
+                        <label for="cantidad-pasajeros">Pasajeros:</label>
+                        <div class="pasajeros-input">
+                            <button type="button" class="cant-pasajeros">-</button>
+                            <input type="text" class="cantidad-pasajeros" id="cantidad-pasajeros" value="1" readonly>
+                            <button type="button" class="cant-pasajeros">+</button>
+                        </div>
+                    </div>
+                    <div class="boton-buscar">
+                        <button class="boton-search" id="boton-search">BUSCAR</button>
+                    </div>
                 </div>
                 <div class="filtro-empresa">
                     <label for="empresas">Empresas</label>
