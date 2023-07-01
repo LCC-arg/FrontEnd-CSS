@@ -8,7 +8,7 @@ async function getSuccessModal() {
     const html = await response.text();
 
     bodyLogin.innerHTML = html;
-    agregarEstilo("/components/success/success.css");
+    agregarEstilo("/ViajeYa/components/success/success.css");
 
 
 };

@@ -3,9 +3,10 @@ import loginComponent from "../loginModal/loginModal.js";
 
 
 const header = document.getElementById("header");
+const ruta = window.location.origin+"/ViajeYa/components"+"/"+"header"+"/"+"header.html";
 
   async function getHeader() {
-    const response = await fetch('../components/header/header.html');
+    const response = await fetch(ruta);
     const html = await response.text();
     header.innerHTML = html;
 

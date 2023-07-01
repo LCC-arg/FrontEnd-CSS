@@ -13,6 +13,7 @@ async function iniciarApp(){
     getViajes().forEach(async pasaje => {
         await pasajeComponent.GetPasaje(pasaje);
     })
+    console.log(getViajes());
 }
 
 

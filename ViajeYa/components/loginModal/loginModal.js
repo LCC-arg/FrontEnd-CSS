@@ -10,14 +10,14 @@ let btnRegistrarse = null;
 
 async function getLoginModal() {
 
-  const response = await fetch('/components/loginModal/loginModal.html');
+  const response = await fetch(window.location.origin+"/ViajeYa/components"+"/"+"loginModal"+"/"+"loginModal.html");
   const html = await response.text();
  
   body.innerHTML += html;
   loginModal = document.getElementsByClassName("body__login")[0];
 
-
-  agregarEstilo("/components/header/header.css");
+  
+  agregarEstilo("/ViajeYa/components/header/header.css");
 
   //logica de logueo
   loguearUsuario();

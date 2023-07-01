@@ -6,7 +6,7 @@ async function getNotificaionModal(image,message) {
   const bodyLogin = document.getElementsByClassName("body__login")[0];
   const html = generateNotification(image, message);
   bodyLogin.innerHTML = html;
-  agregarEstilo("/components/notification/notification.css");
+  agregarEstilo("/ViajeYa/components/notification/notification.css");
 
 
 };

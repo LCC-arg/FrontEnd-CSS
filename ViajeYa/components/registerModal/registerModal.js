@@ -11,11 +11,11 @@ async function getRegisterModal() {
  
     let paises = await Destino.Get(); //trae los paises
     let paisesLista = Array.from(paises);
-    const response = await fetch('/components/registerModal/registerModal.html');
+    const response = await fetch('/ViajeYa/components/registerModal/registerModal.html');
     const html = await response.text();
 
     bodyLogin.innerHTML = html;
-    agregarEstilo("/components/registerModal/registerModal.css");
+    agregarEstilo("/ViajeYa/components/registerModal/registerModal.css");
 
     let select = document.getElementById("register_nacionalidad");
     

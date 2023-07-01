@@ -1,9 +1,9 @@
 import viaje from "../../api/services/viajeService/Viaje.js";
 import Ciudad from "../../api/services/destinosService/Ciudad.js";
-import {setViajes,saveRequestComandaToLocalStorage,loadResultadoViajesFromLocalStorage, resetResultadoViajes} from "../filtroViaje/filtroViajeStorage.js"
+import { setViajes, saveRequestComandaToLocalStorage, loadResultadoViajesFromLocalStorage, resetResultadoViajes } from "../filtroViaje/filtroViajeStorage.js"
 
 let suggestions = [];
-Ciudad.Get().then((result) => {suggestions = result.map((ciudad) => ciudad.nombre);})
+Ciudad.Get().then((result) => { suggestions = result.map((ciudad) => ciudad.nombre); })
 
 async function getFiltroViaje() {
 	initializeSearch('#search-input-box-1', 'input', '#container-suggestions-1');
@@ -95,33 +95,33 @@ function buscar() {
 
 		let ciudadOrigenId = await Ciudad.GetByNombre(ciudadOrigen.value);
 		let ciudadDestinoId = await Ciudad.GetByNombre(ciudadDestino.value);
-	
+
 		let ciudadOrigenSeleccionadaId;
 		let ciudadDestinoSeleccionadaId;
-	
+
 		for (let i = 0; i < ciudadOrigenId.length; i++) {
 			if (ciudadOrigenId[i].nombre === ciudadOrigen.value) {
 				ciudadOrigenSeleccionadaId = ciudadOrigenId[i].id;
 				break;
 			}
 		}
-	
+
 		for (let i = 0; i < ciudadDestinoId.length; i++) {
 			if (ciudadDestinoId[i].nombre === ciudadDestino.value) {
 				ciudadDestinoSeleccionadaId = ciudadDestinoId[i].id;
 				break;
 			}
 		}
-	
-		viaje.Get(forma, ciudadOrigenSeleccionadaId, ciudadDestinoSeleccionadaId, fechaSalida.value, fechaLlegada.value, pasajeros.value
-		).then(viajes => {
-			console.log(viajes);
-			loadResultadoViajesFromLocalStorage();
-			setViajes(viajes);
-			saveRequestComandaToLocalStorage();
 
-			window.location.href = "../../pages/pasajes.html";
-		});
+		viaje.Get(forma, ciudadOrigenSeleccionadaId, ciudadDestinoSeleccionadaId, fechaSalida.value, fechaLlegada.value, pasajeros.value)
+			.then(viajes => {
+				console.log(viajes);
+				loadResultadoViajesFromLocalStorage();
+				setViajes(viajes);
+				saveRequestComandaToLocalStorage();
+				const ruta ="/ViajeYa/pages/pasajes.html";
+				window.location.href =window.location.origin+ ruta;
+			});
 	});
 }
 

@@ -4,11 +4,11 @@ async function getFailureModal() {
 
     const bodyLogin = document.getElementsByClassName("body__login")[0];
 
-    const response = await fetch('/components/failure/failure.html');
+    const response = await fetch('/ViajeYa/components/failure/failure.html');
     const html = await response.text();
 
     bodyLogin.innerHTML = html;
-    agregarEstilo("/components/failure/failure.css");
+    agregarEstilo("/ViajeYa/components/failure/failure.css");
 
 
 };
