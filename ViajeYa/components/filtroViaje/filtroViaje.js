@@ -119,9 +119,9 @@ function buscar() {
 			loadResultadoViajesFromLocalStorage();
 			setViajes(viajes);
 			saveRequestComandaToLocalStorage();
-		});
 
-		window.location.href = "../../pages/pasajes.html";
+			window.location.href = "../../pages/pasajes.html";
+		});
 	});
 }
 
