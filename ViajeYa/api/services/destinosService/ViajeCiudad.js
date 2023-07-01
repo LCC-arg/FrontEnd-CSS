@@ -1,9 +1,9 @@
 import config from "../../../config/config.js";
 
-const apiUrl =  `${config.microservicioTransporte}/api/Transporte`;
+const apiUrl =  `${config.microservicioDestino}/api/ViajeCiudad`;
 
 
-const crearTransporte = async (transporteRequest) =>{
+const crearViajeCiudad = async (viajeCiudadRequest) =>{
 
     try {
         const response = await fetch(apiUrl, {
@@ -11,7 +11,7 @@ const crearTransporte = async (transporteRequest) =>{
           headers: {
             'Content-Type': 'application/json'
           },
-          body: JSON.stringify(transporteRequest)
+          body: JSON.stringify(viajeCiudadRequest)
         });
     
         if (!response.ok) {
@@ -29,17 +29,17 @@ const crearTransporte = async (transporteRequest) =>{
 };
 
 
-const conseguirTransporte = async (idTransporte) => {
+const conseguirViajeCiudad = async (idViajeCiudad) => {
 
     let result = [];
-    let response = await fetch(apiUrl + `/` + idTransporte);
+    let response = await fetch(apiUrl + `/` + idViajeCiudad);
     if (response.ok) {
         result = await response.json();
     }
     return result;
 };
 
-const conseguirTransportes = async  () => {
+const conseguirViajeCiudades = async  () => {
 
 
     //los filtros deben ser opcionales SIEMPRE
@@ -52,12 +52,12 @@ const conseguirTransportes = async  () => {
 };
 
 
-const transporte = {
+const viajeCiudad = {
 
-    Post : crearTransporte,
-    Get : conseguirTransportes,
-    GetById : conseguirTransporte ,
+    Post : crearViajeCiudad,
+    Get : conseguirViajeCiudades,
+    GetById : conseguirViajeCiudad ,
 
 }
 
-export default transporte;
+export default viajeCiudad;
