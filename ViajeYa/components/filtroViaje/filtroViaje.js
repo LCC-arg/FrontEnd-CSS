@@ -93,6 +93,9 @@ function buscar() {
 
 	botonBuscar.addEventListener("click", async function () {
 
+		document.getElementById("loader").classList.remove("loader2");
+		document.getElementById("loader").classList.add("loader")
+
 		let ciudadOrigenId = await Ciudad.GetByNombre(ciudadOrigen.value);
 		let ciudadDestinoId = await Ciudad.GetByNombre(ciudadDestino.value);
 	
@@ -119,9 +122,9 @@ function buscar() {
 			loadResultadoViajesFromLocalStorage();
 			setViajes(viajes);
 			saveRequestComandaToLocalStorage();
-		});
 
-		window.location.href = "../../pages/pasajes.html";
+			window.location.href = "../../pages/pasajes.html";
+		});
 	});
 }
 

@@ -113,7 +113,6 @@
     padding: 1rem;
     width: 70%;
     background-color: #E77F84;
-    color: white;
     border: none;
     font-family: 'Raleway', sans-serif;
     font-weight: bold;
@@ -142,4 +141,13 @@
     color: #302f2f;
     cursor: pointer;
     font-family: 'Raleway', sans-serif;
+}
+
+#boton_registrar{
+    color: white;
+    background-color:#E77F84;
+}
+
+#boton_registrar:hover{
+    background-color: #b14449;
 }
