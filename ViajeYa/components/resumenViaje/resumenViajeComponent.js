@@ -3,9 +3,7 @@ import { getCantidadPasajeros, getDataBoleto,saveViajeSeleccionadoToLocalStorage
 export default function creacionResumenViaje() {
     loadViajeSeleccionadoFromLocalStorage();
     let pasajero= getCantidadPasajeros();
-    console.log(pasajero);
     let data = getDataBoleto();
-    console.log(data);
     return `
     <link rel="stylesheet" href="../components/resumenViaje/resumenViaje.css">
     <div class="viaje">

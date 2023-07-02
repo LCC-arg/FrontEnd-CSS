@@ -41,10 +41,7 @@ export default  function creacionPasaje(datos){
     botonComprar.addEventListener('click', () => botonComprarAction(datos));
     
     function botonComprarAction(datos) {
-        console.log(datos);
-     console.log("Compraste el viaje " + datos.idViaje);
      loadViajeSeleccionadoFromLocalStorage();
-     console.log("Cantidad pasajeros " + getCantidadPasajeros());
     setDataBoleto(datos);
      saveViajeSeleccionadoToLocalStorage();
      const ruta = "/ViajeYa/pages/reserva.html";

@@ -43,7 +43,6 @@ const conseguirTipoTransportes = async  () => {
 
 
     //los filtros deben ser opcionales SIEMPRE
-    console.log(apiUrl);
     let result = [];
     let response = await fetch(apiUrl);
     if (response.ok) {
