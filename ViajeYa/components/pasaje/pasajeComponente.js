@@ -1,4 +1,4 @@
-import { setViaje,getCantidadPasajeros, saveViajeSeleccionadoToLocalStorage, loadViajeSeleccionadoFromLocalStorage, resetViajeSeleccionado } from "../pasaje/viajeSeleccionadoStorage.js"
+import { getCantidadPasajeros,setDataBoleto, saveViajeSeleccionadoToLocalStorage, loadViajeSeleccionadoFromLocalStorage, resetViajeSeleccionado } from "../pasaje/viajeSeleccionadoStorage.js"
 
 export default  function creacionPasaje(datos){
     const pasajeComponente = document.createElement("div");
@@ -38,18 +38,19 @@ export default  function creacionPasaje(datos){
     `;
     
     const botonComprar = pasajeComponente.querySelector(".boton-comprar");
-    botonComprar.addEventListener('click', () => botonComprarAction(datos.viaje));
+    botonComprar.addEventListener('click', () => botonComprarAction(datos));
     
-    function botonComprarAction(viaje) {
-     console.log("Compraste el viaje " + datos.viaje.id);
+    function botonComprarAction(datos) {
+        console.log(datos);
+     console.log("Compraste el viaje " + datos.idViaje);
      loadViajeSeleccionadoFromLocalStorage();
-     resetViajeSeleccionado();
-     setViaje(viaje);
      console.log("Cantidad pasajeros " + getCantidadPasajeros());
-
+    setDataBoleto(datos);
      saveViajeSeleccionadoToLocalStorage();
      const ruta = "/ViajeYa/pages/reserva.html";
-     window.location.href =window.location.origin+ ruta;
+
+
+    window.location.href =window.location.origin+ ruta;
 
 
     }

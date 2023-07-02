@@ -1,6 +1,7 @@
 let viajeSeleccionado = {
-    viaje: "",
-    cantidadPasajeros : 1
+    // viaje: "",
+    cantidadPasajeros : 1,
+    dataBoleto: ""
 };
 
 export const setViajeSeleccionado = (viajeSeleccionadoInput) => {
@@ -11,15 +12,24 @@ export const getViajeSeleccionado = () => {
     return viajeSeleccionado;
 };
 
-export const setViaje = (viajeInput) => {
-    viajeSeleccionado.viaje = viajeInput;
+// export const setViaje = (viajeInput) => {
+//     viajeSeleccionado.viaje = viajeInput;
+//   };
+  
+
+//   export const getViaje = () => {
+//     return viajeSeleccionado.viaje;
+//   };
+
+
+  export const setDataBoleto = (data) => {
+    viajeSeleccionado.dataBoleto = data;
   };
   
 
-  export const getViaje = () => {
-    return viajeSeleccionado.viaje;
+  export const getDataBoleto = () => {
+    return viajeSeleccionado.dataBoleto;
   };
-
 
   export const setCantidadPasajeros = (cantidad) => {
     viajeSeleccionado.cantidadPasajeros = cantidad;

@@ -56,7 +56,8 @@ function initializeSearch(searchContainerSelector, inputSearchSelector, boxSugge
 function agregarPasajero() {
 	let botones = document.querySelectorAll(".num-pasajeros");
 	let input = document.getElementById("search_cantidad_pasajeros");
-	let numero = parseInt(input.value);
+	loadViajeSeleccionadoFromLocalStorage();
+	let numero = parseInt(getCantidadPasajeros());
 
 	botones.forEach((boton, index) => {
 		boton.addEventListener("click", async function () {
@@ -82,7 +83,8 @@ function buscar() {
 	let fechaSalida = document.getElementById("search_fecha_salida");
 	let fechaLlegada = document.getElementById("search_fecha_regreso");
 	let pasajeros = document.getElementById("search_cantidad_pasajeros");
-	console.log(pasajeros.value);
+	loadViajeSeleccionadoFromLocalStorage();
+	pasajeros.value=getCantidadPasajeros();
 
 
 

@@ -7,10 +7,8 @@ import creacionPasaje from "./pasajeComponente.js";
 
 async function getPasaje(viajeId) {
   const agregarPasaje = document.querySelector(".resultados-busqueda-pasajes");
-
   let data = await obtenerDatos(viajeId);
   let response = creacionPasaje(data);
-  console.log(response);
 
   agregarPasaje.appendChild(response);
 
@@ -43,6 +41,16 @@ async function obtenerDatos(pasaje) {
 
   let dataCaracteristicaTransporte = await caracteristicaTransporte.Get(idTransporte, 1);
   let asientosDisponible = dataCaracteristicaTransporte[0]['valor']; //Asientos disponibles
+  let dataCaracteristicaTransporteTipo = await caracteristicaTransporte.Get(idTransporte, 2);
+  console.log(dataCaracteristicaTransporteTipo);
+  let tipoViaje ="";
+  if (Array.isArray(dataCaracteristicaTransporteTipo) && dataCaracteristicaTransporteTipo.length > 0) {
+   tipoViaje = dataCaracteristicaTransporteTipo[0]['valor']; //Asientos disponibles
+  }
+  else {tipoViaje="Asiento Regular";}
+
+
+
 
 
   let dataCiudadOrigen = await ciudad.GetById(idCiudadOrigen);
@@ -50,6 +58,7 @@ async function obtenerDatos(pasaje) {
 
   let nombreCiudadOrigen = dataCiudadOrigen.nombre;
   let nombreCiudadDestino = dataCiudadDestino.nombre;
+  let nombreEmpresa = dataTransporte.companiaTransporteResponse.razonSocial;
 
   const datos = {
     precio: precioReserva,
@@ -63,8 +72,10 @@ async function obtenerDatos(pasaje) {
     imagen: "",
     descripcion: descripcionTransporte,
     idViaje : idViaje,
-    viaje : pasaje
-  };
+    tipoViaje : pasaje.tipoViaje,
+    empresa : nombreEmpresa,
+    asiento : tipoViaje
+    };
   return datos;
 }
 
