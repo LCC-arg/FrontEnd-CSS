@@ -61,6 +61,7 @@ export const pasajeroForm = (id) => `
         <div class="flex">
             <div class="grid2">
                 <div>
+                <p id="nacimiento-date">Fecha de Nacimiento:</p>
                     <select name="day" id="daySelect" class="daySelectClass">
                         <option value="">Día</option>
                     </select>                                      

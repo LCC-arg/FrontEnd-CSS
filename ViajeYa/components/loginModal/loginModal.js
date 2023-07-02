@@ -80,8 +80,8 @@ async function loguearUsuario() {
       //el token y el id del usuario se guardan en config
       config.token = userObject.token;
       config.idUsuario = userObject.usuarioId;
-      console.log(userObject.usuarioId);
-      console.log(config.token);
+ /*      console.log(userObject.usuarioId);
+      console.log(config.token); */
 
       //los datos enteros del usuario se guardan en el sessionStorage y en perfilUsuario de config
       let perfil = await Usuario.GetById(config.idUsuario);

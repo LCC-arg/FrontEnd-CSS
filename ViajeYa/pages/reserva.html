@@ -19,6 +19,16 @@
 
         <section>
             <div class="container-reserva">
+                <div class="boton-pasajeros">
+                    <div class="pasajeros-cant">
+                        <p>Cantidad de pasajeros</p>
+                    </div>
+                    <div class="pasajeros-input">
+                        <button type="button" class="num-pasajeros boton_search">-</button>
+                        <input type="text" class="cantidad_pasajeros" id="search_cantidad_pasajeros" value="1" readonly>
+                        <button type="button" class="num-pasajeros boton_search">+</button>
+                    </div>
+                </div>
                 <div class="container-pasajero-form">
                 </div>
                 <div class="container-reserva-details">
@@ -27,9 +37,9 @@
                     </div>
                 </div>
             </div>
-            <footer class="footer" id="footer"></footer>
         </section>
     </div>
+    <footer class="footer" id="footer"></footer>
 
     
     <script type="module" src="../js/reserva.js"></script>

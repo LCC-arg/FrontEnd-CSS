@@ -89,6 +89,10 @@ function buscar() {
 
 
 
+	let empresa = document.getElementById("empresas");
+	let tipoTransporte = document.getElementById("tipo-transporte");
+	let orden = document.getElementById("orden");
+
 	const botonTipo = document.querySelectorAll(".boton_tipo_viaje");
 	let forma = "";
 

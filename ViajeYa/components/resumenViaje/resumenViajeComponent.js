@@ -5,7 +5,6 @@ export default function creacionResumenViaje() {
     let pasajero= getCantidadPasajeros();
     let data = getDataBoleto();
     return `
-    <link rel="stylesheet" href="../components/resumenViaje/resumenViaje.css">
     <div class="viaje">
     <p class="viaje-tittle tittle">Viaje de ${data.tipoViaje}</p>
     <p class="origen"> De: ${data.ciudadOrigen}</p>
@@ -30,7 +29,7 @@ export default function creacionResumenViaje() {
     </div>
     <div class="clase">
         <p class="tittle">Clase</p>
-        <p class="classname">${data.asiento}</p>
+        <p class="empresa-name">${data.asiento}</p>
     </div>
 </div>
 <div class="precio">

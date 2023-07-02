@@ -18,7 +18,6 @@ async function iniciarApp(){
     })
     loadResultadoViajesFromLocalStorage();
   
-    console.log(  getCantidadPasajeros());
 
 }
 

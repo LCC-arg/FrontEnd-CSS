@@ -12,6 +12,7 @@ async function getPasaje(viajeId) {
 
   agregarPasaje.appendChild(response);
 
+
 }
 
 
@@ -38,6 +39,7 @@ async function obtenerDatos(pasaje) {
 
   let dataTransporte = await transporte.GetById(idTransporte);
   let descripcionTransporte = dataTransporte.tipoTransporteResponse.descripcion; //Tipo Transporte
+  let imagenEmpresa = dataTransporte.companiaTransporteResponse.imagen;
 
   let dataCaracteristicaTransporte = await caracteristicaTransporte.Get(idTransporte, 1);
   let asientosDisponible = dataCaracteristicaTransporte[0]['valor']; //Asientos disponibles
@@ -48,7 +50,6 @@ async function obtenerDatos(pasaje) {
    tipoViaje = dataCaracteristicaTransporteTipo[0]['valor']; //Asientos disponibles
   }
   else {tipoViaje="Asiento Regular";}
-
 
 
 
@@ -69,15 +70,17 @@ async function obtenerDatos(pasaje) {
     asientosDisponibles: asientosDisponible,
     ciudadOrigen: nombreCiudadOrigen,
     ciudadDestino: nombreCiudadDestino,
-    imagen: "",
+    imagen: imagenEmpresa,
     descripcion: descripcionTransporte,
     idViaje : idViaje,
     tipoViaje : pasaje.tipoViaje,
     empresa : nombreEmpresa,
     asiento : tipoViaje
     };
-  return datos;
-}
+    return datos;
+
+  };
+
 
 const pasajeComponent = {
   GetPasaje: getPasaje,

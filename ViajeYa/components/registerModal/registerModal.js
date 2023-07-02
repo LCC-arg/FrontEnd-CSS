@@ -19,7 +19,6 @@ async function getRegisterModal() {
 
     let select = document.getElementById("register_nacionalidad");
     
-    console.log(paisesLista)
 
     paisesLista.forEach(pais => {
         
