@@ -79,6 +79,10 @@ function buscar() {
 	let fechaLlegada = document.getElementById("search_fecha_regreso");
 	let pasajeros = document.getElementById("search_cantidad_pasajeros");
 
+	let empresa = document.getElementById("empresas");
+	let tipoTransporte = document.getElementById("tipo-transporte");
+	let orden = document.getElementById("orden");
+
 	const botonTipo = document.querySelectorAll(".boton_tipo_viaje");
 	let forma = "";
 
@@ -115,8 +119,8 @@ function buscar() {
 				break;
 			}
 		}
-	
-		viaje.Get(forma, ciudadOrigenSeleccionadaId, ciudadDestinoSeleccionadaId, fechaSalida.value, fechaLlegada.value, pasajeros.value
+
+		viaje.Get(forma, ciudadOrigenSeleccionadaId, ciudadDestinoSeleccionadaId, fechaSalida.value, fechaLlegada.value, pasajeros.value, orden.value, tipoTransporte.value, empresa.value
 		).then(viajes => {
 			console.log(viajes);
 			loadResultadoViajesFromLocalStorage();

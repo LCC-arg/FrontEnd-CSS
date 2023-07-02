@@ -10,6 +10,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&family=Open+Sans:ital,wght@1,800&family=Raleway:wght@100;300;400;500;700&display=swap"
         rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/preloader.css">
 
@@ -25,60 +26,55 @@
 
     <main class="contenedor3">
         <div class="grid-pasajes">
-            <div class="filtros-busqueda-pasajes">
-                <div class="filtros-busqueda-viajes">
-                    <h2>Viajes</h2>
-                    <div class="viaje_filtro" id="viaje_filtro">
-                        <button class="boton_tipo_viaje" id="boton_ida_vuelta" data-tipo="Ida y vuelta">Ida y
-                            vuelta</button>
-                        <button class="boton_tipo_viaje" id="boton_ida" data-tipo="Ida">Solo ida</button>
-                    </div>
-                    <div class="seleccionar-ciudad-origen">
-                            <label for="search_ciudad_origen">Ciudad de origen:</label>
-                            <div class="search-input-box" id="search-input-box-1">
-                                <input type="text" id="search_ciudad_origen" placeholder="Ingrese una ciudad..." />
-                                <ul class="container-suggestions" id="container-suggestions-1">
-                                    <li>sugerencia 1</li>
-                                    <li>sugerencia 2</li>
-                                    <li>sugerencia 3</li>
-                                </ul>
-                            </div>
-                    </div>
-                    <div class="seleccionar-ciudad-destino">
-                        <label for="search_ciudad_destino">Ciudad de destino:</label>
-                        <div class="search-input-box" id="search-input-box-2">
-                            <input type="text" id="search_ciudad_destino" placeholder="Ingrese una ciudad..." />
-                            <ul class="container-suggestions" id="container-suggestions-2">
+            <div class="filtros-busqueda-viajes">
+                <h2>Viajes</h2>
+                <div class="viaje_filtro" id="viaje_filtro">
+                    <button class="boton_tipo_viaje" id="boton_ida_vuelta" data-tipo="Ida y vuelta">Ida y
+                        vuelta</button>
+                    <button class="boton_tipo_viaje" id="boton_ida" data-tipo="Ida">Solo ida</button>
+                </div>
+                <div class="seleccionar-ciudad-origen">
+                        <label for="search_ciudad_origen">Ciudad de origen:</label>
+                        <div class="search-input-box" id="search-input-box-1">
+                            <input type="text" id="search_ciudad_origen" placeholder="Ingrese una ciudad..." />
+                            <ul class="container-suggestions" id="container-suggestions-1">
                                 <li>sugerencia 1</li>
                                 <li>sugerencia 2</li>
                                 <li>sugerencia 3</li>
                             </ul>
                         </div>
+                </div>
+                <div class="seleccionar-ciudad-destino">
+                    <label for="search_ciudad_destino">Ciudad de destino:</label>
+                    <div class="search-input-box" id="search-input-box-2">
+                        <input type="text" id="search_ciudad_destino" placeholder="Ingrese una ciudad..." />
+                        <ul class="container-suggestions" id="container-suggestions-2">
+                            <li>sugerencia 1</li>
+                            <li>sugerencia 2</li>
+                            <li>sugerencia 3</li>
+                        </ul>
                     </div>
+                </div>
 
 
-                    <div class="fechas-container">
-                        <div class="fecha-salida-div">
-                            <label for="search_fecha_salida">Salida:</label>
-                            <input type="date" id="search_fecha_salida" />
-                        </div>
-                        <div class="fecha-regreso-div">
-                            <label for="search_fecha_regreso">Regreso:</label>
-                            <input type="date" id="search_fecha_regreso" />
-                        </div>
+                <div class="fechas-container">
+                    <div class="fecha-salida-div">
+                        <label for="search_fecha_salida">Salida:</label>
+                        <input type="date" id="search_fecha_salida" />
                     </div>
-                    
+                    <div class="fecha-regreso-div">
+                        <label for="search_fecha_regreso">Regreso:</label>
+                        <input type="date" id="search_fecha_regreso" />
+                    </div>
+                </div>
+                
 
-                    <div class="pasajeros-container">
-                        <label for="cantidad-pasajeros">Pasajeros:</label>
-                        <div class="pasajeros-input">
-                            <button type="button" class="num-pasajeros">-</button>
-                            <input type="text" class="cantidad_pasajeros" id="search_cantidad_pasajeros" value="1" readonly>
-                            <button type="button" class="num-pasajeros">+</button>
-                        </div>
-                    </div>
-                    <div class="boton-buscar">
-                        <button class="boton_search" id="boton_search">BUSCAR</button>
+                <div class="pasajeros-container">
+                    <label id="text-pasajeros" for="cantidad-pasajeros">Pasajeros:</label>
+                    <div class="pasajeros-input">
+                        <button type="button" class="num-pasajeros boton_search">-</button>
+                        <input type="text" class="cantidad_pasajeros" id="search_cantidad_pasajeros" value="1" readonly>
+                        <button type="button" class="num-pasajeros boton_search">+</button>
                     </div>
                 </div>
 
@@ -87,35 +83,14 @@
                     <select id="empresas">
                         <option value="" disabled selected>Seleccione una empresa...</option>
                         <option>Plusmar</option>
-                        <option>RutaAtlantica</option>
-                        <option>Aerolineas Argentina</option>
-                        <option>Viaje Ya</option>
+                        <option>Chevalier</option>
+                        <option>Sarmiento SRL</option>
+                        <option>Roca</option>
+                        <option>Despegar</option>
+                        <option>Aerolineas Argentinas</option>
                     </select>
                 </div>
-                <div class="filtro-horario-salida">
-                    <label for="horario-salida">Horario Salida</label>
-                    <select id="horario-salida">
-                        <option value="" disabled selected>Seleccione un horario de salida..</option>
-                        <option>00:00hs - 04:00hs</option>
-                        <option>04:00hs - 08:00hs</option>
-                        <option>08:00hs - 12:00hs</option>
-                        <option>12:00hs - 16:00hs</option>
-                        <option>16:00hs - 20:00hs</option>
-                        <option>20:00hs - 00:00hs</option>
-                    </select>
-                </div>
-                <div class="filtro-horario-llegada">
-                    <label for="horario-salida">Horario Llegada</label>
-                    <select id="horario-salida">
-                        <option value="" disabled selected>Seleccione un horario de llegada..</option>
-                        <option>00:00hs - 04:00hs</option>
-                        <option>04:00hs - 08:00hs</option>
-                        <option>08:00hs - 12:00hs</option>
-                        <option>12:00hs - 16:00hs</option>
-                        <option>16:00hs - 20:00hs</option>
-                        <option>20:00hs - 00:00hs</option>
-                    </select>
-                </div>
+                
                 <div class="filtro-tipo-transporte">
                     <label for="tipo-transporte">Tipo de Transporte</label>
                     <select id="tipo-transporte">
@@ -129,11 +104,13 @@
                     <label for="orden">Ordenar por:</label>
                     <select id="orden">
                         <option value="" disabled selected>Ordenar por...</option>
-                        <option value="DESC">Mayor Precio</option>
-                        <option value="ASC">Menor Precio</option>
+                        <option>Mayor Precio</option>
+                        <option>Menor Precio</option>
                     </select>
                 </div>
-
+                <div class="boton-buscar">
+                    <button class="boton_search" id="boton_search">BUSCAR</button>
+                </div>
             </div>
             <div class="resultados-busqueda-pasajes">
 

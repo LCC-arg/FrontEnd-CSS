@@ -12,6 +12,7 @@
     height: 380px;
     border: 2px solid rgb(173, 171, 171);
     border-radius: 20px;
+    background-color: #24262b;
   }
   
   .top-container {
@@ -23,6 +24,7 @@
     border-top-left-radius: 18px;
     border-top-right-radius: 18px;
     padding: 10px;
+    font-weight: bold;
     
   }
 
@@ -41,21 +43,30 @@
     justify-content: center;
     align-items: center;
     padding: 10px;
+    font-weight: bold;
+  }
+
+  .bot-container strong{
+    color: var(--rosaPrimario);
   }
 
   .nro-factura{
     margin: 10px;
     margin-top: 30px;
+    color: var(--blanco);
   }
 
   .monto{
     margin: 10px;
     margin-bottom: 60px;
+    color: var(--blanco);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   }
   
   .factura{
     margin-bottom: 20px;
     color: gray;
+    color: var(--blanco);
   }
   
 

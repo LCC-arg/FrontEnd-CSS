@@ -1,97 +1,309 @@
+.grid-container {
+  margin: 100px 0px 100px 0px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+  gap: 10px;
+
+}
+
+.item1 {
+  grid-column-end: -1;
+  width: 600px;
+}
+
+.item2 {
+  grid-row: 2;
+}
+
+.item3 {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  
+}
+
+.grid-item {
+  padding: 20px;
+  text-align: center;
+}
+
 .container-reserva-details{
-    position: relative;
-    right: 0;
-    margin-bottom: 150px ;
+  position: relative;
+  right: 0;
+  margin-bottom: 150px ;
 }
 
 .container-reserva-pay{
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
 }
 
 .container-check-pay-method {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    width: 1300px;
-    display: inline-block;
-    padding-right: 200px;
-  }
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 1300px;
+  display: inline-block;
+  padding-right: 200px;
+}
+
+.payment-method {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+  justify-content: end;
+
+}
+
+.payment-method input[type="radio"] {
+  display: none;
+}
+
+.payment-method label {
+  margin-left: 10px;
+  cursor: pointer;
+  width: 450px;
+  border-bottom: 2px solid black;
+}
+
+.payment-method label:before {
+  content: "";
+  position: relative;
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 1px solid black;
+  border-radius: 50%;
+  border-color: black;
+  background-color: white;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.payment-method input[type="radio"]:checked + label:before {
+  background-color: var(--rosaPrimario);
+}
+
+.card-data-form-container {
+  justify-content: end;
+  position: relative;
+  left: 350px;
+  width: 900px;
+  border: 2px solid black;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  background-color: #24262b;
+  color: var(--rosaPrimario);
+  font-weight: bold;
+  box-shadow: 10px 10px 20px black;
+}
+
+.pay-method-tittle{
+  background-color: salmon;
+  display: flex;
+  color: white;
+
+}
+
+#pay-method-tittle {
+  margin: 10px;
+}
+
+.grid-card-form{ 
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 60px;
+  align-items: center;
+  margin:20px;
+}
+
+
+.vencimiento{
+  display: flex;
+  float: left;
+}
+
+#monthSelect{
+  margin-right: 10px;
+}
+
+
+
+.Buscador {
+  width: 300px;
+  height: 40px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  color: #333;
+  font-size: 14px;
+  font-weight: 400;
+  outline: none;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.Buscador::placeholder {
+  color: #999;
+}
+
+.Buscador:focus {
+  border-color: #ff9900;
+  box-shadow: 0 0 5px rgba(255, 153, 0, 0.5);
+}
+.vencimiento{
+  display: flex;
+  justify-content: center;
+}
+
+#monthSelect {
+  width: 150px;
+  height: 40px;
+  padding: 5px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #333;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+#yearSelect {
+  width: 100px;
+  height: 40px;
+  padding: 5px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #333;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.reserva-details {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
   
-  .payment-method {
-    display: flex;
-    align-items: center;
-    margin-bottom: 40px;
-    justify-content: end;
-  }
   
-  .payment-method input[type="radio"] {
-    display: none;
-  }
+}
+
+.container-reserva-details{
+  position: absolute;
+  right: 200px;
+  width: 400px;
+  border: 3px solid var(--rosaPrimario);
+  height: auto;  
+  background-color: #24262b;
+  border-radius: 20px;
+  box-shadow: 10px 10px 20px black;
+}
+
+.reserva-details p{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.viaje-info{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 2px solid white;
+}
+
+.viaje-tittle{
+  text-align: center;
+  font-size: large;
+  margin-bottom: 5px ;
+}
+.origen, .destino{
+  left: 12%;
+  color: white;
+}
+
+.horarios, .precio, .transporte{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 10px ;
   
-  .payment-method label {
-    margin-left: 10px;
-    cursor: pointer;
-    width: 450px;
-    border-bottom: 2px solid black;
-  }
+}
+
+.horarios, .transporte{
+  border-bottom: 2px solid white;
   
-  .payment-method label:before {
-    content: "";
-    position: relative;
-    display: inline-block;
-    width: 18px;
-    height: 18px;
-    border: 1px solid black;
-    border-radius: 50%;
-    border-color: black;
-    background-color: white;
-    margin-right: 10px;
-    vertical-align: middle;
-  }
-  
-  .payment-method input[type="radio"]:checked + label:before {
-    background-color: #3366ff;
-  }
-
-  .footer{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-  }
-
-  .card-data-form-container{
-    justify-content: end;
-    position: relative;
-    left: 350px;
-    width: 900px;
-    border: 2px solid black;
-  }
+}
 
 
-  .pay-method-tittle{
-    background-color: salmon;
-    display: flex;
+.precio div{
+  width: 100px;
+  color: white;
+}
 
-  }
+.salida, .llegada, .empresa, .type-transport  {
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+  margin-bottom: 10px ;
+  color: white;
+}
 
-  #pay-method-tittle {
-    margin: 10px;
-  }
+.tittle{
+  border-bottom: 1px solid white;
+  color: var(--rosaPrimario) ;
+}
 
-  .grid-card-form{ 
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 60px;
-    align-items: center;
-    margin:20px;
-  }
+.totalprice, .hora{
+  font-size: 25px;
+  color: white;
+}
+
+.tipo-transporte {
+  color: white;
+}
+
+.button-pago{
+  display: flex;
+  justify-content: center;
+}
+
+.boton{
+  width: 180px;
+}
 
 
-  .vencimiento{
-    display: flex;
-  }
-  
-  #monthSelect{
-    margin-right: 10px;
-  }
+.footer{
+  margin-top: 130px;
+}
+
+.boton-pasajeros{
+  width: 800px;
+  position: relative;
+  left: 420px;
+}
+
+.pasajeros-cant{
+  text-align: center;
+  font-weight: bold;
+  color: black;
+}
+
+#search_cantidad_pasajeros{
+  margin-top: 0;
+  height: 50px;
+}
+
+.boton_search{
+  height: 50px;
+}
+
+.totalprice{
+  background-color: var(--rosaPrimario);
+}
+
+

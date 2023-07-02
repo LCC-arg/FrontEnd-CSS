@@ -8,7 +8,7 @@ async function getPasaje(viajeId) {
   const agregarPasaje = document.querySelector(".resultados-busqueda-pasajes");
 
   let data = await obtenerDatos(viajeId);
-  let response = creacionPasaje(data);
+  let response = await creacionPasaje(data);
   agregarPasaje.innerHTML += response;
   botonComprar();
 }
@@ -42,10 +42,10 @@ async function obtenerDatos(pasaje) {
 
   let dataTransporte = await transporte.GetById(idTransporte);
   let descripcionTransporte = dataTransporte.tipoTransporteResponse.descripcion; //Tipo Transporte
+  let imagenEmpresa = dataTransporte.companiaTransporteResponse.imagen;
 
   let dataCaracteristicaTransporte = await caracteristicaTransporte.Get(idTransporte, 1);
   let asientosDisponible = dataCaracteristicaTransporte[0]['valor']; //Asientos disponibles
-
 
   let dataCiudadOrigen = await ciudad.GetById(idCiudadOrigen);
   let dataCiudadDestino = await ciudad.GetById(idCiudadDestino);
@@ -62,7 +62,7 @@ async function obtenerDatos(pasaje) {
     asientosDisponibles: asientosDisponible,
     ciudadOrigen: nombreCiudadOrigen,
     ciudadDestino: nombreCiudadDestino,
-    imagen: "",
+    imagen: imagenEmpresa,
     descripcion: descripcionTransporte
   };
   return datos;

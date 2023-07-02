@@ -1,5 +1,5 @@
 
-export default  function creacionPasaje(datos){
+export default async function creacionPasaje(datos){
   return ` 
   <link rel="stylesheet" href="../components/pasaje/pasaje.css">
   <div class="resultado-pasaje">

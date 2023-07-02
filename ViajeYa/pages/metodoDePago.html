@@ -22,7 +22,7 @@
         <div class="container-reserva">
             <div class="container-check-pay-method">
                 <div class="payment-method">
-                  <input type="radio" id="credito" name="paymentOption" checked>
+                  <input type="radio" id="credito" name="paymentOption">
                   <label for="credito">Tarjeta de crédito</label>
                 </div>
                 <div class="payment-method">
@@ -37,6 +37,7 @@
                   <input type="radio" id="paypal" name="paymentOption">
                   <label for="paypal">PayPal</label>
                 </div>
+            </div>
                 <div class="card-data-form-container">
                     <div class="pay-method-tittle">
                         <h2 id="pay-method-tittle">
@@ -94,7 +95,7 @@
               </div>
             <div class="container-reserva-details">
                 <div class="reserva-details">
-                    <div class="viaje">
+                    <div class="viaje-info">
                         <p class="viaje-tittle tittle">Viaje de Ida</p>
                         <p class="origen"> De: Florencio Varela (Cruce)</p>
                         <p class="destino">A: Pinamar</p>
@@ -116,9 +117,9 @@
                             <p class="tittle">Empresa</p>
                             <p class="empresa-name">RapiBus</p>
                         </div>
-                        <div class="clase">
-                            <p class="tittle">Clase</p>
-                            <p class="classname">Economico</p>
+                        <div class="type-transport">
+                            <p class="tittle">Transporte</p>
+                            <p class="tipo-transporte">Bus</p>
                         </div>
                     </div>
                     <div class="precio">
@@ -131,6 +132,9 @@
                             <p class="totalprice">$17200</p>
                         </div>
                     </div>
+                    <div class="button-pago">
+                        <button class="boton">Realizar pago</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -142,7 +146,8 @@
 </section>
 
 </div>
-<script type="module" src="/js/main.js"></script>
+<script type="module" src="../js/Container/pay.js"></script>
+<!-- <script type="module" src="/js/main.js"></script> -->
 
 
 
