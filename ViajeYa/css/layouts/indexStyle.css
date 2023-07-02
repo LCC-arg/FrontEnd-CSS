@@ -174,8 +174,9 @@
 }
 
 .fila {
-  display: flex;
-  justify-content: center;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
 }
 
 .columna {
