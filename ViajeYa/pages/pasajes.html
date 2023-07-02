@@ -10,6 +10,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&family=Open+Sans:ital,wght@1,800&family=Raleway:wght@100;300;400;500;700&display=swap"
         rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/preloader.css">
 
@@ -77,63 +78,41 @@
                             <button type="button" class="num-pasajeros">+</button>
                         </div>
                     </div>
+
+                    <div class="filtro-empresa">
+                        <label for="empresas">Empresas</label>
+                        <select id="empresas">
+                            <option value="" disabled selected>Seleccione una empresa...</option>
+                            <option>Plusmar</option>
+                            <option>Chevalier</option>
+                            <option>Sarmiento SRL</option>
+                            <option>Roca</option>
+                            <option>Despegar</option>
+                            <option>Aerolineas Argentinas</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filtro-tipo-transporte">
+                        <label for="tipo-transporte">Tipo de Transporte</label>
+                        <select id="tipo-transporte">
+                            <option value="" disabled selected>Seleccione un tipo de transporte...</option>
+                            <option>Avion</option>
+                            <option>Micro</option>
+                            <option>Tren</option>
+                        </select>
+                    </div>
+                    <div class="filtro-orden">
+                        <label for="orden">Ordenar por:</label>
+                        <select id="orden">
+                            <option value="" disabled selected>Ordenar por...</option>
+                            <option>Mayor Precio</option>
+                            <option>Menor Precio</option>
+                        </select>
+                    </div>
                     <div class="boton-buscar">
                         <button class="boton_search" id="boton_search">BUSCAR</button>
                     </div>
                 </div>
-
-                <div class="filtro-empresa">
-                    <label for="empresas">Empresas</label>
-                    <select id="empresas">
-                        <option value="" disabled selected>Seleccione una empresa...</option>
-                        <option>Plusmar</option>
-                        <option>RutaAtlantica</option>
-                        <option>Aerolineas Argentina</option>
-                        <option>Viaje Ya</option>
-                    </select>
-                </div>
-                <div class="filtro-horario-salida">
-                    <label for="horario-salida">Horario Salida</label>
-                    <select id="horario-salida">
-                        <option value="" disabled selected>Seleccione un horario de salida..</option>
-                        <option>00:00hs - 04:00hs</option>
-                        <option>04:00hs - 08:00hs</option>
-                        <option>08:00hs - 12:00hs</option>
-                        <option>12:00hs - 16:00hs</option>
-                        <option>16:00hs - 20:00hs</option>
-                        <option>20:00hs - 00:00hs</option>
-                    </select>
-                </div>
-                <div class="filtro-horario-llegada">
-                    <label for="horario-salida">Horario Llegada</label>
-                    <select id="horario-salida">
-                        <option value="" disabled selected>Seleccione un horario de llegada..</option>
-                        <option>00:00hs - 04:00hs</option>
-                        <option>04:00hs - 08:00hs</option>
-                        <option>08:00hs - 12:00hs</option>
-                        <option>12:00hs - 16:00hs</option>
-                        <option>16:00hs - 20:00hs</option>
-                        <option>20:00hs - 00:00hs</option>
-                    </select>
-                </div>
-                <div class="filtro-tipo-transporte">
-                    <label for="tipo-transporte">Tipo de Transporte</label>
-                    <select id="tipo-transporte">
-                        <option value="" disabled selected>Seleccione un tipo de transporte...</option>
-                        <option>Avion</option>
-                        <option>Micro</option>
-                        <option>Tren</option>
-                    </select>
-                </div>
-                <div class="filtro-orden">
-                    <label for="orden">Ordenar por:</label>
-                    <select id="orden">
-                        <option value="" disabled selected>Ordenar por...</option>
-                        <option value="DESC">Mayor Precio</option>
-                        <option value="ASC">Menor Precio</option>
-                    </select>
-                </div>
-
             </div>
             <div class="resultados-busqueda-pasajes">
 

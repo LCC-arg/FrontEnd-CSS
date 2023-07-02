@@ -40,7 +40,7 @@ const conseguirViaje = async (idViaje) => {
 };
 
 
-const conseguirViajeFiltrado = async  (tipo ,ciudadOrigen, ciudadDestino, fechaSalida , fechaLlegada, pasajeros) => {
+const conseguirViajeFiltrado = async  (tipo ,ciudadOrigen, ciudadDestino, fechaSalida , fechaLlegada, pasajeros,orden,tipoTransporte,empresa) => {
 
   var url = `${apiUrl}?`;
   if(tipo)
@@ -71,6 +71,21 @@ const conseguirViajeFiltrado = async  (tipo ,ciudadOrigen, ciudadDestino, fechaS
   {
       if (tipo || ciudadOrigen || ciudadDestino || fechaSalida || fechaLlegada) {url += `&`;}
       url += `pasajesDisponibles=${pasajeros}`;
+  }
+  if(orden)
+  {
+      if (tipo || ciudadOrigen || ciudadDestino || fechaSalida || fechaLlegada || pasajeros) {url += `&`;}
+      url += `orden=${orden}`;
+  }
+  if(empresa)
+  {
+      if (tipo || ciudadOrigen || ciudadDestino || fechaSalida || fechaLlegada || pasajeros || orden) {url += `&`;}
+      url += `empresa=${empresa}`;
+  }
+  if(tipoTransporte)
+  {
+      if (tipo || ciudadOrigen || ciudadDestino || fechaSalida || fechaLlegada || pasajeros || orden || empresa) {url += `&`;}
+      url += `compania=${tipoTransporte}`;
   }
   let result = []
   let response = await fetch(url);

@@ -148,6 +148,7 @@
     height: 50px;
     margin-bottom: 30px;
     padding: 20px;
+    color:var(--rosaPrimario);
 }
 
 .filtro-empresa input{
@@ -167,6 +168,7 @@
     font-size: 13px;
     color: var(--negro);
     font-weight:bold;
+    background: var(--blanco);
 }
 
 .grid-pasajes option{
