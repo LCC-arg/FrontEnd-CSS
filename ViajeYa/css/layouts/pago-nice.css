@@ -1,0 +1,86 @@
+.pay-nice-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: 150px 0px 100px 0px;
+  }
+
+  .pay-nice{
+    width: 650px;
+    height: 380px;
+    border: 2px solid rgb(173, 171, 171);
+    border-radius: 20px;
+    background-color: #24262b;
+  }
+  
+  .top-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: salmon;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+    padding: 10px;
+    font-weight: bold;
+    
+  }
+
+  #logo-nice{
+    width: 40px;
+    margin-bottom: 4px;
+  }
+
+  #pago-exitoso{
+    color: white;
+  }
+  
+  .bot-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    font-weight: bold;
+  }
+
+  .bot-container strong{
+    color: var(--rosaPrimario);
+  }
+
+  .nro-factura{
+    margin: 10px;
+    margin-top: 30px;
+    color: var(--blanco);
+  }
+
+  .monto{
+    margin: 10px;
+    margin-bottom: 60px;
+    color: var(--blanco);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  
+  .factura{
+    margin-bottom: 20px;
+    color: gray;
+    color: var(--blanco);
+  }
+  
+
+
+#return-index{
+    width: 200px;
+    height: 50px;
+    background-color: salmon;
+    padding: 10px;
+    color: white;
+}
+
+.footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}

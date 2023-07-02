@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ViajeYa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&family=Open+Sans:ital,wght@1,800&family=Raleway:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/layouts/metodo-de-pago.css">
+  
+</head>
+<body>
+
+    <header class="header" id="header"></header>
+
+    <div class="container">
+    <section>
+        <div class="reserva-container">
+            <div class="tittle-paymethod">
+                <h1>Realiza tu pago</h1>
+            </div>
+            <div class="reserva">
+                <div class="container-check-pay-method">
+                    <div class="payment-method">
+                      <input type="radio" id="credito" name="paymentOption">
+                      <label for="credito">Tarjeta de crédito</label>
+                    </div>
+                    <div class="payment-method">
+                      <input type="radio" id="debito" name="paymentOption">
+                      <label for="debito">Tarjeta de débito</label>
+                    </div>
+                    <div class="payment-method">
+                      <input type="radio" id="mercadopago" name="paymentOption">
+                      <label for="mercadopago">Mercado Pago</label>
+                    </div>
+                    <div class="payment-method">
+                      <input type="radio" id="paypal" name="paymentOption">
+                      <label for="paypal">PayPal</label>
+                    </div>
+                </div>
+                <div class="card-data-form-container">
+                    <div class="pay-method-tittle">
+                        <h2 id="pay-method-tittle">
+                            Datos de la tarjeta
+                        </h2>
+                    </div>
+                    <div class="grid-card-form">
+                        <div class="nombre">
+                            <div class="nombre-tittle">Nombre</div>
+                            <div>
+                                <input type="search" placeholder="Ingresa tu nombre"   class="Buscador" />
+                            </div>
+                        </div>
+                        <div class="apellido">
+                            <div class="apellido-tittle">Apellido</div>
+                            <div>
+                                <input type="search" placeholder="Ingresa tu apellido"   class="Buscador" />
+                            </div>
+                        </div>
+                        <div class="contacto">
+                            <div class="contacto-tittle">Contacto</div>
+                            <div>
+                                <input type="search" placeholder="Ingresa tu contacto"   class="Buscador" />
+                            </div>
+                        </div>
+                        <div class="contacto">
+                            <div class="contacto-tittle">Nro. Tarjeta</div>
+                            <div>
+                                <input type="search" placeholder="xxxx-xxxx-xxxx-xxxx"   class="Buscador" />
+                            </div>
+                        </div>
+                        <div class="contacto">
+                            <div class="contacto-tittle">Vencimiento</div>
+                            <div class="vencimiento">
+                                <div>
+                                    <select name="month" id="monthSelect">
+                                        <option value="">Mes</option>
+                                      </select>
+                                </div>
+                                <div>
+                                    <select name="year" id="yearSelect">
+                                        <option value="">Año</option>
+                                      </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contacto">
+                            <div class="contacto-tittle">Codigo de seguridad</div>
+                            <div>
+                                <input type="search" placeholder="Ingrese el codigo de seguridad"   class="Buscador" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="reserva-details">
+                    <div class="viaje-info">
+                        <p class="viaje-tittle tittle">Viaje de Ida</p>
+                        <p class="origen"> De: Florencio Varela (Cruce)</p>
+                        <p class="destino">A: Pinamar</p>
+                    </div>
+                    <div class="horarios">
+                        <div class="salida">
+                            <p class="tittle">Salida</p>
+                            <p class="dia"> sab. 20 may.</p>
+                            <p class="hora">23:05 hs</p>
+                        </div>
+                        <div class="llegada">
+                            <p class="tittle">Llegada</p>
+                            <p class="dia">dom. 21 may.</p>
+                            <p class="hora">05:15hs</p>
+                        </div>
+                    </div>
+                    <div class="transporte">
+                        <div class="empresa">
+                            <p class="tittle">Empresa</p>
+                            <p class="empresa-name">RapiBus</p>
+                        </div>
+                        <div class="type-transport">
+                            <p class="tittle">Transporte</p>
+                            <p class="tipo-transporte">Bus</p>
+                        </div>
+                    </div>
+                    <div class="precio">
+                        <div class="pasajeros-price">
+                            <p class="tittle" >Pasajeros</p>
+                            <p class="pasajerosprice"> 2x $8600</p>
+                        </div>
+                        <div class="total">
+                            <p class="tittle">Total</p>
+                            <p class="totalprice">$17200</p>
+                        </div>
+                    </div>
+                    <div class="button-pago">
+                        <button class="boton">Realizar pago</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <footer class="footer" id="footer"></footer>
+</section>
+
+</div>
+<script type="module" src="../js/Container/pay.js"></script>
+<script type="module" src="/js/main.js"></script>
+
+
+
+</body>

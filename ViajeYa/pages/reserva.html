@@ -19,11 +19,21 @@
 
         <section>
             <div class="container-reserva">
+                <div class="boton-pasajeros">
+                    <div class="pasajeros-cant">
+                        <p>Cantidad de pasajeros</p>
+                    </div>
+                    <div class="pasajeros-input">
+                        <button type="button" class="num-pasajeros boton_search">-</button>
+                        <input type="text" class="cantidad_pasajeros" id="search_cantidad_pasajeros" value="1" readonly>
+                        <button type="button" class="num-pasajeros boton_search">+</button>
+                    </div>
+                </div>
                 <div class="container-pasajero-form">
                 </div>
                 <div class="container-reserva-details">
                     <div class="reserva-details">
-                        <div class="viaje">
+                        <div class="viaje-info">
                             <p class="viaje-tittle tittle">Viaje de Ida</p>
                             <p class="origen"> De: Florencio Varela (Cruce)</p>
                             <p class="destino">A: Pinamar</p>
@@ -45,9 +55,9 @@
                                 <p class="tittle">Empresa</p>
                                 <p class="empresa-name">RapiBus</p>
                             </div>
-                            <div class="clase">
-                                <p class="tittle">Clase</p>
-                                <p class="classname">Economico</p>
+                            <div class="tipo-transporte">
+                                <p class="tittle">Transporte</p>
+                                <p class="classname">Avion</p>
                             </div>
                         </div>
                         <div class="precio">
@@ -60,12 +70,15 @@
                                 <p class="totalprice">$17200</p>
                             </div>
                         </div>
+                        <div class="button-reserva">
+                            <button class="boton">Reservar</button>
+                        </div>
                     </div>
                 </div>
             </div>
-            <footer class="footer" id="footer"></footer>
         </section>
     </div>
+    <footer class="footer" id="footer"></footer>
 
     
     <script type="module" src="../js/reserva.js"></script>
