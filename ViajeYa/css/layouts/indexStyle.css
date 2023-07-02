@@ -170,21 +170,23 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  margin: -130px auto 0px;
+  margin-top: -120px;
+  left: 75px;
 }
 
-.fila {
-  margin: auto;
+.grid-destinos {
   display: grid;
+  padding: 2%;
   grid-template-columns: repeat(4,1fr);
 }
 
-.columna {
-  padding-right: 5px;
-  width: 20%;
-  padding: 2rem;
+.grid-destinos div{
+  justify-content: center;
+  margin: 0;
+}
+ .columna {
+  width: auto;
   box-sizing: border-box;
-  margin: 15px;
 }
 
 .columna button {
@@ -203,19 +205,19 @@
   box-shadow: 0px 0px 40px black;
 }
 
-.overlay {
+ .overlay {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   bottom: 65px;
   left: 0;
-  width: 100%;
+  width: 50%;
   height: 25%;
   background-color: rgba(0, 0, 0, 0.7);
   width: 350px;
 
-}
+} 
 
 .overlay h3 {
   color: var(--blanco);

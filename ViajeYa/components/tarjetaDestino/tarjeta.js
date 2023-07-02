@@ -6,7 +6,7 @@ let destinosRecuperados = await InfoCiudad.Get();
 let lista = destinosRecuperados.slice(0,8) //ineficiente mejorar
 
 
-let fila = document.getElementsByClassName("fila")[0];
+let fila = document.getElementsByClassName("grid-destinos")[0];
 
 
 lista.forEach(destino => 
