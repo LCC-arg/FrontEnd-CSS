@@ -11,34 +11,52 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    
+}
+
+.filtros-busqueda-viajes h2 {
+    display: flex;
+    justify-content: center;
 }
 
 /* FILTRO BUSQUEDA*/
 
 
 .filtros-busqueda-viajes {
-    border: #b14449 2px solid;
+    border: 3px solid var(--rosaPrimario);
     border-radius: 20px;
     height: fit-content;
     width: fit-content;
     padding: 20px;
-    background-color: var(--negro);
+    background-color: #24262b;
     color: var(--blanco);
     margin-bottom: 40px;
+    width: 360px;
+    box-shadow: 10px 10px 20px black;
 }
 .filtros-busqueda-viajes h2{
     font-size: 35px;
     margin: 30px 0;
 }
 
+
 .viaje_filtro{
     display: flex;
+    justify-content: space-between;
     margin-bottom: 30px;
 }
+
+#boton_ida_vuelta{
+    margin: 0;
+}
+
+#boton_ida{
+    margin: 0;
+}
+
 .boton_tipo_viaje {
     cursor: pointer;
     margin: 0.5rem 1.5rem 0.5rem 0;
-    padding: 1rem;
     min-width: fit-content;
     border: 2px #b14449 solid;
     color: var(--negro);
@@ -46,7 +64,10 @@
     font-family: var(--fuentePrincipal);
     font-weight: bold;
     border-radius: 2rem;
+    width: 120px;
 }
+
+
 
 .boton_tipo_viaje:hover {
     color: var(--blanco);
@@ -60,6 +81,7 @@
     border-radius: 10px;
     padding: 8px;
     margin-bottom: 20px;
+    border: solid 2px #b14449;
 }
 
 .seleccionar-tipo-viaje {
@@ -75,19 +97,26 @@
 
 .fechas-container{
     display: flex;
+    justify-content: space-between;
 }
 .fechas-container input{
     border-radius: 0;
 }
 
+
 .fecha-salida-div,
 .fecha-regreso-div{
-    width: 120px;
+    width: 151px;
 }
 
 .pasajeros-container label{
     margin-top: 500px;
 }
+
+.pasajeros-container {
+    text-align: center;
+}
+
 .pasajeros-input {
     display: flex;
     align-items: center;
@@ -98,6 +127,13 @@
     margin-top: 20px;
     text-align: center;
 }
+
+#search_cantidad_pasajeros{
+    box-shadow: 0px 0px 10px var(--rosaPrimario);
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
 
 .num-pasajeros {
     cursor: pointer;
@@ -113,10 +149,9 @@
     justify-content: center;
     min-width: 100%;
 }
-.boton-search {
+.boton_search {
     cursor: pointer;
     padding: 1rem;
-    margin: 1.5rem 0;
     width: 100%;
     background-color: var(--rosaPrimario);
     color: var(--negro);
@@ -124,9 +159,13 @@
     font-family: var(--fuentePrincipal);
     border: 2px solid #b14449;
     border-radius: 0.5rem;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    width: auto;
 }
 
-.boton-search:hover {
+.boton_search:hover {
     background-color: #b14449;
     color: var(--blanco);
 }
@@ -148,7 +187,16 @@
     height: 50px;
     margin-bottom: 30px;
     padding: 20px;
-    color:var(--rosaPrimario);
+    color: var(--blanco);
+}
+
+#empresas, #tipo-transporte, #orden{
+    height: 50px;
+    width: 100%;
+    border-radius: 10px;
+    padding: 8px;
+    margin-bottom: 20px;
+    border: solid 2px #b14449;
 }
 
 .filtro-empresa input{
