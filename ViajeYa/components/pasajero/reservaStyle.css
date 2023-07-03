@@ -1,7 +1,7 @@
-
-.container{
+.container {
   display: flex;
   flex-direction: column;
+  min-height: 90vh;
 }
 
 .container-reserva {
@@ -15,172 +15,186 @@
 .container-pasajero-form {
   display: flex;
   width: 68%;
-  box-sizing: border-box; 
+  box-sizing: border-box;
   position: relative;
   justify-content: center;
   flex-direction: column;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-  
+
 }
 
 
-.pasajero-form{
-    width: 800px;
-    border: 2px solid black;
-    box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.5);
-    margin-bottom: 50px;
-    position: relative;
-    left: 420px;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    background-color: #24262b;
-    color: white;
+.pasajero-form {
+  width: 800px;
+  border: 2px solid black;
+  box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.5);
+  margin-bottom: 50px;
+  position: relative;
+  left: 420px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  background-color: #24262b;
+  color: white;
 }
 
-.pasajero-tittle{
-    border-bottom: 2px solid black;
-    display: flex;
-    align-items: center;
-    height: 75px;
-    background-color: var(--rosaPrimario);
-    position: relative;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    
+.pasajero-tittle {
+  border-bottom: 2px solid black;
+  display: flex;
+  align-items: center;
+  height: 75px;
+  background-color: var(--rosaPrimario);
+  position: relative;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  cursor: pointer;
+
 }
 
-#arrow{
-    position: absolute;
-    right: 0;
+#arrow {
+  position: absolute;
+  right: 0;
 }
 
-#arrow:hover{
-    transform: ease 9s;
+#arrow:hover {
+  transform: ease 9s;
 }
 
-.pasajero-tittle img{
-    margin-left: 10px;
-    margin-right: 10px;
-    width: 50px;
+.pasajero-tittle img {
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 50px;
 }
 
 .grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    align-items: center;
-    margin:20px;
-  }
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  align-items: center;
+  margin: 20px;
+}
 
-  .grid div{
-    margin: 10px;
-  }
-  
+.grid div {
+  margin: 10px;
+}
 
 
-  .grid2 {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    justify-items: center;
-    align-items: center;
-    height: 100px;
-  }
-  .flex{
-  display:flex;
+
+.grid2 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  justify-items: center;
+  align-items: center;
+  height: 100px;
+}
+
+.flex {
+  display: flex;
   justify-content: center;
-  }
+}
 
 
 
-  .Buscador {
-    background-size: 24px;
-    width: 300px;
-    border: transparent;
-    padding: 10px 10px 10px 30px;
-    outline: none;
-    background-color: white;
-    color: black;
-    box-shadow: 0px 0px 3px black;
-    height: 30px;
-    border: 2px solid black;
-  }
-  
-  .search-container{
-    display: flex;
-    justify-content: center;
-    margin-top: 5px;
-    margin-bottom: 20px;
-    
-  }
+.Buscador {
+  background-size: 24px;
+  width: 300px;
+  border: transparent;
+  padding: 10px 10px 10px 30px;
+  outline: none;
+  background-color: white;
+  color: black;
+  box-shadow: 0px 0px 3px black;
+  height: 40px;
+  border: 2px solid black;
+  border-radius: 0.5rem;
+}
 
-  /* Dropdown-date */
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+  margin-bottom: 20px;
+
+}
+
+/* Dropdown-date */
 
 
 
-  #daySelect{
-    width: 100px;
-    background-color: white;
-    border: 2px solid black;
-    color: black;
-    margin-top: 10px;
-  }
+#daySelect {
+  width: 100px;
+  background-color: white;
+  border: 2px solid black;
+  color: black;
+  margin-top: 10px;
+  height: 40px;
+  border-radius: 0.5rem;
+  padding-left: 1rem;
+}
 
-  #monthSelect{
-    width: 200px;
-    background-color: white;
-    border: 2px solid black;
-    color: black;
-    margin-top: 28px;
-  }
+#monthSelect {
+  width: 200px;
+  background-color: white;
+  border: 2px solid black;
+  color: black;
+  margin-top: 28px;
+  height: 40px;
+  border-radius: 0.5rem;
+  padding-left: 1rem;
+}
 
-  #yearSelect{
-    width: 100px;
-    background-color: white;
-    border: 2px solid black;
-    color: black;
-    margin-top: 28px;
-  }
+#yearSelect {
+  width: 100px;
+  background-color: white;
+  border: 2px solid black;
+  color: black;
+  margin-top: 28px;
+  height: 40px;
+  border-radius: 0.5rem;
+  padding-left: 1rem;
+}
 
-  /* toggle dropdown */
+/* toggle dropdown */
 
-  .container-data-pasajero-form {
-    display: none;
-  }
-  
-  .container-data-pasajero-form2 {
-    display: none;
-  }
-  .container-data-pasajero-form.show-content {
-    display: block;
-  }
+.container-data-pasajero-form {
+  display: none;
+}
 
-  .container-data-pasajero-form2.show-content {
-    display: block;
-  }
+.container-data-pasajero-form2 {
+  display: none;
+}
+
+.container-data-pasajero-form.show-content {
+  display: block;
+}
+
+.container-data-pasajero-form2.show-content {
+  display: block;
+}
+
 /* Reserva Details */
- 
+
 .reserva-details {
   position: relative;
   width: 100%;
   box-sizing: border-box;
-  
-  
+
+
 }
 
-.container-reserva-details{
+.container-reserva-details {
   position: absolute;
   right: 200px;
   width: 400px;
   border: 3px solid var(--rosaPrimario);
-  height: auto;  
+  height: auto;
   background-color: #24262b;
   border-radius: 20px;
   box-shadow: 10px 10px 20px black;
 }
 
-.reserva-details p{
+.reserva-details p {
   margin-top: 10px;
   margin-bottom: 10px;
   display: flex;
@@ -188,95 +202,104 @@
   font-weight: bold;
 }
 
-.viaje-info{
+.viaje-info {
   width: 100%;
   display: flex;
   flex-direction: column;
   border-bottom: 2px solid white;
 }
 
-.viaje-tittle{
+.viaje-tittle {
   text-align: center;
   font-size: large;
-  margin-bottom: 5px ;
+  margin-bottom: 5px;
 }
-.origen, .destino{
+
+.origen,
+.destino {
   left: 12%;
   color: white;
 }
 
-.horarios, .precio, .transporte{
+.horarios,
+.precio,
+.transporte {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin-bottom: 10px ;
-  
+  margin-bottom: 10px;
+
 }
 
-.horarios, .transporte{
+.horarios,
+.transporte {
   border-bottom: 2px solid white;
-  
+
 }
 
 
-.precio div{
+.precio div {
   width: 100px;
   color: white;
 }
 
-.salida, .llegada, .empresa, .tipo-transporte {
+.salida,
+.llegada,
+.empresa,
+.tipo-transporte {
   display: flex;
   flex-direction: column;
   width: 100px;
-  margin-bottom: 10px ;
+  margin-bottom: 10px;
   color: white;
-  
+
 }
 
-.tittle{
+.tittle {
   border-bottom: 1px solid white;
-  color: var(--rosaPrimario) ;
+  color: var(--rosaPrimario);
 }
 
-.totalprice, .hora{
+.totalprice,
+.hora {
   font-size: 25px;
   color: white;
 }
 
-.button-reserva{
+.button-reserva {
   display: flex;
   justify-content: center;
 }
 
-.boton{
+.boton {
   width: 180px;
 }
 
-.footer{
+.footer {
   margin-top: 130px;
 }
 
-.boton-pasajeros{
+.boton-pasajeros {
   width: 800px;
   position: relative;
   left: 420px;
 }
 
-.pasajeros-cant{
+.pasajeros-cant {
   text-align: center;
   font-weight: bold;
   color: black;
 }
 
-#search_cantidad_pasajeros{
+#search_cantidad_pasajeros {
   margin-top: 0;
   height: 50px;
 }
 
-.boton_search{
+.boton_search {
   height: 50px;
 }
 
-.asiento{
-  color:white;
+.asiento {
+  color: white;
 }

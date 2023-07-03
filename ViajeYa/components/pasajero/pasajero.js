@@ -60,22 +60,8 @@ export const pasajeroForm = (id) => `
         
         <div class="flex">
             <div class="grid2">
-                <div>
-                <p id="nacimiento-date">Fecha de Nacimiento:</p>
-                    <select name="day" id="daySelect" class="daySelectClass">
-                        <option value="">Día</option>
-                    </select>                                      
-                </div>
-                <div>
-                    <select name="month" id="monthSelect" class="monthSelectClass">
-                        <option value="">Mes</option>
-                    </select>
-                </div>
-                <div>
-                    <select name="year" id="yearSelect" class="yearSelectClass">
-                        <option value="">Año</option>
-                    </select>
-                </div>
+            <label for="search_fecha_nacimiento">Nacimiento:</label>
+            <input type="date" id="search_fecha_nacimiento" class="Buscador" />
             </div>
         </div>
     </div>
