@@ -147,44 +147,54 @@ export default function creacionResumenViaje() {
         var fechaNacimiento = formulario.querySelector('.flex input').value;
         var dni = formulario.querySelector('.dni input').value;
 
+    
+        if (isNaN(parseInt(dni))) {
+            Swal.fire("El DNI debe ser un número válido (Pasajero " + numeroPasajero + ")")
+            return;
+        }
 
         if (dni.trim() === "") {
-            alert("Por favor, ingresa tu DNI (Pasajero " + numeroPasajero + ")");
+            Swal.fire("Por favor, ingresa tu DNI (Pasajero " + numeroPasajero + ")")
             return;
         }
 
         if (nacionalidad.trim() === "") {
-            alert("Por favor, ingresa tu nacionalidad (Pasajero " + numeroPasajero + ")");
+            Swal.fire("Por favor, ingresa tu nacionalidad (Pasajero " + numeroPasajero + ")")
             return;
         }
 
         if (nombre.trim() === "") {
-            alert("Por favor, ingresa tu nombre (Pasajero " + numeroPasajero + ")");
+            Swal.fire("Por favor, ingresa tu nombre (Pasajero " + numeroPasajero + ")")
             return;
         }
 
         if (apellido.trim() === "") {
-            alert("Por favor, ingresa tu apellido (Pasajero " + numeroPasajero + ")");
+            Swal.fire("Por favor, ingresa tu apellido (Pasajero " + numeroPasajero + ")")
+            return;
+        }
+
+        if (isNaN(parseInt(contacto))) {
+            Swal.fire("El contacto debe ser un número válido (Pasajero " + numeroPasajero + ")")
             return;
         }
 
         if (contacto.trim() === "") {
-            alert("Por favor, ingresa tu contacto (Pasajero " + numeroPasajero + ")");
+            Swal.fire("Por favor, ingresa tu contacto (Pasajero " + numeroPasajero + ")")
             return;
         }
 
         if (genero.trim() === "") {
-            alert("Por favor, ingresa tu género (Pasajero " + numeroPasajero + ")");
+            Swal.fire("Por favor, ingresa tu género (Pasajero " + numeroPasajero + ")")
             return;
         }
 
         if (fechaNacimiento.trim() === "") {
-            alert("Por favor, ingresa tu fecha de nacimiento (Pasajero " + numeroPasajero + ")");
+            Swal.fire("Por favor, ingresa tu fecha de nacimiento (Pasajero " + numeroPasajero + ")")
             return;
         }
 
         // Si todos los campos son válidos, puedes pasar al siguiente formulario
-        alert("Formulario del Pasajero " + numeroPasajero + " llenado correctamente");
+        Swal.fire("Formulario del Pasajero " + numeroPasajero + " llenado correctamente")
 
         // Llamar recursivamente a la función para validar el siguiente formulario
         validarFormulariosSecuencialmente(formularios, indice + 1);

@@ -5,7 +5,7 @@ export default function creacionResumenPagoViaje() {
     let pasajero = getCantidadPasajeros();
     let data = getDataBoleto();
     const resumenComponente = document.createElement("div");
-    resumenComponente.innerHTML =`
+    resumenComponente.innerHTML = `
     <div class="viaje-info">
     <p class="viaje-tittle tittle">Viaje de ${data.tipoViaje}</p>
     <p class="origen"> De: ${data.ciudadOrigen}</p>
@@ -50,11 +50,66 @@ export default function creacionResumenPagoViaje() {
     `;
 
     const botonReservar = resumenComponente.querySelector(".button-reserva");
-    botonReservar.addEventListener('click', () => botonReservarAction());
+    botonReservar.addEventListener('click', () => validarFormulario());
 
 
-    function botonReservarAction() {
+    function validarFormulario() {
+        var nombre = document.querySelector('.card-data-form-container .nombre input').value;
+        var apellido = document.querySelector('.card-data-form-container .apellido input').value;
+        var contacto = document.querySelector('.card-data-form-container .contacto input').value;
+        var nroTarjeta = document.querySelectorAll('.card-data-form-container .contacto input')[1].value;
+        var mesVencimiento = document.querySelector('.card-data-form-container #monthSelect').value;
+        var anioVencimiento = document.querySelector('.card-data-form-container #yearSelect').value;
+        var codigoSeguridad = document.querySelectorAll('.card-data-form-container .contacto input')[2].value;
+
+        var container = document.querySelector('.card-data-form-container');
+        var containerStyle = window.getComputedStyle(container);
+        var displayValue = containerStyle.getPropertyValue('display');
+
+        if (displayValue === 'none') {
+            Swal.fire("Por favor, elija una forma de pago")
+            return;
+        }
+
+        // Validar campos
+        if (nombre.trim() === "") {
+            Swal.fire("Por favor, ingresa tu nombre")
+            return;
+        }
+
+        if (apellido.trim() === "") {
+            Swal.fire("Por favor, ingresa tu apellido")
+            return;
+        }
+
+
+        if (contacto.trim() === "") {
+            Swal.fire("Por favor, ingresa tu contacto")
+            return;
+        }
+
+        if (isNaN(parseInt(contacto))) {
+            Swal.fire("El contacto debe ser un número válido")
+            return;
+        }
+
+        if (nroTarjeta.trim() === "") {
+            Swal.fire("Por favor, ingresa el número de tarjeta")
+            return;
+        }
+
+        if (mesVencimiento === "" || anioVencimiento === "") {
+            Swal.fire("Por favor, selecciona el mes y el año de vencimiento")
+            return;
+        }
+
+        if (codigoSeguridad.trim() === "") {
+            Swal.fire("Por favor, ingresa el código de seguridad")
+            return;
+        }
+
         window.location.href = "../../pages/pago-nice.html";
     }
+
     return resumenComponente;
 }
