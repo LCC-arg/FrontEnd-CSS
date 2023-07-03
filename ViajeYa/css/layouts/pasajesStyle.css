@@ -31,6 +31,7 @@
     background-color: #24262b;
     color: var(--blanco);
     margin-bottom: 40px;
+    margin-right: 20PX;
     width: 360px;
     box-shadow: 10px 10px 20px black;
 }
@@ -65,6 +66,7 @@
     font-weight: bold;
     border-radius: 2rem;
     width: 120px;
+
 }
 
 
@@ -112,6 +114,11 @@
 .pasajeros-container label{
     margin-top: 500px;
 }
+
+.resultados-busqueda-pasajes{
+    margin-left: 30px;
+}
+
 
 .pasajeros-container {
     text-align: center;
