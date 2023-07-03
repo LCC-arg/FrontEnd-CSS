@@ -142,7 +142,7 @@ function buscar() {
 			setCantidadPasajeros(pasajeros.value);
 			saveViajeSeleccionadoToLocalStorage();
 		
-			window.location.href = "../../pages/pasajes.html";
+			window.location.href = "../pages/pasajes.html";
 		});
 	});
 }
@@ -206,7 +206,7 @@ function buscarIndex() {
 			setCantidadPasajeros(pasajeros.value);
 			saveViajeSeleccionadoToLocalStorage();
 
-			window.location.href = "../../pages/pasajes.html";
+			window.location.href = "../pages/pasajes.html";
 		});
 	});
 }

@@ -1,8 +1,11 @@
-import { getCantidadPasajeros, setDataBoleto, saveViajeSeleccionadoToLocalStorage, loadViajeSeleccionadoFromLocalStorage, resetViajeSeleccionado } from "../pasaje/viajeSeleccionadoStorage.js"
+import { getCantidadPasajeros,setDataBoleto, saveViajeSeleccionadoToLocalStorage, loadViajeSeleccionadoFromLocalStorage, resetViajeSeleccionado } from "../pasaje/viajeSeleccionadoStorage.js"
 import creacionRecorrido from "../pasaje/recorridoComponent.js"
 
-export default function creacionPasaje(datos) {
+export default  function creacionPasaje(datos){
     const pasajeComponente = document.createElement("div");
+    if(datos.asientoViaje==="Ida"){
+        datos.fechaLlegada="--";
+    }
     pasajeComponente.innerHTML = `
       <link rel="stylesheet" href="../components/pasaje/pasaje.css">
       <div class="resultado-pasaje" data-id-viaje="${datos.idViaje}">
@@ -17,13 +20,20 @@ export default function creacionPasaje(datos) {
           </div>
           <div class="fecha-llegada">
               <div class="dia-llegada">
-                  <h4>Llega:</h4>
+                  <h4>Vuelta:</h4>
                   <p>${datos.fechaLlegada}</p>
               </div>
               <h4 class="horario">${datos.horaLlegada}</h4>
               <p>${datos.ciudadDestino}</p>
           </div>
-          <p class="precio">ARS $ <span class="precio-negrita">${datos.precio}</span></p>
+          <div class="columna-precio">
+                <div class="dia-llegada">
+                <h4>Tipo de Viaje:</h4>
+                <p>${datos.asientoViaje}</p>
+        </div>
+            <p class="precio">ARS $ <span class="precio-negrita">${datos.precio}</span></p>
+        </div>
+          
          <div class="tipo-vehiculo border-superior">
           <h4 class="centrar-texto ">${datos.descripcion}</h4>
          </div>
@@ -43,28 +53,27 @@ export default function creacionPasaje(datos) {
     const recorrido = pasajeComponente.querySelector('.recorrido');
     const pasaje = recorrido.parentNode;
     pasaje.appendChild(document.createElement('DIV'));
-    recorrido.addEventListener('mouseover', () => recorridoAction())
-    recorrido.addEventListener('mouseout', () => recorridoActionBorrar())
+    recorrido.addEventListener('mouseover',() => recorridoAction())
+   recorrido.addEventListener('mouseout',() => recorridoActionBorrar())
 
     function botonComprarAction(datos) {
-        loadViajeSeleccionadoFromLocalStorage();
-        setDataBoleto(datos);
-        saveViajeSeleccionadoToLocalStorage();
-        const ruta = "/ViajeYa/pages/reserva.html";
-        window.location.href = window.location.origin + ruta;
+     loadViajeSeleccionadoFromLocalStorage();
+    setDataBoleto(datos);
+     saveViajeSeleccionadoToLocalStorage();
+     window.location.href = "../pages/pasajes.html";
     }
 
-
+  
     function recorridoAction() {
-        if (datos.escalas.length !== 0) {
-            const informacionEscla = creacionRecorrido(datos.ciudadOrigen, datos.escalas, datos.ciudadDestino);
+        if(datos.escalas.length !== 0){
+            const informacionEscla = creacionRecorrido(datos.ciudadOrigen,datos.escalas,datos.ciudadDestino);
             const cartel = document.createElement('div');
             cartel.innerHTML = informacionEscla;
             cartel.classList.add('tooltip');
             const pasaje = recorrido.parentNode;
             pasaje.appendChild(cartel);
-        } else {
-            const informacionEscla = creacionRecorrido(datos.ciudadOrigen, datos.escalas, datos.ciudadDestino);
+        }else{
+            const informacionEscla = creacionRecorrido(datos.ciudadOrigen,datos.escalas,datos.ciudadDestino);
             const cartel = document.createElement('div');
             cartel.innerHTML = informacionEscla;
             console.log(informacionEscla);
@@ -72,9 +81,9 @@ export default function creacionPasaje(datos) {
             const pasaje = recorrido.parentNode;
             pasaje.appendChild(cartel);
         }
-
+      
     }
-
+    
     function recorridoActionBorrar() {
         const pasaje = recorrido.parentNode;
         const cartel = pasaje.querySelector(".tooltip");

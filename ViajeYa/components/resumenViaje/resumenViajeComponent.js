@@ -119,21 +119,21 @@ export default function creacionResumenViaje() {
                         });
                 }
             }
-/*             reservaRequest.clase = "Economico";
+            reservaRequest.clase = "Economico";
             reservaRequest.viajeId = data.idViaje;
             reservaRequest.pasajeros = pasajerosId;
 
             console.log(reservaRequest);
 
-            setInterval(function(){
+            setTimeout(function () {
                 Reserva.Post(reservaRequest)
-                .then((response) => {
-                    console.log(response); // Manejar la respuesta de la solicitud Post aquí
-                })
-                .catch((error) => {
-                    console.error(error); // Manejar el error de la solicitud Post aquí
-                });
-            },2000); */
+                    .then((response) => {
+                        console.log(response); // Manejar la respuesta de la solicitud Post aquí
+                    })
+                    .catch((error) => {
+                        console.error(error); // Manejar el error de la solicitud Post aquí
+                    });
+            }, 5000);
             return;
         }
 
@@ -147,7 +147,7 @@ export default function creacionResumenViaje() {
         var fechaNacimiento = formulario.querySelector('.flex input').value;
         var dni = formulario.querySelector('.dni input').value;
 
-    
+
         if (isNaN(parseInt(dni))) {
             Swal.fire("El DNI debe ser un número válido (Pasajero " + numeroPasajero + ")")
             return;
@@ -192,9 +192,6 @@ export default function creacionResumenViaje() {
             Swal.fire("Por favor, ingresa tu fecha de nacimiento (Pasajero " + numeroPasajero + ")")
             return;
         }
-
-        // Si todos los campos son válidos, puedes pasar al siguiente formulario
-        Swal.fire("Formulario del Pasajero " + numeroPasajero + " llenado correctamente")
 
         // Llamar recursivamente a la función para validar el siguiente formulario
         validarFormulariosSecuencialmente(formularios, indice + 1);
