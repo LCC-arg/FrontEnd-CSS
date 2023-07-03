@@ -29,6 +29,7 @@ async function obtenerDatos(pasaje) {
   let idTransporte = pasaje.transporteId;
   let fechaSalidaGeneral = pasaje.fechaSalida;
   let fechaLlegadaGeneral = pasaje.fechaLlegada;
+  let dataCaracteristicaTransporte = pasaje.asientosDisponibles
 
   const fechaSalida = new Date(fechaSalidaGeneral);
   const fechaLlegada = new Date(fechaLlegadaGeneral);
@@ -44,8 +45,8 @@ async function obtenerDatos(pasaje) {
   let descripcionTransporte = dataTransporte.tipoTransporteResponse.descripcion; //Tipo Transporte
   let imagenEmpresa = dataTransporte.companiaTransporteResponse.imagen;
 
-  let dataCaracteristicaTransporte = await caracteristicaTransporte.Get(idTransporte, 1);
-  let asientosDisponible = dataCaracteristicaTransporte[0]['valor']; //Asientos disponibles
+/*   let dataCaracteristicaTransporte = await caracteristicaTransporte.Get(idTransporte, 1);
+  let asientosDisponible = dataCaracteristicaTransporte[0]['valor']; //Asientos disponibles */
 
   let dataCiudadOrigen = await ciudad.GetById(idCiudadOrigen);
   let dataCiudadDestino = await ciudad.GetById(idCiudadDestino);
@@ -59,7 +60,7 @@ async function obtenerDatos(pasaje) {
     horaLlegada: horaLlegada,
     fechaSalida: fechaSalidaFormateada,
     horaSalida: horaSalida,
-    asientosDisponibles: asientosDisponible,
+    asientosDisponibles: dataCaracteristicaTransporte,
     ciudadOrigen: nombreCiudadOrigen,
     ciudadDestino: nombreCiudadDestino,
     imagen: imagenEmpresa,

@@ -8,6 +8,6 @@ document.addEventListener('DOMContentLoaded', ()=> iniciarApp());
 async function iniciarApp(){
     await footerComponent.GetFooter();
     await headerComponent.GetHeader();
-    await filtroViajeComponent.GetFiltroViaje();
+    await filtroViajeComponent.GetFiltroViajeIndex();
     await slider.GetSlider();
 }

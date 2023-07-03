@@ -13,13 +13,14 @@ async function iniciarApp(){
     await filtroViajeComponent.GetFiltroViaje(); 
     loadResultadoViajesFromLocalStorage();
     const pasajes = getViajes();
+    console.log(pasajes);
 
     for (const pasaje of pasajes) {
       await new Promise(resolve => {
         setTimeout(async () => {
           await pasajeComponent.GetPasaje(pasaje);
           resolve();
-        }, 10); // Reemplaza 'tiempoEspera' por el tiempo en milisegundos que deseas esperar antes de imprimir cada pasaje
+        }, 100); // Reemplaza 'tiempoEspera' por el tiempo en milisegundos que deseas esperar antes de imprimir cada pasaje
       });
     }
 }
