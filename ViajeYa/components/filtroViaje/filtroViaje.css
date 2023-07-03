@@ -72,6 +72,10 @@
     border: #b14449 2px solid;
 }
 
+#boton_ida_vuelta{
+    margin-right: 20px;
+}
+
 .selected{
     color: var(--blanco);
     background-color: var(--rosaPrimario);
