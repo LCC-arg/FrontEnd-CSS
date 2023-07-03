@@ -21,7 +21,12 @@ async function obtenerDatos(pasaje) {
   let fechaSalidaGeneral = pasaje.fechaSalida;
   let fechaLlegadaGeneral = pasaje.fechaLlegada;
   let dataCaracteristicaTransporte = pasaje.asientosDisponibles;
-
+  let escalasId = pasaje.escalas;
+  let escalas = []
+  escalasId.forEach(async id => {
+    let descripcion = await ciudad.GetById(id);
+    escalas.push(descripcion);
+  });
   const fechaSalida = new Date(fechaSalidaGeneral);
   const fechaLlegada = new Date(fechaLlegadaGeneral);
 
@@ -37,11 +42,11 @@ async function obtenerDatos(pasaje) {
   let imagenEmpresa = dataTransporte.companiaTransporteResponse.imagen;
 
   let dataCaracteristicaTransporteTipo = await caracteristicaTransporte.Get(idTransporte, 2);
-  let tipoViaje ="";
+  let tipoViaje = "";
   if (Array.isArray(dataCaracteristicaTransporteTipo) && dataCaracteristicaTransporteTipo.length > 0) {
-   tipoViaje = dataCaracteristicaTransporteTipo[0]['valor']; //Asientos disponibles
+    tipoViaje = dataCaracteristicaTransporteTipo[0]['valor']; //Asientos disponibles
   }
-  else {tipoViaje="Asiento Regular";}
+  else { tipoViaje = "Asiento Regular"; }
 
   let dataCiudadOrigen = await ciudad.GetById(idCiudadOrigen);
   let dataCiudadDestino = await ciudad.GetById(idCiudadDestino);
@@ -61,13 +66,14 @@ async function obtenerDatos(pasaje) {
     ciudadDestino: nombreCiudadDestino,
     imagen: imagenEmpresa,
     descripcion: descripcionTransporte,
-    idViaje : idViaje,
-    tipoViaje : pasaje.tipoViaje,
-    empresa : nombreEmpresa,
-    asiento : tipoViaje,
-    };
-    return datos;
+    idViaje: idViaje,
+    tipoViaje: pasaje.tipoViaje,
+    empresa: nombreEmpresa,
+    asiento: tipoViaje,
+    escalas: escalas
   };
+  return datos;
+};
 
 
 const pasajeComponent = {
@@ -75,4 +81,3 @@ const pasajeComponent = {
 };
 
 export default pasajeComponent;
-
