@@ -95,3 +95,12 @@ align-items: center;
 .border-superior{
     border-top: solid 1px  #00000071;
 }
+
+.recorrido_label{
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.recorrido_label:hover{
+    scale: 1.2;
+}
