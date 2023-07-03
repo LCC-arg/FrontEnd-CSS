@@ -1,4 +1,6 @@
 import { pasajeroForm } from "../../components/pasajero/pasajero.js";
+import { getCantidadPasajeros, getDataBoleto,saveViajeSeleccionadoToLocalStorage, loadViajeSeleccionadoFromLocalStorage, resetViajeSeleccionado } from "../../components/pasaje/viajeSeleccionadoStorage.js"
+
 
 export const addPasajeroForms = async (num) => {
 
@@ -23,7 +25,8 @@ export const pasajeroFormsExpand = () => {    //Linea que arregla lo de reserva
     });
 };
 
+loadViajeSeleccionadoFromLocalStorage();
 
-addPasajeroForms(3);
+addPasajeroForms(getCantidadPasajeros());
 
 pasajeroFormsExpand();
