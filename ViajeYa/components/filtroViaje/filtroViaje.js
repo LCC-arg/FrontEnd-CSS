@@ -205,8 +205,9 @@ function buscarIndex() {
 			loadResultadoViajesFromLocalStorage();
 			setCantidadPasajeros(pasajeros.value);
 			saveViajeSeleccionadoToLocalStorage();
+			const ruta = "/ViajeYa/pages/pasajes.html";
 
-			window.location.href = "../../pages/pasajes.html";
+			window.location.href =window.location.origin+ ruta;
 		});
 	});
 }

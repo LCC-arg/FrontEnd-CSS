@@ -1,4 +1,5 @@
 import { getCantidadPasajeros,setDataBoleto, saveViajeSeleccionadoToLocalStorage, loadViajeSeleccionadoFromLocalStorage, resetViajeSeleccionado } from "../pasaje/viajeSeleccionadoStorage.js"
+import creacionRecorrido from "../pasaje/recorridoComponent.js"
 
 export default  function creacionPasaje(datos){
     const pasajeComponente = document.createElement("div");
@@ -36,22 +37,53 @@ export default  function creacionPasaje(datos){
           <button class="button-reset boton-comprar border-superior">Comprar</button>
       </div>
     `;
-    
+
     const botonComprar = pasajeComponente.querySelector(".boton-comprar");
     botonComprar.addEventListener('click', () => botonComprarAction(datos));
-    
+    const recorrido = pasajeComponente.querySelector('.recorrido');
+    const pasaje = recorrido.parentNode;
+    pasaje.appendChild(document.createElement('DIV'));
+    recorrido.addEventListener('mouseover',() => recorridoAction())
+   recorrido.addEventListener('mouseout',() => recorridoActionBorrar())
+
     function botonComprarAction(datos) {
      loadViajeSeleccionadoFromLocalStorage();
     setDataBoleto(datos);
      saveViajeSeleccionadoToLocalStorage();
      const ruta = "/ViajeYa/pages/reserva.html";
-
-
     window.location.href =window.location.origin+ ruta;
+    }
 
-
+  
+    function recorridoAction() {
+        if(datos.escalas.length !== 0){
+            const informacionEscla = creacionRecorrido(datos.ciudadOrigen,datos.escalas,datos.ciudadDestino);
+            const cartel = document.createElement('div');
+            cartel.innerHTML = informacionEscla;
+            cartel.classList.add('tooltip');
+            const pasaje = recorrido.parentNode;
+            pasaje.appendChild(cartel);
+        }else{
+            const informacionEscla = creacionRecorrido(datos.ciudadOrigen,datos.escalas,datos.ciudadDestino);
+            const cartel = document.createElement('div');
+            cartel.innerHTML = informacionEscla;
+            console.log(informacionEscla);
+            cartel.classList.add('tooltip');
+            const pasaje = recorrido.parentNode;
+            pasaje.appendChild(cartel);
+        }
+      
     }
     
+    function recorridoActionBorrar() {
+        const pasaje = recorrido.parentNode;
+        const cartel = pasaje.querySelector(".tooltip");
+        if (cartel) {
+            cartel.remove();
+        }
+    }
+
+
     return pasajeComponente;
 }
 

@@ -3,19 +3,13 @@ import caracteristicaTransporte from "../../api/services/transporteService/Carac
 import ciudad from "../../api/services/destinosService/Ciudad.js";
 import creacionPasaje from "./pasajeComponente.js";
 
-
-
 async function getPasaje(viajeId) {
   const agregarPasaje = document.querySelector(".resultados-busqueda-pasajes");
   let data = await obtenerDatos(viajeId);
   let response = creacionPasaje(data);
 
   agregarPasaje.appendChild(response);
-
-
 }
-
-
 
 async function obtenerDatos(pasaje) {
 
@@ -26,7 +20,13 @@ async function obtenerDatos(pasaje) {
   let idTransporte = pasaje.transporteId;
   let fechaSalidaGeneral = pasaje.fechaSalida;
   let fechaLlegadaGeneral = pasaje.fechaLlegada;
-
+  let dataCaracteristicaTransporte = pasaje.asientosDisponibles;
+  let escalasId=pasaje.escalas;
+  let escalas=[]
+  escalasId.forEach(async id => {
+    let descripcion= await ciudad.GetById(id);
+    escalas.push(descripcion);
+  });
   const fechaSalida = new Date(fechaSalidaGeneral);
   const fechaLlegada = new Date(fechaLlegadaGeneral);
 
@@ -41,17 +41,12 @@ async function obtenerDatos(pasaje) {
   let descripcionTransporte = dataTransporte.tipoTransporteResponse.descripcion; //Tipo Transporte
   let imagenEmpresa = dataTransporte.companiaTransporteResponse.imagen;
 
-  let dataCaracteristicaTransporte = await caracteristicaTransporte.Get(idTransporte, 1);
-  let asientosDisponible = dataCaracteristicaTransporte[0]['valor']; //Asientos disponibles
   let dataCaracteristicaTransporteTipo = await caracteristicaTransporte.Get(idTransporte, 2);
   let tipoViaje ="";
   if (Array.isArray(dataCaracteristicaTransporteTipo) && dataCaracteristicaTransporteTipo.length > 0) {
    tipoViaje = dataCaracteristicaTransporteTipo[0]['valor']; //Asientos disponibles
   }
   else {tipoViaje="Asiento Regular";}
-
-
-
 
   let dataCiudadOrigen = await ciudad.GetById(idCiudadOrigen);
   let dataCiudadDestino = await ciudad.GetById(idCiudadDestino);
@@ -66,7 +61,7 @@ async function obtenerDatos(pasaje) {
     horaLlegada: horaLlegada,
     fechaSalida: fechaSalidaFormateada,
     horaSalida: horaSalida,
-    asientosDisponibles: asientosDisponible,
+    asientosDisponibles: dataCaracteristicaTransporte,
     ciudadOrigen: nombreCiudadOrigen,
     ciudadDestino: nombreCiudadDestino,
     imagen: imagenEmpresa,
@@ -74,10 +69,10 @@ async function obtenerDatos(pasaje) {
     idViaje : idViaje,
     tipoViaje : pasaje.tipoViaje,
     empresa : nombreEmpresa,
-    asiento : tipoViaje
+    asiento : tipoViaje,
+    escalas: escalas
     };
     return datos;
-
   };
 
 

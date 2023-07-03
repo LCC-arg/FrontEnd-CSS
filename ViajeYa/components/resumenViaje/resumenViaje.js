@@ -1,21 +1,14 @@
 
-import creacionResumenViaje from "./resumenViajeComponent.js";
-
+import creacionResumenViaje  from "./resumenViajeComponent.js";
 
 async function getResumenViaje() {
-    const agregarResumenViaje = document.querySelector(".reserva-details");  
-    let response = creacionResumenViaje();
-    agregarResumenViaje.innerHTML = response;
-  
-  
-  }
+  const agregarResumenViaje = document.querySelector(".reserva-details");
+  let response = creacionResumenViaje();
+  agregarResumenViaje.appendChild(response);
+}
 
-  
-
-  
 const resumenViajeComponent = {
-    GetResumenViaje: getResumenViaje
-  };
-  
-  export default resumenViajeComponent ;
-  
+  GetResumenViaje: getResumenViaje
+};
+
+export default resumenViajeComponent;
