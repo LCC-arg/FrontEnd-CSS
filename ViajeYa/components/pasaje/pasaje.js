@@ -44,7 +44,6 @@ async function obtenerDatos(pasaje) {
   let dataCaracteristicaTransporte = await caracteristicaTransporte.Get(idTransporte, 1);
   let asientosDisponible = dataCaracteristicaTransporte[0]['valor']; //Asientos disponibles
   let dataCaracteristicaTransporteTipo = await caracteristicaTransporte.Get(idTransporte, 2);
-  console.log(dataCaracteristicaTransporteTipo);
   let tipoViaje ="";
   if (Array.isArray(dataCaracteristicaTransporteTipo) && dataCaracteristicaTransporteTipo.length > 0) {
    tipoViaje = dataCaracteristicaTransporteTipo[0]['valor']; //Asientos disponibles

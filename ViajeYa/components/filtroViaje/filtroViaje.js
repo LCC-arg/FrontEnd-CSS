@@ -3,7 +3,6 @@ import Ciudad from "../../api/services/destinosService/Ciudad.js";
 import { setViajes, saveRequestComandaToLocalStorage, loadResultadoViajesFromLocalStorage, resetResultadoViajes } from "../filtroViaje/filtroViajeStorage.js"
 import { setCantidadPasajeros, getCantidadPasajeros, saveViajeSeleccionadoToLocalStorage, loadViajeSeleccionadoFromLocalStorage, resetViajeSeleccionado } from "../pasaje/viajeSeleccionadoStorage.js"
 
-
 let suggestions = [];
 Ciudad.Get().then((result) => { suggestions = result.map((ciudad) => ciudad.nombre); })
 
@@ -12,6 +11,13 @@ async function getFiltroViaje() {
 	initializeSearch('#search-input-box-2', 'input', '#container-suggestions-2');
 	agregarPasajero();
 	buscar();
+}
+
+async function getFiltroViajeIndex(){
+	initializeSearch('#search-input-box-1', 'input', '#container-suggestions-1');
+	initializeSearch('#search-input-box-2', 'input', '#container-suggestions-2');
+	agregarPasajero();
+	buscarIndex();
 }
 
 function initializeSearch(searchContainerSelector, inputSearchSelector, boxSuggestionsSelector) {
@@ -71,8 +77,6 @@ function agregarPasajero() {
 			}
 		});
 	});
-
-
 }
 
 function buscar() {
@@ -83,15 +87,13 @@ function buscar() {
 	let fechaSalida = document.getElementById("search_fecha_salida");
 	let fechaLlegada = document.getElementById("search_fecha_regreso");
 	let pasajeros = document.getElementById("search_cantidad_pasajeros");
-	loadViajeSeleccionadoFromLocalStorage();
-	pasajeros.value=getCantidadPasajeros();
-
-
-
 
 	let empresa = document.getElementById("empresas");
 	let tipoTransporte = document.getElementById("tipo-transporte");
 	let orden = document.getElementById("orden");
+
+	loadViajeSeleccionadoFromLocalStorage();
+	pasajeros.value=getCantidadPasajeros();
 
 	const botonTipo = document.querySelectorAll(".boton_tipo_viaje");
 	let forma = "";
@@ -130,23 +132,87 @@ function buscar() {
 			}
 		}
 
-		viaje.Get(forma, ciudadOrigenSeleccionadaId, ciudadDestinoSeleccionadaId, fechaSalida.value, fechaLlegada.value, pasajeros.value)
-			.then(viajes => {
-				console.log(viajes);
-				loadResultadoViajesFromLocalStorage();
-				setViajes(viajes);
-				saveRequestComandaToLocalStorage();
-				const ruta = "/ViajeYa/pages/pasajes.html";
-				loadResultadoViajesFromLocalStorage();
-				setCantidadPasajeros(pasajeros.value);
-				saveViajeSeleccionadoToLocalStorage();
-				window.location.href =window.location.origin+ ruta;
-			});
+		viaje.Get(forma, ciudadOrigenSeleccionadaId, ciudadDestinoSeleccionadaId, fechaSalida.value, fechaLlegada.value, pasajeros.value, orden.value, tipoTransporte.value, empresa.value
+		).then(viajes => {
+			console.log(viajes);
+			loadResultadoViajesFromLocalStorage();
+			setViajes(viajes);
+			saveRequestComandaToLocalStorage();
+			loadViajeSeleccionadoFromLocalStorage();
+			setCantidadPasajeros(pasajeros.value);
+			saveViajeSeleccionadoToLocalStorage();
+		
+			window.location.href = "../../pages/pasajes.html";
+		});
 	});
 }
 
+function buscarIndex() {
+	let botonBuscar = document.getElementById("boton_search");
+
+	let ciudadOrigen = document.getElementById("search_ciudad_origen");
+	let ciudadDestino = document.getElementById("search_ciudad_destino");
+	let fechaSalida = document.getElementById("search_fecha_salida");
+	let fechaLlegada = document.getElementById("search_fecha_regreso");
+	let pasajeros = document.getElementById("search_cantidad_pasajeros");
+
+	loadViajeSeleccionadoFromLocalStorage();
+	pasajeros.value=getCantidadPasajeros();
+
+	const botonTipo = document.querySelectorAll(".boton_tipo_viaje");
+	let forma = "";
+
+	botonTipo.forEach(boton => {
+		boton.addEventListener("click", () => {
+			botonTipo.forEach(btn => btn.classList.remove("selected"));
+			boton.classList.add("selected");
+			forma = boton.dataset.tipo;
+		});
+	});
+
+
+	botonBuscar.addEventListener("click", async function () {
+
+		document.getElementById("loader").classList.remove("loader2");
+		document.getElementById("loader").classList.add("loader")
+
+		let ciudadOrigenId = await Ciudad.GetByNombre(ciudadOrigen.value);
+		let ciudadDestinoId = await Ciudad.GetByNombre(ciudadDestino.value);
+
+		let ciudadOrigenSeleccionadaId;
+		let ciudadDestinoSeleccionadaId;
+
+		for (let i = 0; i < ciudadOrigenId.length; i++) {
+			if (ciudadOrigenId[i].nombre === ciudadOrigen.value) {
+				ciudadOrigenSeleccionadaId = ciudadOrigenId[i].id;
+				break;
+			}
+		}
+
+		for (let i = 0; i < ciudadDestinoId.length; i++) {
+			if (ciudadDestinoId[i].nombre === ciudadDestino.value) {
+				ciudadDestinoSeleccionadaId = ciudadDestinoId[i].id;
+				break;
+			}
+		}
+
+		viaje.Get(forma, ciudadOrigenSeleccionadaId, ciudadDestinoSeleccionadaId, fechaSalida.value, fechaLlegada.value, pasajeros.value, "", "", ""
+		).then(viajes => {
+			console.log(viajes);
+			loadResultadoViajesFromLocalStorage();
+			setViajes(viajes);
+			saveRequestComandaToLocalStorage();
+			loadResultadoViajesFromLocalStorage();
+			setCantidadPasajeros(pasajeros.value);
+			saveViajeSeleccionadoToLocalStorage();
+
+			window.location.href = "../../pages/pasajes.html";
+		});
+	});
+}
 const filtroViajeComponent = {
 	GetFiltroViaje: getFiltroViaje,
+	GetFiltroViajeIndex: getFiltroViajeIndex,
 };
 
 export default filtroViajeComponent;

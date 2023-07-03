@@ -29,7 +29,7 @@ export default function creacionResumenViaje() {
     </div>
     <div class="clase">
         <p class="tittle">Clase</p>
-        <p class="empresa-name">${data.asiento}</p>
+        <p class="asiento">${data.asiento}</p>
     </div>
 </div>
 <div class="precio">
