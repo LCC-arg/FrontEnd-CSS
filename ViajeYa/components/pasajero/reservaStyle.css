@@ -54,10 +54,11 @@
 #arrow {
   position: absolute;
   right: 0;
+  transition: all ease 3s transform;
 }
 
 #arrow:hover {
-  transform: ease 9s;
+  transform: scale(1.1);
 }
 
 .pasajero-tittle img {

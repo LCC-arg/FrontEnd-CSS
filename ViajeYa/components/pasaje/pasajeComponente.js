@@ -60,7 +60,7 @@ export default  function creacionPasaje(datos){
      loadViajeSeleccionadoFromLocalStorage();
     setDataBoleto(datos);
      saveViajeSeleccionadoToLocalStorage();
-     window.location.href = "../pages/pasajes.html";
+     window.location.href = "../pages/reserva.html";
     }
 
   

@@ -7,7 +7,7 @@ const createReserva = async (reservaRequest) => {
 
     try {
 
-        let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImVmNmYxMzM0LWM4ZjgtNDljNS1iMTY2LTFhOTc4ODM2ZWFiZiIsIm5hbWUiOiJNYXJpYW5hIiwiZW1haWwiOiJ0ZXN0QGdtYWlsLmNvbSIsImV4cCI6MTY4ODQxNDkzOSwiYXVkIjoidXN1YXJpb3MiLCJpc3MiOiJsb2NhbGhvc3QifQ.gd-mcnWbYCGJpH3umnnYII4F5EhdylW-DGxeL8VrQD0";
+        let token = JSON.parse(sessionStorage.getItem("sesion")).token;
 
         const response = await fetch(apiUrl, {
             method: 'POST',

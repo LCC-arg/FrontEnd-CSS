@@ -2,11 +2,11 @@ export const pasajeroForm = (id) => `
 
 <link rel="stylesheet" href="/components/pasajero/reservaStyle.css">
 <div class="pasajero-form">
-    <div class="pasajero-tittle" number="${id}" id="pasajero-title">
-        <img src="/assets/img/logo-login.png" alt="">
-        <h3>Pasajero ${id}</h3>
-        <img id="arrow" src="/assets/img/arrow.png" alt="">
-    </div>
+<div class="pasajero-tittle" number="${id}" id="pasajero-title">
+    <img src="/assets/img/logo-login.png" alt="">
+    <h3>Pasajero ${id}</h3>
+    <img id="arrow" class="arrow" src="/assets/img/arrow.png" number="${id}" alt="">
+  </div>
 
     <div class="container-data-pasajero-form" id="container-data-pasajero-form${id}">
         <div class="grid">

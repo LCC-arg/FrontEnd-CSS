@@ -17,9 +17,9 @@ export function toggleAdditionalContent(id) {
 }
 
 
-export const pasajeroFormsExpand = () => {    //Linea que arregla lo de reserva
+export const pasajeroFormsExpand = () => {
     document.addEventListener("click", e => {
-        if (e.target.matches(".pasajero-tittle")) {
+        if (e.target.matches(".pasajero-tittle") || e.target.matches(".arrow")) {
             toggleAdditionalContent(e.target.getAttribute("number"));
         }
     });
