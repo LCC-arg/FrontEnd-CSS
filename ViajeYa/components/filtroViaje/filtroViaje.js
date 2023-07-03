@@ -1,6 +1,7 @@
 import viaje from "../../api/services/viajeService/Viaje.js";
 import Ciudad from "../../api/services/destinosService/Ciudad.js";
 import { setViajes, saveRequestComandaToLocalStorage, loadResultadoViajesFromLocalStorage, resetResultadoViajes } from "../filtroViaje/filtroViajeStorage.js"
+import { setCantidadPasajeros, getCantidadPasajeros, saveViajeSeleccionadoToLocalStorage, loadViajeSeleccionadoFromLocalStorage, resetViajeSeleccionado } from "../pasaje/viajeSeleccionadoStorage.js"
 
 let suggestions = [];
 Ciudad.Get().then((result) => { suggestions = result.map((ciudad) => ciudad.nombre); })
@@ -61,7 +62,8 @@ function initializeSearch(searchContainerSelector, inputSearchSelector, boxSugge
 function agregarPasajero() {
 	let botones = document.querySelectorAll(".num-pasajeros");
 	let input = document.getElementById("search_cantidad_pasajeros");
-	let numero = parseInt(input.value);
+	loadViajeSeleccionadoFromLocalStorage();
+	let numero = parseInt(getCantidadPasajeros());
 
 	botones.forEach((boton, index) => {
 		boton.addEventListener("click", async function () {
@@ -89,6 +91,9 @@ function buscar() {
 	let empresa = document.getElementById("empresas");
 	let tipoTransporte = document.getElementById("tipo-transporte");
 	let orden = document.getElementById("orden");
+
+	loadViajeSeleccionadoFromLocalStorage();
+	pasajeros.value=getCantidadPasajeros();
 
 	const botonTipo = document.querySelectorAll(".boton_tipo_viaje");
 	let forma = "";
@@ -133,7 +138,10 @@ function buscar() {
 			loadResultadoViajesFromLocalStorage();
 			setViajes(viajes);
 			saveRequestComandaToLocalStorage();
-
+			loadViajeSeleccionadoFromLocalStorage();
+			setCantidadPasajeros(pasajeros.value);
+			saveViajeSeleccionadoToLocalStorage();
+		
 			window.location.href = "../../pages/pasajes.html";
 		});
 	});
@@ -147,6 +155,9 @@ function buscarIndex() {
 	let fechaSalida = document.getElementById("search_fecha_salida");
 	let fechaLlegada = document.getElementById("search_fecha_regreso");
 	let pasajeros = document.getElementById("search_cantidad_pasajeros");
+
+	loadViajeSeleccionadoFromLocalStorage();
+	pasajeros.value=getCantidadPasajeros();
 
 	const botonTipo = document.querySelectorAll(".boton_tipo_viaje");
 	let forma = "";
@@ -191,6 +202,9 @@ function buscarIndex() {
 			loadResultadoViajesFromLocalStorage();
 			setViajes(viajes);
 			saveRequestComandaToLocalStorage();
+			loadResultadoViajesFromLocalStorage();
+			setCantidadPasajeros(pasajeros.value);
+			saveViajeSeleccionadoToLocalStorage();
 
 			window.location.href = "../../pages/pasajes.html";
 		});
