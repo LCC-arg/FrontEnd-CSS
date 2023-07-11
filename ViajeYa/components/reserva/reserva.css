@@ -1,0 +1,78 @@
+
+
+.container-mis-reservas {
+    width: 85%;
+    margin: 80px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-color: #24262b;
+  }
+  
+  .container-mis-reservas h1 {
+    text-align: center;
+    color: var(--rosaPrimario);
+    margin-top: 0;
+  }
+  
+  .reservations {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+  }
+  
+  .reservation {
+    width: calc(50% - 20px);
+    margin-bottom: 40px;
+    background-color: var(--rosaPrimario);
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px var(--rosaPrimario);
+    overflow: hidden;
+  }
+  
+  .reservation img {
+    width: 100%;
+    height: 394px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  
+  .reservation-details {
+    margin-top: 0;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .reservation-details h2 {
+    margin: 0;
+    color: black;
+  }
+  
+  .reservation-details p {
+    padding: 5px;
+    color: black;
+    overflow-wrap: break-word ;
+  }
+  
+  .column-right{
+    margin-right: 30px;
+    flex-basis: 40%;
+  }
+  
+  .column-left  {
+    flex-grow: 1;
+    flex-basis: 0;
+    flex-wrap: wrap;
+  }
+  
+  .reserva-tittle{
+    display: initial;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-right: 2px solid black;
+  }

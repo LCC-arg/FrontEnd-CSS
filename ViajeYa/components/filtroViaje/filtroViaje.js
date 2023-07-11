@@ -134,7 +134,7 @@ function buscar() {
 
 		viaje.Get(forma, ciudadOrigenSeleccionadaId, ciudadDestinoSeleccionadaId, fechaSalida.value, fechaLlegada.value, pasajeros.value, orden.value, tipoTransporte.value, empresa.value
 		).then(viajes => {
-			console.log(viajes);
+			console.log(4);
 			loadResultadoViajesFromLocalStorage();
 			setViajes(viajes);
 			saveRequestComandaToLocalStorage();
@@ -142,7 +142,7 @@ function buscar() {
 			setCantidadPasajeros(pasajeros.value);
 			saveViajeSeleccionadoToLocalStorage();
 		
-			window.location.href = "../../pages/pasajes.html";
+			window.location.href = "/ViajeYa/pages/pasajes.html";
 		});
 	});
 }
@@ -207,7 +207,7 @@ function buscarIndex() {
 			saveViajeSeleccionadoToLocalStorage();
 			const ruta = "/ViajeYa/pages/pasajes.html";
 
-			window.location.href =window.location.origin+ ruta;
+		window.location.href =window.location.origin+ ruta;
 		});
 	});
 }

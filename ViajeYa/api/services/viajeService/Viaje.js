@@ -43,6 +43,7 @@ const conseguirViaje = async (idViaje) => {
 const conseguirViajeFiltrado = async  (tipo ,ciudadOrigen, ciudadDestino, fechaSalida , fechaLlegada, pasajeros,orden,tipoTransporte,empresa) => {
 
   var url = `${apiUrl}?`;
+  console.log(url);
   if(tipo)
   {
       url += `tipo=${tipo}`;

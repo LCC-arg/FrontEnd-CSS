@@ -48,6 +48,8 @@ async function obtenerDatos(pasaje) {
   }
   else {tipoViaje="Asiento Regular";}
 
+console.log(pasaje);
+
   let dataCiudadOrigen = await ciudad.GetById(idCiudadOrigen);
   let dataCiudadDestino = await ciudad.GetById(idCiudadDestino);
 
@@ -67,7 +69,7 @@ async function obtenerDatos(pasaje) {
     imagen: imagenEmpresa,
     descripcion: descripcionTransporte,
     idViaje : idViaje,
-    tipoViaje : pasaje.tipoViaje,
+    asientoViaje : pasaje.tipoViaje,
     empresa : nombreEmpresa,
     asiento : tipoViaje,
     escalas: escalas

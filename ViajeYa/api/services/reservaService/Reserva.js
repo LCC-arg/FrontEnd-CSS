@@ -41,7 +41,7 @@ const getReservaById = async (idReserva) => {
 
 
 const getReservaByFilters = async (fecha, clase, usuarioId, orden) => {
-    var url = `${urlBase}?`;
+    var url = `${apiUrl}?`;
     if(fecha)
     {
         url += `fecha=${fecha}`;

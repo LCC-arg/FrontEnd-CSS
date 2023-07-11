@@ -3,6 +3,9 @@ import creacionRecorrido from "../pasaje/recorridoComponent.js"
 
 export default  function creacionPasaje(datos){
     const pasajeComponente = document.createElement("div");
+    if(datos.asientoViaje==="Ida"){
+        datos.fechaLlegada="--";
+    }
     pasajeComponente.innerHTML = `
       <link rel="stylesheet" href="../components/pasaje/pasaje.css">
       <div class="resultado-pasaje" data-id-viaje="${datos.idViaje}">
@@ -17,13 +20,20 @@ export default  function creacionPasaje(datos){
           </div>
           <div class="fecha-llegada">
               <div class="dia-llegada">
-                  <h4>Llega:</h4>
+                  <h4>Vuelta:</h4>
                   <p>${datos.fechaLlegada}</p>
               </div>
               <h4 class="horario">${datos.horaLlegada}</h4>
               <p>${datos.ciudadDestino}</p>
           </div>
-          <p class="precio">ARS $ <span class="precio-negrita">${datos.precio}</span></p>
+          <div class="columna-precio">
+                <div class="dia-llegada">
+                <h4>Tipo de Viaje:</h4>
+                <p>${datos.asientoViaje}</p>
+        </div>
+            <p class="precio">ARS $ <span class="precio-negrita">${datos.precio}</span></p>
+        </div>
+          
          <div class="tipo-vehiculo border-superior">
           <h4 class="centrar-texto ">${datos.descripcion}</h4>
          </div>
