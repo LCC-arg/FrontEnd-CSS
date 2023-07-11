@@ -1,13 +1,13 @@
-import creacionResumenViaje  from "./resumenViajeComponent.js";
+import creacionResumenPagoViaje from "./resumenViajePagoComponent.js";
 
 async function getResumenViaje() {
   const agregarResumenViaje = document.querySelector(".reserva-details");
-  let response = creacionResumenViaje();
+  let response = creacionResumenPagoViaje();
   agregarResumenViaje.appendChild(response);
 }
 
-const resumenViajeComponent = {
+const resumenViajePagoComponent = {
   GetResumenViaje: getResumenViaje
 };
 
-export default resumenViajeComponent;
+export default resumenViajePagoComponent;

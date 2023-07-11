@@ -2,11 +2,11 @@ export const pasajeroForm = (id) => `
 
 <link rel="stylesheet" href="/ViajeYa/components/pasajero/reservaStyle.css">
 <div class="pasajero-form">
-    <div class="pasajero-tittle" number="${id}" id="pasajero-title">
-        <img src="/ViajeYa/assets/img/logo-login.png" alt="">
-        <h3>Pasajero ${id}</h3>
-        <img id="arrow" src="/ViajeYa/assets/img/arrow.png" alt="">
-    </div>
+<div class="pasajero-tittle" number="${id}" id="pasajero-title">
+    <img src="/assets/img/logo-login.png" alt="">
+    <h3>Pasajero ${id}</h3>
+    <img id="arrow" class="arrow" src="/assets/img/arrow.png" number="${id}" alt="">
+  </div>
 
     <div class="container-data-pasajero-form" id="container-data-pasajero-form${id}">
         <div class="grid">
@@ -60,22 +60,8 @@ export const pasajeroForm = (id) => `
         
         <div class="flex">
             <div class="grid2">
-                <div>
-                <p id="nacimiento-date">Fecha de Nacimiento:</p>
-                    <select name="day" id="daySelect" class="daySelectClass">
-                        <option value="">Día</option>
-                    </select>                                      
-                </div>
-                <div>
-                    <select name="month" id="monthSelect" class="monthSelectClass">
-                        <option value="">Mes</option>
-                    </select>
-                </div>
-                <div>
-                    <select name="year" id="yearSelect" class="yearSelectClass">
-                        <option value="">Año</option>
-                    </select>
-                </div>
+            <label for="search_fecha_nacimiento">Nacimiento:</label>
+            <input type="date" id="search_fecha_nacimiento" class="Buscador" />
             </div>
         </div>
     </div>

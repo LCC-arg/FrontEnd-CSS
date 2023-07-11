@@ -12,36 +12,40 @@
     justify-items: center;
     margin: 20px;
     box-shadow: 2px 8px 4px 0px rgba(0, 0, 0, 0.5);
-  }
+}
 
 
-.resultado-pasaje img{
+.resultado-pasaje img {
     max-width: 80%;
     max-height: 100%;
 }
-.horario{
+
+.horario {
     font-size: 24px;
 }
-.precio-negrita{
+
+.precio-negrita {
     font-weight: bold;
     font-size: 24px;
 }
 
 
 
-.precio{
-display: flex;
-align-items: center;
-margin: 0 auto;
+.precio {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
 }
 
 
-.dia-salida,.dia-llegada{
+.dia-salida,
+.dia-llegada {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.columna-precio{
+
+.columna-precio {
     display: flex;
     width: 100%;
     height: 100%;
@@ -49,10 +53,13 @@ margin: 0 auto;
     justify-content: space-evenly;
     align-items: center;
 }
-.columna-precio h4{
- margin-right: 10px;
+
+.columna-precio h4 {
+    margin-right: 10px;
 }
-.fecha-salida,.fecha-llegada{
+
+.fecha-salida,
+.fecha-llegada {
     display: flex;
     width: 100%;
     height: 100%;
@@ -61,22 +68,23 @@ margin: 0 auto;
     align-items: flex-start;
 }
 
-.libre{
-display: flex;
-justify-content: space-between;
-align-items: center;
-height: 100%;
-background-color: #24262b;
-color: white;
-} 
-.libre .cantidad{
+.libre {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    background-color: #24262b;
+    color: white;
+}
+
+.libre .cantidad {
     background-color: var(--rosaPrimario);
     padding: 5px;
     border-radius: 10px;
     margin-right: 60px;
 }
 
-.boton-comprar{
+.boton-comprar {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -87,31 +95,40 @@ color: white;
     border-bottom-right-radius: 10px;
     cursor: pointer;
 }
-.boton-comprar:hover{
+
+.boton-comprar:hover {
     background-color: #b14449d0;
     box-shadow: 0 5px 5px 0px rgba(0, 0, 0, 0.2);
 }
-.libre,.boton-comprar,.tipo-vehiculo,.recorrido{
-width: 100%;
+
+.libre,
+.boton-comprar,
+.tipo-vehiculo,
+.recorrido {
+    width: 100%;
 
 }
-.recorrido{
-height: 100%; 
-display: flex;
-align-items: center; 
-background-color: #24262b;
-color: white;
+
+.recorrido {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    background-color: #24262b;
+    color: white;
+    cursor: pointer;
 }
-.tipo-vehiculo{
-    height: 100%; 
+
+.tipo-vehiculo {
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #24262b;
     color: white;
 }
-.border-superior{
-    border-top: solid 1px  #00000071;
+
+.border-superior {
+    border-top: solid 1px #00000071;
 }
 
 .tooltip {
@@ -126,28 +143,30 @@ color: white;
     position: relative;
     text-align: center;
     font-weight: bold;
-  }
-  
-  .tooltip::before {
+}
+
+.tooltip::before {
     content: "";
     position: absolute;
     bottom: 99%;
-    left:20%; /* Ajuste del desplazamiento horizontal */
+    left: 20%;
+    /* Ajuste del desplazamiento horizontal */
     transform: translateX(-50%) rotate(180deg);
     border-width: 8px;
     border-style: solid;
     border-color: white transparent transparent transparent;
-  }
-  
-  .tooltip.hide {
+}
+
+.tooltip.hide {
     opacity: 0;
     visibility: hidden;
-  }
-  
-  .tooltip.show {
+}
+
+.tooltip.show {
     opacity: 1;
     visibility: visible;
-  }
+}
+
 .tooltip span {
     color: var(--rosaPrimario);
     font-weight: bold;

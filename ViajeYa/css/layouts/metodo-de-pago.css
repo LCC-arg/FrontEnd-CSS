@@ -1,37 +1,37 @@
-.grid-container {
-  margin: 100px 0px 100px 0px;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto auto;
-  gap: 10px;
-
+.reserva-container{ 
+  width: 100%;
+  position: relative;
 }
 
-.item1 {
-  grid-column-end: -1;
-  width: 600px;
+.reserva{
+  margin-top: 70px;
+  display: flex;
+
+  justify-content: center;
 }
 
-.item2 {
-  grid-row: 2;
+.tittle-paymethod{
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
 }
 
-.item3 {
-  grid-column: 2;
-  grid-row: 1 / span 2;
+.tittle-paymethod{
+  font-weight: bold;
+  color: var(--rosaPrimario);
+  font-size: 20px;
+  
   
 }
 
-.grid-item {
-  padding: 20px;
-  text-align: center;
+.tittle-paymethod h1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #24262b;
 }
 
-.container-reserva-details{
-  position: relative;
-  right: 0;
-  margin-bottom: 150px ;
-}
+
 
 .container-reserva-pay{
   display: flex;
@@ -43,9 +43,9 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  width: 1300px;
+  width: 400px;
   display: inline-block;
-  padding-right: 200px;
+  padding-right: 100px;
 }
 
 .payment-method {
@@ -88,7 +88,6 @@
 .card-data-form-container {
   justify-content: end;
   position: relative;
-  left: 350px;
   width: 900px;
   border: 2px solid black;
   display: none;
@@ -98,6 +97,8 @@
   color: var(--rosaPrimario);
   font-weight: bold;
   box-shadow: 10px 10px 20px black;
+  margin-right: 100px;
+  height: 400px;
 }
 
 .pay-method-tittle{
@@ -184,22 +185,22 @@
 
 .reserva-details {
   position: relative;
-  width: 100%;
-  box-sizing: border-box;
-  
-  
-}
-
-.container-reserva-details{
-  position: absolute;
-  right: 200px;
   width: 400px;
+  box-sizing: border-box;
+  border-radius: 20px;
   border: 3px solid var(--rosaPrimario);
+  box-shadow: 10px 10px 20px black;
   height: auto;  
   background-color: #24262b;
-  border-radius: 20px;
-  box-shadow: 10px 10px 20px black;
+  transition: all ease 0.3s transform;
+
 }
+
+.reserva-details:hover{
+  transform: scale(1.02);
+
+}
+
 
 .reserva-details p{
   margin-top: 10px;
@@ -278,7 +279,7 @@
 
 
 .footer{
-  margin-top: 130px;
+  margin-top: 50px;
 }
 
 .boton-pasajeros{
@@ -302,8 +303,8 @@
   height: 50px;
 }
 
-.totalprice{
-  background-color: var(--rosaPrimario);
+.button-reserva{
+  display: flex;
+  justify-content: center;  
 }
-
 

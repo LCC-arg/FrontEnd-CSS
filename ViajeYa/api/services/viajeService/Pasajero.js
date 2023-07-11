@@ -1,6 +1,6 @@
 import config from "../../../config/config.js";
 
-const apiUrl =  `${config.microservicioViaje}/api/Pasajero`;
+const apiUrl =  `${config.microservicioViaje}/api/Pasajeros`;
 
 const crearPasajero = async (pasajeroRequest) => {
 

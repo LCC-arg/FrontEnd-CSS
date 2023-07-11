@@ -83,4 +83,3 @@ const pasajeComponent = {
 };
 
 export default pasajeComponent;
-

@@ -77,6 +77,7 @@
     background-color: salmon;
     padding: 10px;
     color: white;
+    cursor: pointer;
 }
 
 .footer{
