@@ -1,6 +1,8 @@
 import { getCantidadPasajeros, getDataBoleto, saveViajeSeleccionadoToLocalStorage, loadViajeSeleccionadoFromLocalStorage, resetViajeSeleccionado } from "../pasaje/viajeSeleccionadoStorage.js";
 import Pasajero from "../../api/services/viajeService/Pasajero.js";
 import Reserva from "../../api/services/reservaService/Reserva.js";
+import { setResultadoReservas, getResultadoReservas, setReservas, getReservas, saveRequestReservaToLocalStorage, resetResultadoReservas, loadResultadoReservasFromLocalStorage } from "../resumenViajePago/reservaStorage.js"
+
 
 export default function creacionResumenViaje() {
     loadViajeSeleccionadoFromLocalStorage();
@@ -111,8 +113,7 @@ export default function creacionResumenViaje() {
                     Pasajero.Post(pasajeroRequest)
                         .then((response) => {
                             pasajerosId.push(response.id); // Manejar la respuesta de la solicitud Post aquí
-                            console.log(response)
-                            window.location.href = "../../pages/metodoDePago.html"; // Redireccionar a la página después de la solicitud
+                            console.log(response) // Redireccionar a la página después de la solicitud
                         })
                         .catch((error) => {
                             console.error(error); // Manejar el error de la solicitud Post aquí
@@ -128,7 +129,11 @@ export default function creacionResumenViaje() {
             setTimeout(function () {
                 Reserva.Post(reservaRequest)
                     .then((response) => {
-                        console.log(response); // Manejar la respuesta de la solicitud Post aquí
+                        console.log(response);
+                        loadResultadoReservasFromLocalStorage();
+                        setReservas(response);
+                        saveRequestReservaToLocalStorage();
+                        window.location.href = "../../pages/metodoDePago.html";
                     })
                     .catch((error) => {
                         console.error(error); // Manejar el error de la solicitud Post aquí
