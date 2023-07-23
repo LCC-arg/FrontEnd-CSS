@@ -1,0 +1,55 @@
+.datos{
+    margin-top: 100px;
+    padding: 2%;
+}
+
+.datos h3{
+    font-weight: bold;
+    font-size: 20pt;
+    color: white;
+    background-color: var( --rosaPrimario);
+    padding: 1%;
+    border-radius: 20px 20px 0px 0px;
+}
+
+.container-all-data{
+    background-color: var(--blanco);
+    padding: 1%;
+    border-radius:  0px 0px 5px 5px;
+    box-shadow: 2px 8px 4px 0px rgba(0, 0, 0, 0.5);
+
+}
+
+.tarjetas-user h4{
+    font-size: 17pt;
+}
+
+.tarjeta{
+    padding: 0.4%;
+    margin: 10px;
+    border-radius: 5px;
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    background-color: #f0f0f0;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 13pt;
+}
+
+.tarjeta img{
+    width: 80px;
+}
+
+.bolder{
+    font-weight: bolder;
+}
+
+/*en caso de no existir tarjetas*/
+#no-tarjeta{
+    padding: 2%;
+    text-align: center;
+    margin-top: 10px;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+}

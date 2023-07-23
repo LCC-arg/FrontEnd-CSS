@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="../components/userData/userData.css">
     <link rel="stylesheet" href="/css/layouts/mis-datos.css">
+    <link rel="stylesheet" href="/css/preloader.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Mis datos</title>
 </head>
 <body>
@@ -20,35 +22,14 @@
                     <h3>MIS DATOS</h3>
 
                     <div class="container-all-data">
-                        <div class="user-data-content">
-                            <div class="data-basic">
-                                <p><span class="nombre">NOMBRE: </span>Mariana Coria</p>
-                                <p><span class="dni">DNI: </span> 43234123</p>
-                                <p><span class="email">EMAIL: </span> 43234123</p>
-                            </div>
-                            
-                            <div class="data-contac">
-                                <p><span class="telefono">TELEFONO: </span> 43234123</p>
-                                <p><span class="domicilio">DOMICILIO: </span> 43234123</p>
-                            </div>
-                            
-                        </div>
+                            <div id="container-all-data"></div>
 
                         <div class="tarjetas-user">
                             <h4>MIS TARJETAS</h4>
                             <hr>
-                            <div class="tarjeta">
-                                <img src="../assets/img/mastercard.png" alt="" srcset="">
-                                <p> 4456 6789 **** ****</p>
-                                <p>TIPO: CREDITO</p>
-                                <P>VENCIMIENTO: 10/29</P>
-                            </div>
+                        
+                            <div id="tarjeta-container">
 
-                            <div class="tarjeta">
-                                <img src="../assets/img/visa.png" alt="" srcset="">
-                                <p> 4456 6789 **** ****</p>
-                                <p>TIPO: CREDITO</p>
-                                <P>VENCIMIENTO: 10/29</P>
                             </div>
                 
                         </div>
@@ -62,5 +43,7 @@
     <footer class="footer" id="footer">
     </footer>
     <script type="module" src="/js/main.js"></script>
+    <script type="module" src="/js/preloader.js"></script>
+    <script type="module" src="/js/mis-datos.js"></script>
 </body>
 </html>
