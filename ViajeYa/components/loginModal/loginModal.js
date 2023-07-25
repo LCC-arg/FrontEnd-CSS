@@ -88,12 +88,12 @@ async function loguearUsuario() {
       sessionStorage.setItem("userProfile", JSON.stringify(perfil));
 
       let mensaje = `SESION INICIADA EXITOSAMENTE ,\n nos alegra verte ${perfil.nombre}`;
-      notificationComponent.getNotification("/assets/img/check.png",mensaje);
+      notificationComponent.getNotification("/ViajeYa/assets/img/check.png",mensaje);
     }
 
     if (resultado.metadata.status != 200) {
         let mensaje = "Ups! usuario y/o contraseña incorrecta";
-        notificationComponent.getNotification("/assets/img/lock.png",mensaje);
+        notificationComponent.getNotification("/ViajeYa/assets/img/lock.png",mensaje);
     }
 
 
