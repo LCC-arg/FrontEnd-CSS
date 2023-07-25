@@ -21,7 +21,7 @@ export default function cerrarSesion() {
 
         config.token = null;
         config.idUsuario = null;
-        location.href ="../index.html";
+        location.href ="/ViajeYa/index.html";
 
         }
       })

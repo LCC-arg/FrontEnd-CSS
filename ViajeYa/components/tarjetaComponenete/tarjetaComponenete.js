@@ -7,13 +7,13 @@ export default function generarTarjeta(dataTarjeta) {
     const img = document.createElement("img");
   
     if (dataTarjeta.entidadTarjeta.toUpperCase() === "VISA") {
-      img.src = "../assets/img/visa.png";
+      img.src = "/ViajeYa/assets/img/visa.png";
       img.alt = "visa";
     } else if (dataTarjeta.entidadTarjeta.toUpperCase() === "MASTERCARD") {
-      img.src = "../assets/img/mastercard.png";
+      img.src = "/ViajeYa/assets/img/mastercard.png";
       img.alt = "master";
     } else {
-      img.src = "../assets/img/genericCard.png"; // tarjeta generica
+      img.src = "/ViajeYa/assets/img/genericCard.png"; // tarjeta generica
       img.alt = "generica";
     }
   

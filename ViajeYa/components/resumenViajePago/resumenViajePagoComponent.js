@@ -9,7 +9,7 @@ export default function creacionResumenPagoViaje() {
     const resumenComponente = document.createElement("div");
     resumenComponente.innerHTML = `
     <div class="viaje-info">
-    <p class="viaje-tittle tittle">Viaje de ${data.tipoViaje}</p>
+    <p class="viaje-tittle tittle">Viaje de ${data.asientoViaje}</p>
     <p class="origen"> De: ${data.ciudadOrigen}</p>
     <p class="destino">A: ${data.ciudadDestino}</p>
     </div>

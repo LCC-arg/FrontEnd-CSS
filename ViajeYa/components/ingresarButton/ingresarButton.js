@@ -13,7 +13,7 @@ function cambiarButton(elemento) {
 
     const enlaceDatos = document.createElement("a");
     enlaceDatos.textContent = "Mis Datos";
-    enlaceDatos.href = "/pages/mis-datos.html";
+    enlaceDatos.href = "/ViajeYa/pages/mis-datos.html";
 
     divOpciones.appendChild(enlaceDatos);
 

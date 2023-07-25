@@ -3,10 +3,6 @@ import creacionReserva from "./reservaComponent.js";
 import formatearFecha from "../../utils/formatearFecha.js";
 import formatearHora from "../../utils/formatearHora.js";
 
-
-
-
-
 async function getReserva(idReserva,count) {
   const agregarReserva = document.querySelector(".reservations");
   
@@ -18,7 +14,7 @@ async function getReserva(idReserva,count) {
 
 async function obtenerDatos(idReserva,count) {
   let reservaData = await reservaService.GetById(idReserva);
-  let pasajeroMap = reservaData.pasajero;
+  let pasajeroMap = reservaData.pasajero.nombre + " " + reservaData.pasajero.apellido;
   let tipoTransporteMap = reservaData.viaje.tipoTransporte;
   let destinoNombreMap = reservaData.viaje.ciudadDestinoDescripcion;
   let imagenDestinoMap = reservaData.viaje.ciudadDestinoImagen;
@@ -31,11 +27,6 @@ async function obtenerDatos(idReserva,count) {
 const horaReservaMap = formatearHora(reservaData.fecha);
 const horaSalidaMap = formatearHora(reservaData.viaje.fechaSalida);
 const horaLlegadaMap = formatearHora(reservaData.viaje.fechaLlegada);
-
- /* 
-  let idPasajero = reservaData.pasajero;
-  let nombrePasajero= await pasajero.GetById(idPasajero);
-*/
 
   const datos = {
     pasajeros:pasajeroMap,
