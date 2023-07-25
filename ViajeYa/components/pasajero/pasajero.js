@@ -1,5 +1,4 @@
 export const pasajeroForm = (id) => `
-
 <link rel="stylesheet" href="/components/pasajero/reservaStyle.css">
 <div class="pasajero-form">
 <div class="pasajero-tittle" number="${id}" id="pasajero-title">
