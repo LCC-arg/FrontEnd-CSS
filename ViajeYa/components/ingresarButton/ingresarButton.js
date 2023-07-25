@@ -6,17 +6,27 @@ function cambiarButton(elemento) {
       
      let datosUsuario = JSON.parse(usuario);
 
-     if(usuario != null){
-          agregarNombre(elemento,datosUsuario.nombre);
+  if (usuario != null) {
+    agregarNombre(elemento, datosUsuario.nombre);
 
-          let btnCerraSesion = document.getElementById("perfil-usuario");
+    const divOpciones = document.getElementsByClassName("links-center")[0];
 
-          btnCerraSesion.addEventListener("click",(e)=>{
-            e.preventDefault();
-                    cerrarSesion();
-          });
-     }
-   }
+    const enlaceDatos = document.createElement("a");
+    enlaceDatos.textContent = "Mis Datos";
+    enlaceDatos.href = "/pages/mis-datos.html";
+
+    divOpciones.appendChild(enlaceDatos);
+
+
+
+    let btnCerraSesion = document.getElementById("perfil-usuario");
+
+    btnCerraSesion.addEventListener("click", (e) => {
+      e.preventDefault();
+      cerrarSesion();
+    });
+  }
+}
    
 
    function agregarNombre(elemento, user) {

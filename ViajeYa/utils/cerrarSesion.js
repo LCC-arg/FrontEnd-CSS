@@ -21,7 +21,7 @@ export default function cerrarSesion() {
 
         config.token = null;
         config.idUsuario = null;
-        location.reload();
+        location.href ="../index.html";
 
         }
       })

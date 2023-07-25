@@ -71,11 +71,31 @@ const registrarUsuario = async (UsuarioRequest) => {
 
 };
 
+const obtenerTarjetas = async (usuarioId) =>{
+
+  let token = config.token;
+  let endpoint = `${config.microservicioUsuario}/api/Tarjeta/${usuarioId}`;
+
+  const response = await fetch(endpoint, {
+    method: 'GET',
+    headers: {
+      'Authorization': `Bearer ${token}`
+    }
+  });
+
+
+  const responseData = await response.json();
+  // Procesar la respuesta aquí
+  return responseData;
+
+}
+
 
 const Usuario = {
   loginUser : logearUsuario ,
   GetById : conseguirDatosUsuario,
-  Registrar : registrarUsuario
+  Registrar : registrarUsuario,
+  obtenerTarjetas : obtenerTarjetas
 }
 
 

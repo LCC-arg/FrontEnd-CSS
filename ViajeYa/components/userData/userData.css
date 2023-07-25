@@ -1,0 +1,40 @@
+
+
+.user-data-content{
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.user-data-content p{
+    margin: 4px;
+    padding: 0.2%;
+}
+
+/* Estilos para el contenedor principal */
+.user-data-content {
+    display: flex; /* Usamos flexbox para alinear los divs internos */
+    justify-content: space-between; /* Espacio entre los divs internos */
+    background-color: #f0f0f0;
+    padding: 10px;
+  }
+  
+  /* Estilos para los divs internos */
+  .user-data-content .data-basic,
+  .user-data-content .data-contac {
+    flex: 1;
+  }
+  
+ 
+  .user-data-content .data-basic p,
+  .user-data-content .data-contac p {
+    margin: 0; 
+  }
+  
+
+  .user-data-content .data-basic {
+    text-align: left;
+  }
+  
+
+  
+
