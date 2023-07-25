@@ -133,7 +133,7 @@ export default function creacionResumenViaje() {
                         loadResultadoReservasFromLocalStorage();
                         setReservas(response);
                         saveRequestReservaToLocalStorage();
-                        window.location.href = "../../pages/metodoDePago.html";
+                        window.location.href = "../pages/metodoDePago.html";
                     })
                     .catch((error) => {
                         console.error(error); // Manejar el error de la solicitud Post aquí

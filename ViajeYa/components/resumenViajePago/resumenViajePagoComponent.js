@@ -126,7 +126,7 @@ export default function creacionResumenPagoViaje() {
         pago.Post(pagoRequest)
             .then((response) => {
                 console.log(response);
-                window.location.href = "../../pages/pago-nice.html";
+                window.location.href = "../pages/pago-nice.html";
             })
     }
 

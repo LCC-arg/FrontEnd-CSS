@@ -1,15 +1,11 @@
 export const pasajeroForm = (id) => `
-<<<<<<< HEAD
 
 <link rel="stylesheet" href="/ViajeYa/components/pasajero/reservaStyle.css">
-=======
-<link rel="stylesheet" href="/components/pasajero/reservaStyle.css">
->>>>>>> main
 <div class="pasajero-form">
 <div class="pasajero-tittle" number="${id}" id="pasajero-title">
-    <img src="/assets/img/logo-login.png" alt="">
+    <img src="../assets/img/logo-login.png" alt="">
     <h3>Pasajero ${id}</h3>
-    <img id="arrow" class="arrow" src="/assets/img/arrow.png" number="${id}" alt="">
+    <img id="arrow" class="arrow" src="../assets/img/arrow.png" number="${id}" alt="">
   </div>
 
     <div class="container-data-pasajero-form" id="container-data-pasajero-form${id}">
