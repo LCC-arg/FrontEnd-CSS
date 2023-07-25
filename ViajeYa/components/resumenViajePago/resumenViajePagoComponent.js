@@ -1,4 +1,6 @@
 import { getCantidadPasajeros, getDataBoleto, saveViajeSeleccionadoToLocalStorage, loadViajeSeleccionadoFromLocalStorage, resetViajeSeleccionado } from "../pasaje/viajeSeleccionadoStorage.js"
+import { setResultadoReservas, getResultadoReservas, setReservas, getReservas, saveRequestReservaToLocalStorage, resetResultadoReservas, loadResultadoReservasFromLocalStorage } from "../resumenViajePago/reservaStorage.js"
+import pago from "../../api/services/reservaService/Pago.js";
 
 export default function creacionResumenPagoViaje() {
     loadViajeSeleccionadoFromLocalStorage();
@@ -51,7 +53,6 @@ export default function creacionResumenPagoViaje() {
 
     const botonReservar = resumenComponente.querySelector(".button-reserva");
     botonReservar.addEventListener('click', () => validarFormulario());
-
 
     function validarFormulario() {
         var nombre = document.querySelector('.card-data-form-container .nombre input').value;
@@ -108,7 +109,25 @@ export default function creacionResumenPagoViaje() {
             return;
         }
 
-        window.location.href = "../../pages/pago-nice.html";
+        loadResultadoReservasFromLocalStorage();
+
+        let reservasIds = [];
+
+        getReservas().forEach(element => {
+            reservasIds.push(element.id);
+        });
+
+        let pagoRequest = {
+            reservas: reservasIds,
+            metodoPago: 1,
+            numeroTarjeta: nroTarjeta.toString()
+        };
+
+        pago.Post(pagoRequest)
+            .then((response) => {
+                console.log(response);
+                window.location.href = "../../pages/pago-nice.html";
+            })
     }
 
     return resumenComponente;
