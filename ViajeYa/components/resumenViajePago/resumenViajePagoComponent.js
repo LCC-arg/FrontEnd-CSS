@@ -108,7 +108,7 @@ export default function creacionResumenPagoViaje() {
             return;
         }
 
-        window.location.href = "../../pages/pago-nice.html";
+        window.location.href = "/ViajeYa/pages/pago-nice.html";
     }
 
     return resumenComponente;
